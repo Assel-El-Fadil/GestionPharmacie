@@ -145,7 +145,7 @@ namespace GestionPharmacie.Admin
             }
 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "data source = LAPTOP-G7L9QSSV;initial catalog=GestionPharmacie;" +
+            conn.ConnectionString = "data source = DESKTOP-DDPB0HH\\GI2_1;initial catalog=GestionPharmacie;" +
                         "integrated security=True;TrustServerCertificate=True";
 
             string sql = $"SELECT MedicamentID, Reference, NomMedicament, CategorieID, Forme, Dosage, PrixVente, QuantiteStock," +
@@ -329,6 +329,10 @@ namespace GestionPharmacie.Admin
         {
             panelmedicaments.Visible = false;
             panelmedicaments.Dock = DockStyle.None;
+            panelClients.Visible = false;
+            panelClients.Dock = DockStyle.None;
+            panelCommandes.Visible = false;
+            panelCommandes.Dock = DockStyle.None;
             dashboard.Visible = true;
             dashboard.Dock = DockStyle.Fill;
         }
@@ -339,6 +343,46 @@ namespace GestionPharmacie.Admin
             dashboard.Dock = DockStyle.None;
             panelmedicaments.Visible = true;
             panelmedicaments.Dock = DockStyle.Fill;
+            panelClients.Visible = false;
+            panelClients.Dock = DockStyle.None;
+            panelCommandes.Visible = false;
+            panelCommandes.Dock = DockStyle.None;
+        }
+
+        private void iconButton3_Click(object sender, EventArgs e)
+        {
+            // show Commandes panel
+            dashboard.Visible = false;
+            dashboard.Dock = DockStyle.None;
+            panelmedicaments.Visible = false;
+            panelmedicaments.Dock = DockStyle.None;
+            panelClients.Visible = false;
+            panelClients.Dock = DockStyle.None;
+            panelCommandes.Visible = true;
+            panelCommandes.Dock = DockStyle.Fill;
+
+            LoadCommandes();
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            // show Clients panel
+            dashboard.Visible = false;
+            dashboard.Dock = DockStyle.None;
+            panelmedicaments.Visible = false;
+            panelmedicaments.Dock = DockStyle.None;
+            panelCommandes.Visible = false;
+            panelCommandes.Dock = DockStyle.None;
+            panelClients.Visible = true;
+            panelClients.Dock = DockStyle.Fill;
+
+            LoadClients();
+        }
+
+        private void LoadClients()
+        {
+            DataTable dt = Client.GetAll();
+            gridClients.DataSource = dt;
         }
 
         private void label8_Click(object sender, EventArgs e)
@@ -462,6 +506,327 @@ namespace GestionPharmacie.Admin
         private void iconPictureBox4_Click(object sender, EventArgs e)
         {
             ViewMedicament.Visible = false;
+        }
+
+        private void AddPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void searchClientBtn_Click(object sender, EventArgs e)
+        {
+            string txt = searchClientTxt.Text.Trim();
+            DataTable dt;
+            if (string.IsNullOrWhiteSpace(txt))
+            {
+                dt = Client.GetAll();
+            }
+            else
+            {
+                dt = Client.Search(txt);
+            }
+            gridClients.DataSource = dt;
+        }
+
+        private void resetClientBtn_Click(object sender, EventArgs e)
+        {
+            searchClientTxt.Text = string.Empty;
+            gridClients.DataSource = Client.GetAll();
+        }
+
+        private void gridClients_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == gridClients.Columns["ClientsActions"].Index && e.RowIndex >= 0)
+            {
+                e.PaintBackground(e.ClipBounds, true);
+
+                int x = e.CellBounds.Left + 5;
+                int y = e.CellBounds.Top + (e.CellBounds.Height - 20) / 2;
+
+                // edit icon
+                e.Graphics.DrawImage(Properties.Resources.edit, new Rectangle(x, y, 20, 20));
+                x += 30;
+                // delete icon
+                e.Graphics.DrawImage(Properties.Resources.delete, new Rectangle(x, y, 20, 20));
+
+                e.Handled = true;
+            }
+        }
+
+        private void gridClients_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex != gridClients.Columns["ClientsActions"].Index || e.RowIndex < 0)
+                return;
+
+            int cellLeft = gridClients.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false).X;
+            int clickX = gridClients.PointToClient(Cursor.Position).X - cellLeft;
+
+            int id = Convert.ToInt32(gridClients.Rows[e.RowIndex].Cells["UtilisateurID"].Value);
+            string numeroClient = gridClients.Rows[e.RowIndex].Cells["NumeroClient"].Value?.ToString();
+            string nom = gridClients.Rows[e.RowIndex].Cells["Nom"].Value?.ToString();
+            string prenom = gridClients.Rows[e.RowIndex].Cells["Prenom"].Value?.ToString();
+            string telephone = gridClients.Rows[e.RowIndex].Cells["Telephone"].Value?.ToString();
+            string email = gridClients.Rows[e.RowIndex].Cells["Email"].Value?.ToString();
+
+            if (clickX < 30)
+            {
+                // Modifier client
+                Client c = new Client
+                {
+                    UtilisateurID = id,
+                    NumeroClient = numeroClient,
+                    Nom = nom,
+                    Prenom = prenom,
+                    Telephone = telephone,
+                    Email = email
+                };
+
+                DialogResult confirm = MessageBox.Show(
+                    $"Voulez-vous modifier le client '{nom} {prenom}' (N° {numeroClient}) ?",
+                    "Confirmation de modification",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (confirm == DialogResult.Yes)
+                {
+                    string result = Client.UpdateClient(c);
+                    MessageBox.Show(result, "Modification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadClients();
+                }
+            }
+            else if (clickX < 60)
+            {
+                // Supprimer client
+                DialogResult confirm = MessageBox.Show(
+                    $"Voulez-vous vraiment supprimer le client '{nom} {prenom}' (N° {numeroClient}) ?",
+                    "Confirmation de suppression",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (confirm == DialogResult.Yes)
+                {
+                    string result = Client.DeleteClient(id);
+                    MessageBox.Show(result, "Suppression", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadClients();
+                }
+            }
+        }
+
+        private void buttonNouveauClient_Click(object sender, EventArgs e)
+        {
+            AddClientPanel.Visible = !AddClientPanel.Visible;
+        }
+
+        private void iconPictureBoxCloseClient_Click(object sender, EventArgs e)
+        {
+            AddClientPanel.Visible = false;
+        }
+
+        private void buttonAnnulerClient_Click(object sender, EventArgs e)
+        {
+            AddClientPanel.Visible = false;
+        }
+
+        private void buttonAjouterClient_Click(object sender, EventArgs e)
+        {
+            // Validate required fields
+            if (string.IsNullOrWhiteSpace(txtNumeroClient.Text) ||
+                string.IsNullOrWhiteSpace(txtNomClient.Text) ||
+                string.IsNullOrWhiteSpace(txtPrenomClient.Text))
+            {
+                MessageBox.Show("Veuillez remplir tous les champs obligatoires (marqués d'un *).",
+                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Validate email format if provided
+            if (!string.IsNullOrWhiteSpace(txtEmailClient.Text))
+            {
+                try
+                {
+                    var mail = new System.Net.Mail.MailAddress(txtEmailClient.Text);
+                }
+                catch
+                {
+                    MessageBox.Show("Format d'email invalide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            // Get values
+            string numeroClient = txtNumeroClient.Text.Trim();
+            string nom = txtNomClient.Text.Trim();
+            string prenom = txtPrenomClient.Text.Trim();
+            string cin = txtCIN.Text.Trim();
+            string telephone = txtTelephoneClient.Text.Trim();
+            string email = txtEmailClient.Text.Trim();
+            DateTime dateNaissance = dateNaissanceClient.Value;
+            string ville = txtVille.Text.Trim();
+
+            // Add client
+            bool result = Client.AddClient(numeroClient, nom, prenom, cin, telephone, email, dateNaissance, ville);
+
+            // Clear fields
+            txtNumeroClient.Text = "";
+            txtNomClient.Text = "";
+            txtPrenomClient.Text = "";
+            txtCIN.Text = "";
+            txtTelephoneClient.Text = "";
+            txtEmailClient.Text = "";
+            txtVille.Text = "";
+            dateNaissanceClient.Value = DateTime.Now;
+
+            if (result)
+            {
+                MessageBox.Show("Client ajouté avec succès.", "Succès",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                AddClientPanel.Visible = false;
+                LoadClients(); // Refresh the clients list
+            }
+            else
+            {
+                MessageBox.Show("Erreur lors de l'ajout du client.", "Erreur",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void LoadCommandes()
+        {
+            DataTable dt = Commande.GetAll();
+            FormatCommandesGrid(dt);
+            gridCommandes.DataSource = dt;
+        }
+
+        private void FormatCommandesGrid(DataTable dt)
+        {
+            if (dt.Columns.Contains("Date"))
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["Date"] != DBNull.Value && row["Date"] is DateTime)
+                    {
+                        row["Date"] = ((DateTime)row["Date"]).ToString("dd/MM/yyyy");
+                    }
+                }
+            }
+            if (dt.Columns.Contains("Montant"))
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    if (row["Montant"] != DBNull.Value)
+                    {
+                        decimal montant = Convert.ToDecimal(row["Montant"]);
+                        row["Montant"] = montant.ToString("F2");
+                    }
+                }
+            }
+        }
+
+        private void searchCommandeBtn_Click(object sender, EventArgs e)
+        {
+            string txt = searchCommandeTxt.Text.Trim();
+            DataTable dt;
+
+            if (string.IsNullOrWhiteSpace(txt))
+            {
+                dt = Commande.GetAll();
+            }
+            else
+            {
+                dt = Commande.Search(txt);
+            }
+
+            FormatCommandesGrid(dt);
+            gridCommandes.DataSource = dt;
+        }
+
+        private void resetCommandeBtn_Click(object sender, EventArgs e)
+        {
+            searchCommandeTxt.Text = string.Empty;
+            LoadCommandes();
+        }
+
+        private void gridCommandes_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == gridCommandes.Columns["CommandesActions"].Index && e.RowIndex >= 0)
+            {
+                e.PaintBackground(e.ClipBounds, true);
+
+                int x = e.CellBounds.Left + 5;
+                int y = e.CellBounds.Top + (e.CellBounds.Height - 20) / 2;
+
+                // view icon (eye) only
+                e.Graphics.DrawImage(Properties.Resources.view, new Rectangle(x, y, 20, 20));
+
+                e.Handled = true;
+            }
+        }
+
+        private void gridCommandes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex != gridCommandes.Columns["CommandesActions"].Index || e.RowIndex < 0)
+                return;
+
+            int cellLeft = gridCommandes.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false).X;
+            int clickX = gridCommandes.PointToClient(Cursor.Position).X - cellLeft;
+
+            if (clickX < 30)
+            {
+                // View commande details
+                int commandeID = Convert.ToInt32(gridCommandes.Rows[e.RowIndex].Cells["CommandeID"].Value);
+                ShowCommandeDetails(commandeID);
+            }
+        }
+
+        private void ShowCommandeDetails(int commandeID)
+        {
+            DataTable dtCommande = Commande.GetCommandeDetails(commandeID);
+            if (dtCommande.Rows.Count == 0)
+            {
+                MessageBox.Show("Commande introuvable.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            DataRow cmd = dtCommande.Rows[0];
+            DataTable dtItems = Commande.GetCommandeItems(commandeID);
+
+            // Populate commande details
+            labelCommandeNumero.Text = $"Détails de la commande {cmd["NumeroCommande"]}";
+            labelCommandeDate.Text = $"Commande du {((DateTime)cmd["DateCommande"]).ToString("dd/MM/yyyy")}";
+            labelCommandeClient.Text = cmd["Client"]?.ToString() ?? "";
+            labelCommandeStatut.Text = cmd["Statut"]?.ToString() ?? "";
+            labelCommandeDateValue.Text = ((DateTime)cmd["DateCommande"]).ToString("dd/MM/yyyy");
+            labelCommandePaiement.Text = cmd["Paiement"]?.ToString() ?? "";
+            labelCommandeMontantTotal.Text = $"{Convert.ToDecimal(cmd["MontantTotal"]):F2} DH";
+
+            // Populate items grid
+            gridCommandeItems.DataSource = dtItems;
+            if (dtItems.Columns.Contains("PrixUnitaire"))
+            {
+                foreach (DataRow row in dtItems.Rows)
+                {
+                    if (row["PrixUnitaire"] != DBNull.Value)
+                    {
+                        decimal prix = Convert.ToDecimal(row["PrixUnitaire"]);
+                        row["PrixUnitaire"] = prix.ToString("F2");
+                    }
+                   
+                }
+            }
+
+            ViewCommande.Visible = true;
+        }
+
+        private void iconPictureBoxCloseCommande_Click(object sender, EventArgs e)
+        {
+            ViewCommande.Visible = false;
+        }
+
+        private void buttonFermerCommande_Click(object sender, EventArgs e)
+        {
+            ViewCommande.Visible = false;
         }
     }
 }
