@@ -44,6 +44,7 @@
             Ajouter = new Button();
             tabControl1 = new TabControl();
             Information = new TabPage();
+            iconButton8 = new FontAwesome.Sharp.IconButton();
             FormeCbox = new ComboBox();
             categorieCbox = new ComboBox();
             DescTxt = new TextBox();
@@ -193,6 +194,24 @@
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             label1 = new Label();
             label3 = new Label();
+            PanelStats = new Panel();
+            CategorieChart = new LiveCharts.WinForms.CartesianChart();
+            SalesChart = new LiveCharts.WinForms.CartesianChart();
+            RevChart = new LiveCharts.WinForms.CartesianChart();
+            Txtavgpanier = new Label();
+            nbrCommtxt = new Label();
+            label43 = new Label();
+            label41 = new Label();
+            label37 = new Label();
+            TxtRev = new Label();
+            label42 = new Label();
+            label38 = new Label();
+            label40 = new Label();
+            label35 = new Label();
+            label39 = new Label();
+            label44 = new Label();
+            label33 = new Label();
+            label19 = new Label();
             comboStatutCommande = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -229,6 +248,7 @@
             panel4.SuspendLayout();
             panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            PanelStats.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -245,7 +265,7 @@
             panel1.ForeColor = SystemColors.ControlText;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(171, 473);
+            panel1.Size = new Size(171, 577);
             panel1.TabIndex = 0;
             // 
             // iconButton7
@@ -262,7 +282,7 @@
             iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton7.IconSize = 20;
             iconButton7.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton7.Location = new Point(0, 428);
+            iconButton7.Location = new Point(0, 532);
             iconButton7.Name = "iconButton7";
             iconButton7.Padding = new Padding(15, 0, 0, 0);
             iconButton7.Size = new Size(171, 45);
@@ -296,6 +316,7 @@
             iconButton5.TextAlign = ContentAlignment.MiddleLeft;
             iconButton5.TextImageRelation = TextImageRelation.ImageBeforeText;
             iconButton5.UseVisualStyleBackColor = false;
+            iconButton5.Click += iconButton5_Click;
             // 
             // iconButton4
             // 
@@ -487,6 +508,7 @@
             // Information
             // 
             Information.BackColor = Color.White;
+            Information.Controls.Add(iconButton8);
             Information.Controls.Add(FormeCbox);
             Information.Controls.Add(categorieCbox);
             Information.Controls.Add(DescTxt);
@@ -507,6 +529,18 @@
             Information.Size = new Size(402, 244);
             Information.TabIndex = 0;
             Information.Text = "Information Generale";
+            // 
+            // iconButton8
+            // 
+            iconButton8.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconButton8.IconColor = Color.Black;
+            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconButton8.Location = new Point(233, 12);
+            iconButton8.Name = "iconButton8";
+            iconButton8.Size = new Size(75, 23);
+            iconButton8.TabIndex = 3;
+            iconButton8.Text = "iconButton8";
+            iconButton8.UseVisualStyleBackColor = true;
             // 
             // FormeCbox
             // 
@@ -752,7 +786,7 @@
             panelTop.Dock = DockStyle.Top;
             panelTop.Location = new Point(171, 0);
             panelTop.Name = "panelTop";
-            panelTop.Size = new Size(799, 46);
+            panelTop.Size = new Size(933, 46);
             panelTop.TabIndex = 1;
             // 
             // label6
@@ -785,7 +819,7 @@
             iconButton9.IconColor = Color.Black;
             iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton9.IconSize = 32;
-            iconButton9.Location = new Point(747, 0);
+            iconButton9.Location = new Point(881, 0);
             iconButton9.Name = "iconButton9";
             iconButton9.Size = new Size(52, 46);
             iconButton9.TabIndex = 0;
@@ -891,9 +925,9 @@
             panelmedicaments.Controls.Add(AddPanel);
             panelmedicaments.Controls.Add(panel3);
             panelmedicaments.Controls.Add(GridView1);
-            panelmedicaments.Location = new Point(171, 46);
+            panelmedicaments.Location = new Point(1084, 98);
             panelmedicaments.Name = "panelmedicaments";
-            panelmedicaments.Size = new Size(812, 460);
+            panelmedicaments.Size = new Size(232, 268);
             panelmedicaments.TabIndex = 7;
             panelmedicaments.Visible = false;
             // 
@@ -905,8 +939,8 @@
             panelSearch.Dock = DockStyle.Top;
             panelSearch.Location = new Point(0, 0);
             panelSearch.Name = "panelSearch";
-            panelSearch.Padding = new Padding(10, 10, 10, 10);
-            panelSearch.Size = new Size(812, 70);
+            panelSearch.Padding = new Padding(10);
+            panelSearch.Size = new Size(232, 70);
             panelSearch.TabIndex = 2;
             // 
             // labelTitle
@@ -933,7 +967,7 @@
             buttonNouveau.IconFont = FontAwesome.Sharp.IconFont.Solid;
             buttonNouveau.IconSize = 16;
             buttonNouveau.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonNouveau.Location = new Point(600, 24);
+            buttonNouveau.Location = new Point(20, 24);
             buttonNouveau.Name = "buttonNouveau";
             buttonNouveau.Padding = new Padding(8, 0, 0, 0);
             buttonNouveau.Size = new Size(200, 32);
@@ -2072,10 +2106,9 @@
             dashboard.Controls.Add(panel4);
             dashboard.Controls.Add(label1);
             dashboard.Controls.Add(label3);
-            dashboard.Dock = DockStyle.Fill;
-            dashboard.Location = new Point(171, 46);
+            dashboard.Location = new Point(1084, 372);
             dashboard.Name = "dashboard";
-            dashboard.Size = new Size(799, 427);
+            dashboard.Size = new Size(339, 235);
             dashboard.TabIndex = 8;
             // 
             // panelExpiry
@@ -2228,6 +2261,203 @@
             label3.TabIndex = 0;
             label3.Text = "Tableau de bord";
             // 
+            // PanelStats
+            // 
+            PanelStats.AutoScroll = true;
+            PanelStats.Controls.Add(CategorieChart);
+            PanelStats.Controls.Add(SalesChart);
+            PanelStats.Controls.Add(RevChart);
+            PanelStats.Controls.Add(Txtavgpanier);
+            PanelStats.Controls.Add(nbrCommtxt);
+            PanelStats.Controls.Add(label43);
+            PanelStats.Controls.Add(label41);
+            PanelStats.Controls.Add(label37);
+            PanelStats.Controls.Add(TxtRev);
+            PanelStats.Controls.Add(label42);
+            PanelStats.Controls.Add(label38);
+            PanelStats.Controls.Add(label40);
+            PanelStats.Controls.Add(label35);
+            PanelStats.Controls.Add(label39);
+            PanelStats.Controls.Add(label44);
+            PanelStats.Controls.Add(label33);
+            PanelStats.Controls.Add(label19);
+            PanelStats.Dock = DockStyle.Fill;
+            PanelStats.Location = new Point(171, 46);
+            PanelStats.Name = "PanelStats";
+            PanelStats.Size = new Size(933, 531);
+            PanelStats.TabIndex = 9;
+            // 
+            // CategorieChart
+            // 
+            CategorieChart.Location = new Point(311, 579);
+            CategorieChart.Name = "CategorieChart";
+            CategorieChart.Size = new Size(311, 231);
+            CategorieChart.TabIndex = 1;
+            CategorieChart.Text = "cartesianChart1";
+            // 
+            // SalesChart
+            // 
+            SalesChart.Location = new Point(499, 263);
+            SalesChart.Name = "SalesChart";
+            SalesChart.Size = new Size(311, 231);
+            SalesChart.TabIndex = 1;
+            SalesChart.Text = "cartesianChart1";
+            // 
+            // RevChart
+            // 
+            RevChart.Location = new Point(35, 272);
+            RevChart.Name = "RevChart";
+            RevChart.Size = new Size(308, 231);
+            RevChart.TabIndex = 1;
+            RevChart.Text = "cartesianChart1";
+            // 
+            // Txtavgpanier
+            // 
+            Txtavgpanier.AutoSize = true;
+            Txtavgpanier.Font = new Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Txtavgpanier.Location = new Point(663, 149);
+            Txtavgpanier.Name = "Txtavgpanier";
+            Txtavgpanier.Size = new Size(67, 18);
+            Txtavgpanier.TabIndex = 0;
+            Txtavgpanier.Text = "TxtRev";
+            // 
+            // nbrCommtxt
+            // 
+            nbrCommtxt.AutoSize = true;
+            nbrCommtxt.Font = new Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            nbrCommtxt.Location = new Point(355, 149);
+            nbrCommtxt.Name = "nbrCommtxt";
+            nbrCommtxt.Size = new Size(67, 18);
+            nbrCommtxt.TabIndex = 0;
+            nbrCommtxt.Text = "TxtRev";
+            // 
+            // label43
+            // 
+            label43.AutoSize = true;
+            label43.Font = new Font("Georgia", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label43.Location = new Point(307, 531);
+            label43.Name = "label43";
+            label43.Size = new Size(200, 18);
+            label43.TabIndex = 0;
+            label43.Text = "Répartition par catégorie";
+            // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Font = new Font("Georgia", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label41.Location = new Point(495, 215);
+            label41.Name = "label41";
+            label41.Size = new Size(156, 18);
+            label41.TabIndex = 0;
+            label41.Text = "Top 5 Médicaments";
+            // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Font = new Font("Georgia", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label37.Location = new Point(31, 224);
+            label37.Name = "label37";
+            label37.Size = new Size(220, 18);
+            label37.TabIndex = 0;
+            label37.Text = "Evolution chiffres d'affaires";
+            // 
+            // TxtRev
+            // 
+            TxtRev.AutoSize = true;
+            TxtRev.Font = new Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TxtRev.Location = new Point(35, 149);
+            TxtRev.Name = "TxtRev";
+            TxtRev.Size = new Size(67, 18);
+            TxtRev.TabIndex = 0;
+            TxtRev.Text = "TxtRev";
+            // 
+            // label42
+            // 
+            label42.AutoSize = true;
+            label42.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label42.ForeColor = SystemColors.ControlDarkDark;
+            label42.Location = new Point(307, 560);
+            label42.Name = "label42";
+            label42.Size = new Size(247, 16);
+            label42.TabIndex = 0;
+            label42.Text = "Nombre de médicaments par catégorie";
+            // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Font = new Font("Georgia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label38.ForeColor = SystemColors.ControlDarkDark;
+            label38.Location = new Point(663, 108);
+            label38.Name = "label38";
+            label38.Size = new Size(108, 16);
+            label38.TabIndex = 0;
+            label38.Text = "Panier moyen";
+            // 
+            // label40
+            // 
+            label40.AutoSize = true;
+            label40.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label40.ForeColor = SystemColors.ControlDarkDark;
+            label40.Location = new Point(495, 244);
+            label40.Name = "label40";
+            label40.Size = new Size(187, 16);
+            label40.TabIndex = 0;
+            label40.Text = "Médicaments les plus vendus";
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Font = new Font("Georgia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label35.ForeColor = SystemColors.ControlDarkDark;
+            label35.Location = new Point(355, 108);
+            label35.Name = "label35";
+            label35.Size = new Size(160, 16);
+            label35.TabIndex = 0;
+            label35.Text = "Nombre Commandes";
+            // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label39.ForeColor = SystemColors.ControlDarkDark;
+            label39.Location = new Point(31, 253);
+            label39.Name = "label39";
+            label39.Size = new Size(161, 16);
+            label39.TabIndex = 0;
+            label39.Text = "Revenu mensuel en MAD";
+            // 
+            // label44
+            // 
+            label44.AutoSize = true;
+            label44.Font = new Font("Georgia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label44.ForeColor = SystemColors.ControlDarkDark;
+            label44.Location = new Point(35, 108);
+            label44.Name = "label44";
+            label44.Size = new Size(99, 16);
+            label44.TabIndex = 0;
+            label44.Text = "Revenu total";
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Font = new Font("Georgia", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label33.ForeColor = SystemColors.ControlDarkDark;
+            label33.Location = new Point(35, 52);
+            label33.Name = "label33";
+            label33.Size = new Size(308, 18);
+            label33.TabIndex = 0;
+            label33.Text = "Analyse des performances de la pharmacie";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Georgia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.Location = new Point(31, 27);
+            label19.Name = "label19";
+            label19.Size = new Size(139, 25);
+            label19.TabIndex = 0;
+            label19.Text = "Statistiques";
+            // 
             // comboStatutCommande
             // 
             comboStatutCommande.Location = new Point(0, 0);
@@ -2243,6 +2473,8 @@
             ClientSize = new Size(970, 473);
             Controls.Add(panelCommandes);
             Controls.Add(panelClients);
+            ClientSize = new Size(1104, 577);
+            Controls.Add(PanelStats);
             Controls.Add(dashboard);
             Controls.Add(panelmedicaments);
             Controls.Add(panelTop);
@@ -2302,6 +2534,8 @@
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            PanelStats.ResumeLayout(false);
+            PanelStats.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -2472,5 +2706,24 @@
         private Label labelClientCommande;
         private Label labelCommandeDate;
         private Label labelCommandeNumero;
+        private Panel PanelStats;
+        private Label label33;
+        private Label label19;
+        private FontAwesome.Sharp.IconButton iconButton8;
+        private Label nbrCommtxt;
+        private Label TxtRev;
+        private Label label35;
+        private Label label44;
+        private Label Txtavgpanier;
+        private Label label38;
+        private Label label37;
+        private LiveCharts.WinForms.CartesianChart RevChart;
+        private Label label39;
+        private LiveCharts.WinForms.CartesianChart CategorieChart;
+        private LiveCharts.WinForms.CartesianChart SalesChart;
+        private Label label43;
+        private Label label41;
+        private Label label42;
+        private Label label40;
     }
 }

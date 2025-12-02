@@ -331,5 +331,55 @@ namespace GestionPharmacie
                 return Convert.ToInt32(cmd.ExecuteScalar());
             }
         }
+
+        public static DataTable GetMonthlyRevenue()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string sql = @"SELECT FORMAT(DateCommande, 'MMM') AS Month, SUM(MontantApresRemise) AS Revenue
+                    FROM Commandes WHERE Statut IN ('Validée', 'Livrée') GROUP BY FORMAT(DateCommande, 'MMM'), MONTH(DateCommande)
+                    ORDER BY MONTH(DateCommande);";
+
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+        public static DataTable GetTop5Sold()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string sql = @"SELECT TOP 5 M.NomMedicament, SUM(D.Quantite) AS TotalVentes FROM DetailsCommande D
+                    INNER JOIN Medicaments M ON D.MedicamentID = M.MedicamentID INNER JOIN Commandes C ON D.CommandeID = C.CommandeID
+                    WHERE C.Statut IN ('Validée', 'Livrée') GROUP BY M.NomMedicament ORDER BY TotalVentes DESC;";
+
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+        public static DataTable GetCategoryCounts()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string sql = @"SELECT TOP 5 C.NomCategorie, COUNT(M.MedicamentID) AS Count FROM Categories C
+                    LEFT JOIN Medicaments M ON M.CategorieID = C.CategorieID GROUP BY C.NomCategorie ORDER BY Count DESC;";
+
+                SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
     }
 }

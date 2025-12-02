@@ -1,4 +1,7 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using LiveCharts;
+using LiveCharts.WinForms;
+using LiveCharts.Wpf;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,7 +39,126 @@ namespace GestionPharmacie.Admin
             LoadExpiryPanel();
             LoadCategories();
             LoadFormes();
+            LoadCharts();
         }
+
+        private void LoadCharts()
+        {
+            try
+            {
+                DataTable revenue = Medicament.GetMonthlyRevenue();
+
+                RevChart.Series.Clear();
+                RevChart.AxisX.Clear();
+                RevChart.AxisY.Clear();
+
+                var revenueSeries = new LineSeries
+                {
+                    Title = "Revenu (€)",
+                    Values = new ChartValues<decimal>(),
+                    PointGeometry = DefaultGeometries.Circle,
+                    PointGeometrySize = 8
+                };
+
+                var revenueLabels = new List<string>();
+
+                foreach (DataRow row in revenue.Rows)
+                {
+                    revenueLabels.Add(row["Month"].ToString());
+                    revenueSeries.Values.Add(Convert.ToDecimal(row["Revenue"]));
+                }
+
+                RevChart.Series.Add(revenueSeries);
+
+                RevChart.AxisX.Add(new Axis
+                {
+                    Title = "Mois",
+                    Labels = revenueLabels
+                });
+
+                RevChart.AxisY.Add(new Axis
+                {
+                    Title = "Revenu (€)"
+                });
+            }
+            catch { }
+
+            try
+            {
+                DataTable sales = Medicament.GetTop5Sold();
+
+                SalesChart.Series.Clear();
+                SalesChart.AxisX.Clear();
+                SalesChart.AxisY.Clear();
+
+                var salesSeries = new ColumnSeries
+                {
+                    Title = "Ventes",
+                    Values = new ChartValues<int>()
+                };
+
+                var salesLabels = new List<string>();
+
+                foreach (DataRow row in sales.Rows)
+                {
+                    salesLabels.Add(row["NomMedicament"].ToString());
+                    salesSeries.Values.Add(Convert.ToInt32(row["TotalVentes"]));
+                }
+
+                SalesChart.Series.Add(salesSeries);
+
+                SalesChart.AxisX.Add(new Axis
+                {
+                    Labels = salesLabels
+                });
+
+                SalesChart.AxisY.Add(new Axis
+                {
+                    Title = "Quantité"
+                });
+            }
+            catch { }
+
+            try
+            {
+                DataTable cat = Medicament.GetCategoryCounts();
+
+                CategorieChart.Series.Clear();
+                CategorieChart.AxisX.Clear();
+                CategorieChart.AxisY.Clear();
+
+                var catSeries = new ColumnSeries
+                {
+                    Title = "Médicaments",
+                    Values = new ChartValues<int>()
+                };
+
+                var catLabels = new List<string>();
+
+                int count = 0;
+                foreach (DataRow row in cat.Rows)
+                {
+                    if (count >= 5) break;
+                    catLabels.Add(row["NomCategorie"].ToString());
+                    catSeries.Values.Add(Convert.ToInt32(row["Count"]));
+                    count++;
+                }
+
+                CategorieChart.Series.Add(catSeries);
+
+                CategorieChart.AxisX.Add(new Axis
+                {
+                    Labels = catLabels
+                });
+
+                CategorieChart.AxisY.Add(new Axis
+                {
+                    Title = "Nombre de Médicaments"
+                });
+            }
+            catch { }
+        }
+
 
         private void LoadCategories()
         {
@@ -145,7 +267,7 @@ namespace GestionPharmacie.Admin
             }
 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "data source = DESKTOP-DDPB0HH\\GI2_1;initial catalog=GestionPharmacie;" +
+            conn.ConnectionString = "data source = LAPTOP-G7L9QSSV;initial catalog=GestionPharmacie;" +
                         "integrated security=True;TrustServerCertificate=True";
 
             string sql = $"SELECT MedicamentID, Reference, NomMedicament, CategorieID, Forme, Dosage, PrixVente, QuantiteStock," +
@@ -221,7 +343,6 @@ namespace GestionPharmacie.Admin
                 int x = e.CellBounds.Left + 5;
                 int y = e.CellBounds.Top + (e.CellBounds.Height - 20) / 2;
 
-                // draw icons (import into Resources first)
                 e.Graphics.DrawImage(Properties.Resources.view, new Rectangle(x, y, 20, 20));
                 x += 30;
                 e.Graphics.DrawImage(Properties.Resources.edit, new Rectangle(x, y, 20, 20));
@@ -333,6 +454,8 @@ namespace GestionPharmacie.Admin
             panelClients.Dock = DockStyle.None;
             panelCommandes.Visible = false;
             panelCommandes.Dock = DockStyle.None;
+            PanelStats.Visible = false;
+            PanelStats.Dock = DockStyle.None;
             dashboard.Visible = true;
             dashboard.Dock = DockStyle.Fill;
         }
@@ -341,6 +464,8 @@ namespace GestionPharmacie.Admin
         {
             dashboard.Visible = false;
             dashboard.Dock = DockStyle.None;
+            PanelStats.Visible = false;
+            PanelStats.Dock = DockStyle.None;
             panelmedicaments.Visible = true;
             panelmedicaments.Dock = DockStyle.Fill;
             panelClients.Visible = false;
@@ -506,6 +631,16 @@ namespace GestionPharmacie.Admin
         private void iconPictureBox4_Click(object sender, EventArgs e)
         {
             ViewMedicament.Visible = false;
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            ViewMedicament.Visible = false;
+            ViewMedicament.Dock = DockStyle.None;
+            dashboard.Visible = false;
+            dashboard.Dock = DockStyle.None;
+            PanelStats.Visible = true;
+            PanelStats.Dock = DockStyle.Fill;
         }
 
         private void AddPanel_Paint(object sender, PaintEventArgs e)
