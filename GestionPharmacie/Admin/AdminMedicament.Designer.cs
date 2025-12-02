@@ -244,9 +244,8 @@
             panel1.Dock = DockStyle.Left;
             panel1.ForeColor = SystemColors.ControlText;
             panel1.Location = new Point(0, 0);
-            panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(244, 962);
+            panel1.Size = new Size(171, 473);
             panel1.TabIndex = 0;
             // 
             // iconButton7
@@ -263,11 +262,10 @@
             iconButton7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton7.IconSize = 20;
             iconButton7.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton7.Location = new Point(0, 887);
-            iconButton7.Margin = new Padding(4, 5, 4, 5);
+            iconButton7.Location = new Point(0, 428);
             iconButton7.Name = "iconButton7";
-            iconButton7.Padding = new Padding(21, 0, 0, 0);
-            iconButton7.Size = new Size(244, 75);
+            iconButton7.Padding = new Padding(15, 0, 0, 0);
+            iconButton7.Size = new Size(171, 45);
             iconButton7.TabIndex = 8;
             iconButton7.Text = "Se déconnecter";
             iconButton7.TextAlign = ContentAlignment.MiddleLeft;
@@ -289,11 +287,10 @@
             iconButton5.IconFont = FontAwesome.Sharp.IconFont.Regular;
             iconButton5.IconSize = 20;
             iconButton5.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton5.Location = new Point(0, 407);
-            iconButton5.Margin = new Padding(4, 5, 4, 5);
+            iconButton5.Location = new Point(0, 244);
             iconButton5.Name = "iconButton5";
-            iconButton5.Padding = new Padding(21, 0, 0, 0);
-            iconButton5.Size = new Size(244, 75);
+            iconButton5.Padding = new Padding(15, 0, 0, 0);
+            iconButton5.Size = new Size(171, 45);
             iconButton5.TabIndex = 6;
             iconButton5.Text = "Statistiques";
             iconButton5.TextAlign = ContentAlignment.MiddleLeft;
@@ -314,11 +311,10 @@
             iconButton4.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButton4.IconSize = 20;
             iconButton4.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton4.Location = new Point(0, 332);
-            iconButton4.Margin = new Padding(4, 5, 4, 5);
+            iconButton4.Location = new Point(0, 199);
             iconButton4.Name = "iconButton4";
-            iconButton4.Padding = new Padding(21, 0, 0, 0);
-            iconButton4.Size = new Size(244, 75);
+            iconButton4.Padding = new Padding(15, 0, 0, 0);
+            iconButton4.Size = new Size(171, 45);
             iconButton4.TabIndex = 5;
             iconButton4.Text = "Clients";
             iconButton4.TextAlign = ContentAlignment.MiddleLeft;
@@ -340,11 +336,10 @@
             iconButton3.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButton3.IconSize = 20;
             iconButton3.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton3.Location = new Point(0, 257);
-            iconButton3.Margin = new Padding(4, 5, 4, 5);
+            iconButton3.Location = new Point(0, 154);
             iconButton3.Name = "iconButton3";
-            iconButton3.Padding = new Padding(21, 0, 0, 0);
-            iconButton3.Size = new Size(244, 75);
+            iconButton3.Padding = new Padding(15, 0, 0, 0);
+            iconButton3.Size = new Size(171, 45);
             iconButton3.TabIndex = 4;
             iconButton3.Text = "Commandes";
             iconButton3.TextAlign = ContentAlignment.MiddleLeft;
@@ -366,11 +361,10 @@
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButton2.IconSize = 20;
             iconButton2.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton2.Location = new Point(0, 182);
-            iconButton2.Margin = new Padding(4, 5, 4, 5);
+            iconButton2.Location = new Point(0, 109);
             iconButton2.Name = "iconButton2";
-            iconButton2.Padding = new Padding(21, 0, 0, 0);
-            iconButton2.Size = new Size(244, 75);
+            iconButton2.Padding = new Padding(15, 0, 0, 0);
+            iconButton2.Size = new Size(171, 45);
             iconButton2.TabIndex = 3;
             iconButton2.Text = "Médicaments";
             iconButton2.TextAlign = ContentAlignment.MiddleLeft;
@@ -392,11 +386,10 @@
             iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButton1.IconSize = 20;
             iconButton1.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton1.Location = new Point(0, 107);
-            iconButton1.Margin = new Padding(4, 5, 4, 5);
+            iconButton1.Location = new Point(0, 64);
             iconButton1.Name = "iconButton1";
-            iconButton1.Padding = new Padding(21, 0, 0, 0);
-            iconButton1.Size = new Size(244, 75);
+            iconButton1.Padding = new Padding(15, 0, 0, 0);
+            iconButton1.Size = new Size(171, 45);
             iconButton1.TabIndex = 2;
             iconButton1.Text = "Tableau de bord";
             iconButton1.TextAlign = ContentAlignment.MiddleLeft;
@@ -410,9 +403,8 @@
             panel2.Controls.Add(pictureBox1);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(4, 5, 4, 5);
             panel2.Name = "panel2";
-            panel2.Size = new Size(244, 107);
+            panel2.Size = new Size(171, 64);
             panel2.TabIndex = 1;
             // 
             // pictureBox1
@@ -420,9 +412,8 @@
             pictureBox1.Dock = DockStyle.Fill;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Margin = new Padding(4, 5, 4, 5);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(244, 107);
+            pictureBox1.Size = new Size(171, 64);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -435,10 +426,9 @@
             AddPanel.Controls.Add(Ajouter);
             AddPanel.Controls.Add(tabControl1);
             AddPanel.Controls.Add(label2);
-            AddPanel.Location = new Point(319, 117);
-            AddPanel.Margin = new Padding(4, 5, 4, 5);
+            AddPanel.Location = new Point(223, 70);
             AddPanel.Name = "AddPanel";
-            AddPanel.Size = new Size(646, 610);
+            AddPanel.Size = new Size(453, 367);
             AddPanel.TabIndex = 5;
             AddPanel.Visible = false;
             AddPanel.Paint += AddPanel_Paint;
@@ -451,12 +441,11 @@
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Close;
             iconPictureBox1.IconColor = Color.Black;
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox1.IconSize = 39;
-            iconPictureBox1.Location = new Point(607, -2);
-            iconPictureBox1.Margin = new Padding(4, 5, 4, 5);
+            iconPictureBox1.IconSize = 27;
+            iconPictureBox1.Location = new Point(425, -1);
             iconPictureBox1.Name = "iconPictureBox1";
-            iconPictureBox1.Padding = new Padding(0, 50, 0, 0);
-            iconPictureBox1.Size = new Size(39, 48);
+            iconPictureBox1.Padding = new Padding(0, 30, 0, 0);
+            iconPictureBox1.Size = new Size(27, 29);
             iconPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             iconPictureBox1.TabIndex = 4;
             iconPictureBox1.TabStop = false;
@@ -464,10 +453,9 @@
             // 
             // button2
             // 
-            button2.Location = new Point(511, 542);
-            button2.Margin = new Padding(4, 5, 4, 5);
+            button2.Location = new Point(358, 325);
             button2.Name = "button2";
-            button2.Size = new Size(107, 52);
+            button2.Size = new Size(75, 31);
             button2.TabIndex = 3;
             button2.Text = "Annuler";
             button2.UseVisualStyleBackColor = true;
@@ -478,10 +466,9 @@
             Ajouter.BackColor = Color.Black;
             Ajouter.FlatStyle = FlatStyle.Flat;
             Ajouter.ForeColor = Color.White;
-            Ajouter.Location = new Point(396, 542);
-            Ajouter.Margin = new Padding(4, 5, 4, 5);
+            Ajouter.Location = new Point(277, 325);
             Ajouter.Name = "Ajouter";
-            Ajouter.Size = new Size(107, 52);
+            Ajouter.Size = new Size(75, 31);
             Ajouter.TabIndex = 2;
             Ajouter.Text = "Ajouter";
             Ajouter.UseVisualStyleBackColor = false;
@@ -491,11 +478,10 @@
             // 
             tabControl1.Controls.Add(Information);
             tabControl1.Controls.Add(tabPage2);
-            tabControl1.Location = new Point(33, 78);
-            tabControl1.Margin = new Padding(4, 5, 4, 5);
+            tabControl1.Location = new Point(23, 47);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(586, 453);
+            tabControl1.Size = new Size(410, 272);
             tabControl1.TabIndex = 1;
             // 
             // Information
@@ -515,139 +501,124 @@
             Information.Controls.Add(label9);
             Information.Controls.Add(label8);
             Information.Controls.Add(label4);
-            Information.Location = new Point(4, 34);
-            Information.Margin = new Padding(4, 5, 4, 5);
+            Information.Location = new Point(4, 24);
             Information.Name = "Information";
-            Information.Padding = new Padding(4, 5, 4, 5);
-            Information.Size = new Size(578, 415);
+            Information.Padding = new Padding(3, 3, 3, 3);
+            Information.Size = new Size(402, 244);
             Information.TabIndex = 0;
             Information.Text = "Information Generale";
             // 
             // FormeCbox
             // 
             FormeCbox.FormattingEnabled = true;
-            FormeCbox.Location = new Point(224, 347);
-            FormeCbox.Margin = new Padding(4, 5, 4, 5);
+            FormeCbox.Location = new Point(157, 208);
             FormeCbox.Name = "FormeCbox";
-            FormeCbox.Size = new Size(131, 33);
+            FormeCbox.Size = new Size(93, 23);
             FormeCbox.TabIndex = 2;
             // 
             // categorieCbox
             // 
             categorieCbox.FormattingEnabled = true;
-            categorieCbox.Location = new Point(30, 347);
-            categorieCbox.Margin = new Padding(4, 5, 4, 5);
+            categorieCbox.Location = new Point(21, 208);
             categorieCbox.Name = "categorieCbox";
-            categorieCbox.Size = new Size(131, 33);
+            categorieCbox.Size = new Size(93, 23);
             categorieCbox.TabIndex = 2;
             // 
             // DescTxt
             // 
-            DescTxt.Location = new Point(30, 258);
-            DescTxt.Margin = new Padding(4, 5, 4, 5);
+            DescTxt.Location = new Point(21, 155);
             DescTxt.Name = "DescTxt";
-            DescTxt.Size = new Size(511, 31);
+            DescTxt.Size = new Size(359, 23);
             DescTxt.TabIndex = 1;
             // 
             // NomMedTxt
             // 
-            NomMedTxt.Location = new Point(30, 160);
-            NomMedTxt.Margin = new Padding(4, 5, 4, 5);
+            NomMedTxt.Location = new Point(21, 96);
             NomMedTxt.Name = "NomMedTxt";
-            NomMedTxt.Size = new Size(511, 31);
+            NomMedTxt.Size = new Size(359, 23);
             NomMedTxt.TabIndex = 1;
             // 
             // DosageTxt
             // 
-            DosageTxt.Location = new Point(417, 347);
-            DosageTxt.Margin = new Padding(4, 5, 4, 5);
+            DosageTxt.Location = new Point(292, 208);
             DosageTxt.Name = "DosageTxt";
-            DosageTxt.Size = new Size(124, 31);
+            DosageTxt.Size = new Size(88, 23);
             DosageTxt.TabIndex = 1;
             // 
             // NumlotTxt
             // 
-            NumlotTxt.Location = new Point(339, 68);
-            NumlotTxt.Margin = new Padding(4, 5, 4, 5);
+            NumlotTxt.Location = new Point(237, 41);
             NumlotTxt.Name = "NumlotTxt";
-            NumlotTxt.Size = new Size(203, 31);
+            NumlotTxt.Size = new Size(143, 23);
             NumlotTxt.TabIndex = 1;
             // 
             // TxtReference
             // 
-            TxtReference.Location = new Point(30, 68);
-            TxtReference.Margin = new Padding(4, 5, 4, 5);
+            TxtReference.Location = new Point(21, 41);
             TxtReference.Name = "TxtReference";
-            TxtReference.Size = new Size(203, 31);
+            TxtReference.Size = new Size(143, 23);
             TxtReference.TabIndex = 1;
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(417, 317);
-            label12.Margin = new Padding(4, 0, 4, 0);
+            label12.Location = new Point(292, 190);
             label12.Name = "label12";
-            label12.Size = new Size(73, 25);
+            label12.Size = new Size(46, 15);
             label12.TabIndex = 0;
             label12.Text = "Dosage";
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(224, 317);
-            label11.Margin = new Padding(4, 0, 4, 0);
+            label11.Location = new Point(157, 190);
             label11.Name = "label11";
-            label11.Size = new Size(63, 25);
+            label11.Size = new Size(41, 15);
             label11.TabIndex = 0;
             label11.Text = "Forme";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(339, 35);
-            label5.Margin = new Padding(4, 0, 4, 0);
+            label5.Location = new Point(237, 21);
             label5.Name = "label5";
-            label5.Size = new Size(132, 25);
+            label5.Size = new Size(87, 15);
             label5.TabIndex = 0;
             label5.Text = "Numéro de Lot";
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(30, 317);
-            label10.Margin = new Padding(4, 0, 4, 0);
+            label10.Location = new Point(21, 190);
             label10.Name = "label10";
-            label10.Size = new Size(88, 25);
+            label10.Size = new Size(58, 15);
             label10.TabIndex = 0;
             label10.Text = "Catégorie";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(30, 228);
-            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Location = new Point(21, 137);
             label9.Name = "label9";
-            label9.Size = new Size(102, 25);
+            label9.Size = new Size(67, 15);
             label9.TabIndex = 0;
             label9.Text = "Description";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(30, 130);
-            label8.Margin = new Padding(4, 0, 4, 0);
+            label8.Location = new Point(21, 78);
             label8.Name = "label8";
-            label8.Size = new Size(148, 25);
+            label8.Size = new Size(100, 15);
             label8.TabIndex = 0;
             label8.Text = "Nom commercial";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(30, 33);
-            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Location = new Point(21, 20);
             label4.Name = "label4";
-            label4.Size = new Size(88, 25);
+            label4.Size = new Size(59, 15);
             label4.TabIndex = 0;
             label4.Text = "Référence";
             // 
@@ -665,112 +636,100 @@
             tabPage2.Controls.Add(label15);
             tabPage2.Controls.Add(label14);
             tabPage2.Controls.Add(label13);
-            tabPage2.Location = new Point(4, 34);
-            tabPage2.Margin = new Padding(4, 5, 4, 5);
+            tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(4, 5, 4, 5);
-            tabPage2.Size = new Size(578, 415);
+            tabPage2.Padding = new Padding(3, 3, 3, 3);
+            tabPage2.Size = new Size(402, 244);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Stock et Prix";
             // 
             // Ordonnance
             // 
             Ordonnance.AutoSize = true;
-            Ordonnance.Location = new Point(151, 342);
-            Ordonnance.Margin = new Padding(4, 5, 4, 5);
+            Ordonnance.Location = new Point(106, 205);
             Ordonnance.Name = "Ordonnance";
-            Ordonnance.Size = new Size(268, 29);
+            Ordonnance.Size = new Size(181, 19);
             Ordonnance.TabIndex = 0;
             Ordonnance.Text = "Préscription médicale requise";
             Ordonnance.UseVisualStyleBackColor = true;
             // 
             // DateTxt
             // 
-            DateTxt.Location = new Point(30, 277);
-            DateTxt.Margin = new Padding(4, 5, 4, 5);
+            DateTxt.Location = new Point(21, 166);
             DateTxt.Name = "DateTxt";
-            DateTxt.Size = new Size(498, 31);
+            DateTxt.Size = new Size(350, 23);
             DateTxt.TabIndex = 2;
             // 
             // seuilTxt
             // 
-            seuilTxt.Location = new Point(323, 173);
-            seuilTxt.Margin = new Padding(4, 5, 4, 5);
+            seuilTxt.Location = new Point(226, 104);
             seuilTxt.Name = "seuilTxt";
-            seuilTxt.Size = new Size(205, 31);
+            seuilTxt.Size = new Size(145, 23);
             seuilTxt.TabIndex = 1;
             // 
             // VenteTxt
             // 
-            VenteTxt.Location = new Point(323, 68);
-            VenteTxt.Margin = new Padding(4, 5, 4, 5);
+            VenteTxt.Location = new Point(226, 41);
             VenteTxt.Name = "VenteTxt";
-            VenteTxt.Size = new Size(205, 31);
+            VenteTxt.Size = new Size(145, 23);
             VenteTxt.TabIndex = 1;
             // 
             // AmountTxt
             // 
-            AmountTxt.Location = new Point(30, 173);
-            AmountTxt.Margin = new Padding(4, 5, 4, 5);
+            AmountTxt.Location = new Point(21, 104);
             AmountTxt.Name = "AmountTxt";
-            AmountTxt.Size = new Size(205, 31);
+            AmountTxt.Size = new Size(145, 23);
             AmountTxt.TabIndex = 1;
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(323, 140);
-            label16.Margin = new Padding(4, 0, 4, 0);
+            label16.Location = new Point(226, 84);
             label16.Name = "label16";
-            label16.Size = new Size(130, 25);
+            label16.Size = new Size(88, 15);
             label16.TabIndex = 0;
             label16.Text = "Seuil Minimum";
             // 
             // AchatTxt
             // 
-            AchatTxt.Location = new Point(30, 68);
-            AchatTxt.Margin = new Padding(4, 5, 4, 5);
+            AchatTxt.Location = new Point(21, 41);
             AchatTxt.Name = "AchatTxt";
-            AchatTxt.Size = new Size(205, 31);
+            AchatTxt.Size = new Size(145, 23);
             AchatTxt.TabIndex = 1;
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(30, 247);
-            label17.Margin = new Padding(4, 0, 4, 0);
+            label17.Location = new Point(21, 148);
             label17.Name = "label17";
-            label17.Size = new Size(170, 25);
+            label17.Size = new Size(112, 15);
             label17.TabIndex = 0;
             label17.Text = "Date de Péremption";
             // 
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(30, 138);
-            label15.Margin = new Padding(4, 0, 4, 0);
+            label15.Location = new Point(21, 83);
             label15.Name = "label15";
-            label15.Size = new Size(152, 25);
+            label15.Size = new Size(101, 15);
             label15.TabIndex = 0;
             label15.Text = "Quantité en Stock";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(323, 35);
-            label14.Margin = new Padding(4, 0, 4, 0);
+            label14.Location = new Point(226, 21);
             label14.Name = "label14";
-            label14.Size = new Size(154, 25);
+            label14.Size = new Size(102, 15);
             label14.TabIndex = 0;
             label14.Text = "Prix de vente (DH)";
             // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(30, 33);
-            label13.Margin = new Padding(4, 0, 4, 0);
+            label13.Location = new Point(21, 20);
             label13.Name = "label13";
-            label13.Size = new Size(143, 25);
+            label13.Size = new Size(96, 15);
             label13.TabIndex = 0;
             label13.Text = "Prix d'achat (DH)";
             // 
@@ -778,10 +737,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(190, 20);
-            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Location = new Point(133, 12);
             label2.Name = "label2";
-            label2.Size = new Size(284, 32);
+            label2.Size = new Size(188, 22);
             label2.TabIndex = 0;
             label2.Text = "Nouveau Médicament";
             // 
@@ -792,10 +750,9 @@
             panelTop.Controls.Add(label7);
             panelTop.Controls.Add(iconButton9);
             panelTop.Dock = DockStyle.Top;
-            panelTop.Location = new Point(244, 0);
-            panelTop.Margin = new Padding(4, 5, 4, 5);
+            panelTop.Location = new Point(171, 0);
             panelTop.Name = "panelTop";
-            panelTop.Size = new Size(1333, 77);
+            panelTop.Size = new Size(799, 46);
             panelTop.TabIndex = 1;
             // 
             // label6
@@ -803,20 +760,18 @@
             label6.AutoSize = true;
             label6.Font = new Font("Georgia", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = SystemColors.ControlDarkDark;
-            label6.Location = new Point(9, 27);
-            label6.Margin = new Padding(4, 0, 4, 0);
+            label6.Location = new Point(6, 16);
             label6.Name = "label6";
-            label6.Size = new Size(332, 24);
+            label6.Size = new Size(229, 16);
             label6.TabIndex = 2;
             label6.Text = "Système de gestion de médicaments";
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(1164, 27);
-            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Location = new Point(815, 16);
             label7.Name = "label7";
-            label7.Size = new Size(59, 25);
+            label7.Size = new Size(38, 15);
             label7.TabIndex = 1;
             label7.Text = "label7";
             // 
@@ -830,10 +785,9 @@
             iconButton9.IconColor = Color.Black;
             iconButton9.IconFont = FontAwesome.Sharp.IconFont.Auto;
             iconButton9.IconSize = 32;
-            iconButton9.Location = new Point(1259, 0);
-            iconButton9.Margin = new Padding(4, 5, 4, 5);
+            iconButton9.Location = new Point(747, 0);
             iconButton9.Name = "iconButton9";
-            iconButton9.Size = new Size(74, 77);
+            iconButton9.Size = new Size(52, 46);
             iconButton9.TabIndex = 0;
             iconButton9.UseVisualStyleBackColor = false;
             // 
@@ -850,11 +804,10 @@
             searchbtn.IconFont = FontAwesome.Sharp.IconFont.Solid;
             searchbtn.IconSize = 16;
             searchbtn.ImageAlign = ContentAlignment.MiddleLeft;
-            searchbtn.Location = new Point(999, 28);
-            searchbtn.Margin = new Padding(4, 5, 4, 5);
+            searchbtn.Location = new Point(699, 17);
             searchbtn.Name = "searchbtn";
-            searchbtn.Padding = new Padding(11, 0, 0, 0);
-            searchbtn.Size = new Size(137, 47);
+            searchbtn.Padding = new Padding(8, 0, 0, 0);
+            searchbtn.Size = new Size(96, 28);
             searchbtn.TabIndex = 12;
             searchbtn.Text = "Chercher";
             searchbtn.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -866,11 +819,10 @@
             searchtxt.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             searchtxt.BorderStyle = BorderStyle.FixedSingle;
             searchtxt.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            searchtxt.Location = new Point(26, 33);
-            searchtxt.Margin = new Padding(4, 5, 4, 5);
+            searchtxt.Location = new Point(18, 20);
             searchtxt.Name = "searchtxt";
             searchtxt.PlaceholderText = "  Rechercher un médicament...";
-            searchtxt.Size = new Size(938, 34);
+            searchtxt.Size = new Size(657, 25);
             searchtxt.TabIndex = 10;
             // 
             // GridView1
@@ -882,11 +834,12 @@
             GridView1.BorderStyle = BorderStyle.None;
             GridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             GridView1.Columns.AddRange(new DataGridViewColumn[] { Actions });
-            GridView1.Location = new Point(21, 287);
+            GridView1.Location = new Point(15, 172);
+            GridView1.Margin = new Padding(2, 2, 2, 2);
             GridView1.Name = "GridView1";
             GridView1.RowHeadersVisible = false;
             GridView1.RowHeadersWidth = 62;
-            GridView1.Size = new Size(1306, 560);
+            GridView1.Size = new Size(914, 336);
             GridView1.TabIndex = 4;
             GridView1.CellClick += GridView1_CellClick;
             GridView1.CellPainting += GridView1_CellPainting;
@@ -897,17 +850,15 @@
             Actions.MinimumWidth = 100;
             Actions.Name = "Actions";
             Actions.ReadOnly = true;
-            Actions.Width = 107;
             // 
             // panel3
             // 
             panel3.Controls.Add(iconButton6);
             panel3.Controls.Add(searchbtn);
             panel3.Controls.Add(searchtxt);
-            panel3.Location = new Point(0, 117);
-            panel3.Margin = new Padding(4, 5, 4, 5);
+            panel3.Location = new Point(0, 70);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1417, 108);
+            panel3.Size = new Size(992, 65);
             panel3.TabIndex = 6;
             // 
             // iconButton6
@@ -923,11 +874,10 @@
             iconButton6.IconFont = FontAwesome.Sharp.IconFont.Solid;
             iconButton6.IconSize = 16;
             iconButton6.ImageAlign = ContentAlignment.MiddleLeft;
-            iconButton6.Location = new Point(1147, 27);
-            iconButton6.Margin = new Padding(4, 5, 4, 5);
+            iconButton6.Location = new Point(803, 16);
             iconButton6.Name = "iconButton6";
-            iconButton6.Padding = new Padding(11, 0, 0, 0);
-            iconButton6.Size = new Size(137, 47);
+            iconButton6.Padding = new Padding(8, 0, 0, 0);
+            iconButton6.Size = new Size(96, 28);
             iconButton6.TabIndex = 13;
             iconButton6.Text = "Effacer";
             iconButton6.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -941,10 +891,9 @@
             panelmedicaments.Controls.Add(AddPanel);
             panelmedicaments.Controls.Add(panel3);
             panelmedicaments.Controls.Add(GridView1);
-            panelmedicaments.Location = new Point(244, 77);
-            panelmedicaments.Margin = new Padding(4, 5, 4, 5);
+            panelmedicaments.Location = new Point(171, 46);
             panelmedicaments.Name = "panelmedicaments";
-            panelmedicaments.Size = new Size(1160, 767);
+            panelmedicaments.Size = new Size(812, 460);
             panelmedicaments.TabIndex = 7;
             panelmedicaments.Visible = false;
             // 
@@ -955,10 +904,9 @@
             panelSearch.Controls.Add(buttonNouveau);
             panelSearch.Dock = DockStyle.Top;
             panelSearch.Location = new Point(0, 0);
-            panelSearch.Margin = new Padding(4, 5, 4, 5);
             panelSearch.Name = "panelSearch";
-            panelSearch.Padding = new Padding(14, 17, 14, 17);
-            panelSearch.Size = new Size(1160, 117);
+            panelSearch.Padding = new Padding(10, 10, 10, 10);
+            panelSearch.Size = new Size(812, 70);
             panelSearch.TabIndex = 2;
             // 
             // labelTitle
@@ -966,10 +914,9 @@
             labelTitle.AutoSize = true;
             labelTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             labelTitle.ForeColor = Color.FromArgb(1, 109, 72);
-            labelTitle.Location = new Point(53, 27);
-            labelTitle.Margin = new Padding(4, 0, 4, 0);
+            labelTitle.Location = new Point(37, 16);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(507, 54);
+            labelTitle.Size = new Size(346, 37);
             labelTitle.TabIndex = 4;
             labelTitle.Text = "Gestion des Médicaments";
             // 
@@ -986,11 +933,10 @@
             buttonNouveau.IconFont = FontAwesome.Sharp.IconFont.Solid;
             buttonNouveau.IconSize = 16;
             buttonNouveau.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonNouveau.Location = new Point(857, 40);
-            buttonNouveau.Margin = new Padding(4, 5, 4, 5);
+            buttonNouveau.Location = new Point(600, 24);
             buttonNouveau.Name = "buttonNouveau";
-            buttonNouveau.Padding = new Padding(11, 0, 0, 0);
-            buttonNouveau.Size = new Size(286, 53);
+            buttonNouveau.Padding = new Padding(8, 0, 0, 0);
+            buttonNouveau.Size = new Size(200, 32);
             buttonNouveau.TabIndex = 3;
             buttonNouveau.Text = "  Nouveau médicament";
             buttonNouveau.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -1033,10 +979,9 @@
             ViewMedicament.Controls.Add(label18);
             ViewMedicament.Controls.Add(ViewReference);
             ViewMedicament.Controls.Add(label30);
-            ViewMedicament.Location = new Point(354, 117);
-            ViewMedicament.Margin = new Padding(4, 5, 4, 5);
+            ViewMedicament.Location = new Point(248, 70);
             ViewMedicament.Name = "ViewMedicament";
-            ViewMedicament.Size = new Size(551, 729);
+            ViewMedicament.Size = new Size(386, 438);
             ViewMedicament.TabIndex = 5;
             ViewMedicament.Visible = false;
             // 
@@ -1048,12 +993,11 @@
             iconPictureBox4.IconChar = FontAwesome.Sharp.IconChar.Close;
             iconPictureBox4.IconColor = Color.Black;
             iconPictureBox4.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox4.IconSize = 39;
-            iconPictureBox4.Location = new Point(486, -2);
-            iconPictureBox4.Margin = new Padding(4, 5, 4, 5);
+            iconPictureBox4.IconSize = 27;
+            iconPictureBox4.Location = new Point(340, -1);
             iconPictureBox4.Name = "iconPictureBox4";
-            iconPictureBox4.Padding = new Padding(0, 50, 0, 0);
-            iconPictureBox4.Size = new Size(39, 48);
+            iconPictureBox4.Padding = new Padding(0, 30, 0, 0);
+            iconPictureBox4.Size = new Size(27, 29);
             iconPictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             iconPictureBox4.TabIndex = 4;
             iconPictureBox4.TabStop = false;
@@ -1061,10 +1005,9 @@
             // 
             // button1
             // 
-            button1.Location = new Point(196, 868);
-            button1.Margin = new Padding(4, 5, 4, 5);
+            button1.Location = new Point(137, 521);
             button1.Name = "button1";
-            button1.Size = new Size(107, 52);
+            button1.Size = new Size(75, 31);
             button1.TabIndex = 3;
             button1.Text = "Fermer";
             button1.UseVisualStyleBackColor = true;
@@ -1075,10 +1018,9 @@
             label21.AutoSize = true;
             label21.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label21.ForeColor = SystemColors.ControlDarkDark;
-            label21.Location = new Point(266, 148);
-            label21.Margin = new Padding(4, 0, 4, 0);
+            label21.Location = new Point(186, 89);
             label21.Name = "label21";
-            label21.Size = new Size(164, 25);
+            label21.Size = new Size(108, 17);
             label21.TabIndex = 0;
             label21.Text = "Numéro de Lot";
             // 
@@ -1087,10 +1029,9 @@
             label26.AutoSize = true;
             label26.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label26.ForeColor = SystemColors.ControlDarkDark;
-            label26.Location = new Point(266, 248);
-            label26.Margin = new Padding(4, 0, 4, 0);
+            label26.Location = new Point(186, 149);
             label26.Name = "label26";
-            label26.Size = new Size(85, 25);
+            label26.Size = new Size(57, 17);
             label26.TabIndex = 0;
             label26.Text = "Dosage";
             // 
@@ -1099,10 +1040,9 @@
             label25.AutoSize = true;
             label25.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label25.ForeColor = SystemColors.ControlDarkDark;
-            label25.Location = new Point(266, 435);
-            label25.Margin = new Padding(4, 0, 4, 0);
+            label25.Location = new Point(186, 261);
             label25.Name = "label25";
-            label25.Size = new Size(79, 25);
+            label25.Size = new Size(51, 17);
             label25.TabIndex = 0;
             label25.Text = "Forme";
             // 
@@ -1111,10 +1051,9 @@
             label28.AutoSize = true;
             label28.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label28.ForeColor = SystemColors.ControlDarkDark;
-            label28.Location = new Point(266, 522);
-            label28.Margin = new Padding(4, 0, 4, 0);
+            label28.Location = new Point(186, 313);
             label28.Name = "label28";
-            label28.Size = new Size(146, 25);
+            label28.Size = new Size(97, 17);
             label28.TabIndex = 0;
             label28.Text = "Prix de Vente";
             // 
@@ -1123,10 +1062,9 @@
             label31.AutoSize = true;
             label31.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label31.ForeColor = SystemColors.ControlDarkDark;
-            label31.Location = new Point(266, 605);
-            label31.Margin = new Padding(4, 0, 4, 0);
+            label31.Location = new Point(186, 363);
             label31.Name = "label31";
-            label31.Size = new Size(106, 25);
+            label31.Size = new Size(71, 17);
             label31.TabIndex = 0;
             label31.Text = "Seuil Min";
             // 
@@ -1135,10 +1073,9 @@
             label34.AutoSize = true;
             label34.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label34.ForeColor = SystemColors.ControlDarkDark;
-            label34.Location = new Point(266, 692);
-            label34.Margin = new Padding(4, 0, 4, 0);
+            label34.Location = new Point(186, 415);
             label34.Name = "label34";
-            label34.Size = new Size(212, 25);
+            label34.Size = new Size(139, 17);
             label34.TabIndex = 0;
             label34.Text = "Date de Péremption";
             // 
@@ -1147,10 +1084,9 @@
             label36.AutoSize = true;
             label36.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label36.ForeColor = SystemColors.ControlDarkDark;
-            label36.Location = new Point(39, 778);
-            label36.Margin = new Padding(4, 0, 4, 0);
+            label36.Location = new Point(27, 467);
             label36.Name = "label36";
-            label36.Size = new Size(141, 25);
+            label36.Size = new Size(91, 17);
             label36.TabIndex = 0;
             label36.Text = "Date d'Ajout";
             // 
@@ -1159,10 +1095,9 @@
             label32.AutoSize = true;
             label32.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label32.ForeColor = SystemColors.ControlDarkDark;
-            label32.Location = new Point(39, 692);
-            label32.Margin = new Padding(4, 0, 4, 0);
+            label32.Location = new Point(27, 415);
             label32.Name = "label32";
-            label32.Size = new Size(134, 25);
+            label32.Size = new Size(88, 17);
             label32.TabIndex = 0;
             label32.Text = "Prescription";
             // 
@@ -1171,10 +1106,9 @@
             label29.AutoSize = true;
             label29.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label29.ForeColor = SystemColors.ControlDarkDark;
-            label29.Location = new Point(39, 605);
-            label29.Margin = new Padding(4, 0, 4, 0);
+            label29.Location = new Point(27, 363);
             label29.Name = "label29";
-            label29.Size = new Size(137, 25);
+            label29.Size = new Size(91, 17);
             label29.TabIndex = 0;
             label29.Text = "Stock Actuel";
             // 
@@ -1183,10 +1117,9 @@
             label27.AutoSize = true;
             label27.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label27.ForeColor = SystemColors.ControlDarkDark;
-            label27.Location = new Point(39, 522);
-            label27.Margin = new Padding(4, 0, 4, 0);
+            label27.Location = new Point(27, 313);
             label27.Name = "label27";
-            label27.Size = new Size(134, 25);
+            label27.Size = new Size(85, 17);
             label27.TabIndex = 0;
             label27.Text = "Prix d'achat";
             // 
@@ -1195,10 +1128,9 @@
             label24.AutoSize = true;
             label24.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label24.ForeColor = SystemColors.ControlDarkDark;
-            label24.Location = new Point(39, 435);
-            label24.Margin = new Padding(4, 0, 4, 0);
+            label24.Location = new Point(27, 261);
             label24.Name = "label24";
-            label24.Size = new Size(109, 25);
+            label24.Size = new Size(73, 17);
             label24.TabIndex = 0;
             label24.Text = "Catégorie";
             // 
@@ -1206,10 +1138,9 @@
             // 
             ViewDosage.AutoSize = true;
             ViewDosage.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewDosage.Location = new Point(266, 280);
-            ViewDosage.Margin = new Padding(4, 0, 4, 0);
+            ViewDosage.Location = new Point(186, 168);
             ViewDosage.Name = "ViewDosage";
-            ViewDosage.Size = new Size(18, 26);
+            ViewDosage.Size = new Size(13, 19);
             ViewDosage.TabIndex = 0;
             ViewDosage.Text = ".";
             // 
@@ -1218,10 +1149,9 @@
             label23.AutoSize = true;
             label23.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label23.ForeColor = SystemColors.ControlDarkDark;
-            label23.Location = new Point(39, 342);
-            label23.Margin = new Padding(4, 0, 4, 0);
+            label23.Location = new Point(27, 205);
             label23.Name = "label23";
-            label23.Size = new Size(126, 25);
+            label23.Size = new Size(84, 17);
             label23.TabIndex = 0;
             label23.Text = "Description";
             // 
@@ -1229,10 +1159,9 @@
             // 
             ViewDate.AutoSize = true;
             ViewDate.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewDate.Location = new Point(266, 723);
-            ViewDate.Margin = new Padding(4, 0, 4, 0);
+            ViewDate.Location = new Point(186, 434);
             ViewDate.Name = "ViewDate";
-            ViewDate.Size = new Size(18, 26);
+            ViewDate.Size = new Size(13, 19);
             ViewDate.TabIndex = 0;
             ViewDate.Text = ".";
             // 
@@ -1240,10 +1169,9 @@
             // 
             ViewAjout.AutoSize = true;
             ViewAjout.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewAjout.Location = new Point(39, 810);
-            ViewAjout.Margin = new Padding(4, 0, 4, 0);
+            ViewAjout.Location = new Point(27, 486);
             ViewAjout.Name = "ViewAjout";
-            ViewAjout.Size = new Size(18, 26);
+            ViewAjout.Size = new Size(13, 19);
             ViewAjout.TabIndex = 0;
             ViewAjout.Text = ".";
             // 
@@ -1251,10 +1179,9 @@
             // 
             ViewSeuil.AutoSize = true;
             ViewSeuil.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewSeuil.Location = new Point(266, 637);
-            ViewSeuil.Margin = new Padding(4, 0, 4, 0);
+            ViewSeuil.Location = new Point(186, 382);
             ViewSeuil.Name = "ViewSeuil";
-            ViewSeuil.Size = new Size(18, 26);
+            ViewSeuil.Size = new Size(13, 19);
             ViewSeuil.TabIndex = 0;
             ViewSeuil.Text = ".";
             // 
@@ -1262,10 +1189,9 @@
             // 
             ViewOrdo.AutoSize = true;
             ViewOrdo.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewOrdo.Location = new Point(39, 723);
-            ViewOrdo.Margin = new Padding(4, 0, 4, 0);
+            ViewOrdo.Location = new Point(27, 434);
             ViewOrdo.Name = "ViewOrdo";
-            ViewOrdo.Size = new Size(18, 26);
+            ViewOrdo.Size = new Size(13, 19);
             ViewOrdo.TabIndex = 0;
             ViewOrdo.Text = ".";
             // 
@@ -1273,10 +1199,9 @@
             // 
             ViewVente.AutoSize = true;
             ViewVente.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewVente.Location = new Point(266, 553);
-            ViewVente.Margin = new Padding(4, 0, 4, 0);
+            ViewVente.Location = new Point(186, 332);
             ViewVente.Name = "ViewVente";
-            ViewVente.Size = new Size(18, 26);
+            ViewVente.Size = new Size(13, 19);
             ViewVente.TabIndex = 0;
             ViewVente.Text = ".";
             // 
@@ -1284,10 +1209,9 @@
             // 
             ViewStock.AutoSize = true;
             ViewStock.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewStock.Location = new Point(39, 637);
-            ViewStock.Margin = new Padding(4, 0, 4, 0);
+            ViewStock.Location = new Point(27, 382);
             ViewStock.Name = "ViewStock";
-            ViewStock.Size = new Size(18, 26);
+            ViewStock.Size = new Size(13, 19);
             ViewStock.TabIndex = 0;
             ViewStock.Text = ".";
             // 
@@ -1295,10 +1219,9 @@
             // 
             ViewForme.AutoSize = true;
             ViewForme.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewForme.Location = new Point(266, 467);
-            ViewForme.Margin = new Padding(4, 0, 4, 0);
+            ViewForme.Location = new Point(186, 280);
             ViewForme.Name = "ViewForme";
-            ViewForme.Size = new Size(18, 26);
+            ViewForme.Size = new Size(13, 19);
             ViewForme.TabIndex = 0;
             ViewForme.Text = ".";
             // 
@@ -1306,10 +1229,9 @@
             // 
             ViewAchat.AutoSize = true;
             ViewAchat.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewAchat.Location = new Point(39, 553);
-            ViewAchat.Margin = new Padding(4, 0, 4, 0);
+            ViewAchat.Location = new Point(27, 332);
             ViewAchat.Name = "ViewAchat";
-            ViewAchat.Size = new Size(18, 26);
+            ViewAchat.Size = new Size(13, 19);
             ViewAchat.TabIndex = 0;
             ViewAchat.Text = ".";
             // 
@@ -1318,10 +1240,9 @@
             label22.AutoSize = true;
             label22.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label22.ForeColor = SystemColors.ControlDarkDark;
-            label22.Location = new Point(39, 248);
-            label22.Margin = new Padding(4, 0, 4, 0);
+            label22.Location = new Point(27, 149);
             label22.Name = "label22";
-            label22.Size = new Size(187, 25);
+            label22.Size = new Size(122, 17);
             label22.TabIndex = 0;
             label22.Text = "Nom Commercial";
             // 
@@ -1329,10 +1250,9 @@
             // 
             ViewCat.AutoSize = true;
             ViewCat.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewCat.Location = new Point(39, 467);
-            ViewCat.Margin = new Padding(4, 0, 4, 0);
+            ViewCat.Location = new Point(27, 280);
             ViewCat.Name = "ViewCat";
-            ViewCat.Size = new Size(18, 26);
+            ViewCat.Size = new Size(13, 19);
             ViewCat.TabIndex = 0;
             ViewCat.Text = ".";
             // 
@@ -1341,10 +1261,9 @@
             label20.AutoSize = true;
             label20.Font = new Font("Times New Roman", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label20.ForeColor = SystemColors.ControlDarkDark;
-            label20.Location = new Point(39, 148);
-            label20.Margin = new Padding(4, 0, 4, 0);
+            label20.Location = new Point(27, 89);
             label20.Name = "label20";
-            label20.Size = new Size(113, 25);
+            label20.Size = new Size(76, 17);
             label20.TabIndex = 0;
             label20.Text = "Référence";
             // 
@@ -1352,10 +1271,9 @@
             // 
             ViewDesc.AutoSize = true;
             ViewDesc.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewDesc.Location = new Point(39, 373);
-            ViewDesc.Margin = new Padding(4, 0, 4, 0);
+            ViewDesc.Location = new Point(27, 224);
             ViewDesc.Name = "ViewDesc";
-            ViewDesc.Size = new Size(18, 26);
+            ViewDesc.Size = new Size(13, 19);
             ViewDesc.TabIndex = 0;
             ViewDesc.Text = ".";
             // 
@@ -1363,10 +1281,9 @@
             // 
             ViewNumLot.AutoSize = true;
             ViewNumLot.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewNumLot.Location = new Point(266, 180);
-            ViewNumLot.Margin = new Padding(4, 0, 4, 0);
+            ViewNumLot.Location = new Point(186, 108);
             ViewNumLot.Name = "ViewNumLot";
-            ViewNumLot.Size = new Size(18, 26);
+            ViewNumLot.Size = new Size(13, 19);
             ViewNumLot.TabIndex = 0;
             ViewNumLot.Text = ".";
             // 
@@ -1374,10 +1291,9 @@
             // 
             ViewNom.AutoSize = true;
             ViewNom.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewNom.Location = new Point(39, 280);
-            ViewNom.Margin = new Padding(4, 0, 4, 0);
+            ViewNom.Location = new Point(27, 168);
             ViewNom.Name = "ViewNom";
-            ViewNom.Size = new Size(18, 26);
+            ViewNom.Size = new Size(13, 19);
             ViewNom.TabIndex = 0;
             ViewNom.Text = ".";
             // 
@@ -1386,10 +1302,9 @@
             label18.AutoSize = true;
             label18.Font = new Font("Times New Roman", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label18.ForeColor = SystemColors.ControlDarkDark;
-            label18.Location = new Point(183, 62);
-            label18.Margin = new Padding(4, 0, 4, 0);
+            label18.Location = new Point(128, 37);
             label18.Name = "label18";
-            label18.Size = new Size(194, 22);
+            label18.Size = new Size(132, 15);
             label18.TabIndex = 0;
             label18.Text = "Informations complètes";
             // 
@@ -1397,10 +1312,9 @@
             // 
             ViewReference.AutoSize = true;
             ViewReference.Font = new Font("Times New Roman", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewReference.Location = new Point(39, 180);
-            ViewReference.Margin = new Padding(4, 0, 4, 0);
+            ViewReference.Location = new Point(27, 108);
             ViewReference.Name = "ViewReference";
-            ViewReference.Size = new Size(18, 26);
+            ViewReference.Size = new Size(13, 19);
             ViewReference.TabIndex = 0;
             ViewReference.Text = ".";
             // 
@@ -1408,10 +1322,9 @@
             // 
             label30.AutoSize = true;
             label30.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label30.Location = new Point(156, 20);
-            label30.Margin = new Padding(4, 0, 4, 0);
+            label30.Location = new Point(109, 12);
             label30.Name = "label30";
-            label30.Size = new Size(261, 32);
+            label30.Size = new Size(173, 22);
             label30.TabIndex = 0;
             label30.Text = "Détails Médicament";
             // 
@@ -1435,10 +1348,9 @@
             ViewCommande.Controls.Add(labelClientCommande);
             ViewCommande.Controls.Add(labelCommandeDate);
             ViewCommande.Controls.Add(labelCommandeNumero);
-            ViewCommande.Location = new Point(201, 225);
-            ViewCommande.Margin = new Padding(4, 5, 4, 5);
+            ViewCommande.Location = new Point(103, 7);
             ViewCommande.Name = "ViewCommande";
-            ViewCommande.Size = new Size(854, 655);
+            ViewCommande.Size = new Size(598, 394);
             ViewCommande.TabIndex = 12;
             ViewCommande.Visible = false;
             // 
@@ -1450,12 +1362,11 @@
             iconPictureBoxCloseCommande.IconChar = FontAwesome.Sharp.IconChar.Close;
             iconPictureBoxCloseCommande.IconColor = Color.Black;
             iconPictureBoxCloseCommande.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBoxCloseCommande.IconSize = 39;
-            iconPictureBoxCloseCommande.Location = new Point(755, -2);
-            iconPictureBoxCloseCommande.Margin = new Padding(4, 5, 4, 5);
+            iconPictureBoxCloseCommande.IconSize = 27;
+            iconPictureBoxCloseCommande.Location = new Point(566, 2);
             iconPictureBoxCloseCommande.Name = "iconPictureBoxCloseCommande";
-            iconPictureBoxCloseCommande.Padding = new Padding(0, 50, 0, 0);
-            iconPictureBoxCloseCommande.Size = new Size(39, 48);
+            iconPictureBoxCloseCommande.Padding = new Padding(0, 30, 0, 0);
+            iconPictureBoxCloseCommande.Size = new Size(27, 29);
             iconPictureBoxCloseCommande.SizeMode = PictureBoxSizeMode.Zoom;
             iconPictureBoxCloseCommande.TabIndex = 4;
             iconPictureBoxCloseCommande.TabStop = false;
@@ -1463,10 +1374,9 @@
             // 
             // buttonFermerCommande
             // 
-            buttonFermerCommande.Location = new Point(650, 580);
-            buttonFermerCommande.Margin = new Padding(4, 5, 4, 5);
+            buttonFermerCommande.Location = new Point(455, 348);
             buttonFermerCommande.Name = "buttonFermerCommande";
-            buttonFermerCommande.Size = new Size(107, 52);
+            buttonFermerCommande.Size = new Size(75, 31);
             buttonFermerCommande.TabIndex = 3;
             buttonFermerCommande.Text = "Fermer";
             buttonFermerCommande.UseVisualStyleBackColor = true;
@@ -1476,10 +1386,9 @@
             // 
             labelCommandeMontantTotal.AutoSize = true;
             labelCommandeMontantTotal.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelCommandeMontantTotal.Location = new Point(592, 530);
-            labelCommandeMontantTotal.Margin = new Padding(4, 0, 4, 0);
+            labelCommandeMontantTotal.Location = new Point(414, 318);
             labelCommandeMontantTotal.Name = "labelCommandeMontantTotal";
-            labelCommandeMontantTotal.Size = new Size(106, 32);
+            labelCommandeMontantTotal.Size = new Size(69, 21);
             labelCommandeMontantTotal.TabIndex = 0;
             labelCommandeMontantTotal.Text = "0.00 DH";
             // 
@@ -1487,10 +1396,9 @@
             // 
             labelMontantTotalCommande.AutoSize = true;
             labelMontantTotalCommande.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelMontantTotalCommande.Location = new Point(400, 532);
-            labelMontantTotalCommande.Margin = new Padding(4, 0, 4, 0);
+            labelMontantTotalCommande.Location = new Point(280, 319);
             labelMontantTotalCommande.Name = "labelMontantTotalCommande";
-            labelMontantTotalCommande.Size = new Size(170, 30);
+            labelMontantTotalCommande.Size = new Size(115, 20);
             labelMontantTotalCommande.TabIndex = 0;
             labelMontantTotalCommande.Text = "Montant total :";
             // 
@@ -1501,21 +1409,21 @@
             gridCommandeItems.BackgroundColor = Color.White;
             gridCommandeItems.BorderStyle = BorderStyle.None;
             gridCommandeItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridCommandeItems.Location = new Point(30, 297);
+            gridCommandeItems.Location = new Point(21, 178);
+            gridCommandeItems.Margin = new Padding(2, 2, 2, 2);
             gridCommandeItems.Name = "gridCommandeItems";
             gridCommandeItems.RowHeadersVisible = false;
             gridCommandeItems.RowHeadersWidth = 62;
-            gridCommandeItems.Size = new Size(720, 220);
+            gridCommandeItems.Size = new Size(504, 132);
             gridCommandeItems.TabIndex = 2;
             // 
             // labelArticlesCommande
             // 
             labelArticlesCommande.AutoSize = true;
             labelArticlesCommande.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelArticlesCommande.Location = new Point(30, 255);
-            labelArticlesCommande.Margin = new Padding(4, 0, 4, 0);
+            labelArticlesCommande.Location = new Point(21, 153);
             labelArticlesCommande.Name = "labelArticlesCommande";
-            labelArticlesCommande.Size = new Size(246, 32);
+            labelArticlesCommande.Size = new Size(164, 21);
             labelArticlesCommande.TabIndex = 0;
             labelArticlesCommande.Text = "Articles commandés";
             // 
@@ -1523,10 +1431,9 @@
             // 
             labelCommandePaiement.AutoSize = true;
             labelCommandePaiement.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelCommandePaiement.Location = new Point(403, 216);
-            labelCommandePaiement.Margin = new Padding(4, 0, 4, 0);
+            labelCommandePaiement.Location = new Point(282, 130);
             labelCommandePaiement.Name = "labelCommandePaiement";
-            labelCommandePaiement.Size = new Size(36, 28);
+            labelCommandePaiement.Size = new Size(27, 19);
             labelCommandePaiement.TabIndex = 0;
             labelCommandePaiement.Text = "---";
             // 
@@ -1534,10 +1441,9 @@
             // 
             labelCommandeDateValue.AutoSize = true;
             labelCommandeDateValue.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelCommandeDateValue.Location = new Point(400, 140);
-            labelCommandeDateValue.Margin = new Padding(4, 0, 4, 0);
+            labelCommandeDateValue.Location = new Point(280, 84);
             labelCommandeDateValue.Name = "labelCommandeDateValue";
-            labelCommandeDateValue.Size = new Size(36, 28);
+            labelCommandeDateValue.Size = new Size(27, 19);
             labelCommandeDateValue.TabIndex = 0;
             labelCommandeDateValue.Text = "---";
             // 
@@ -1545,10 +1451,9 @@
             // 
             labelCommandeStatut.AutoSize = true;
             labelCommandeStatut.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelCommandeStatut.Location = new Point(30, 220);
-            labelCommandeStatut.Margin = new Padding(4, 0, 4, 0);
+            labelCommandeStatut.Location = new Point(21, 132);
             labelCommandeStatut.Name = "labelCommandeStatut";
-            labelCommandeStatut.Size = new Size(36, 28);
+            labelCommandeStatut.Size = new Size(27, 19);
             labelCommandeStatut.TabIndex = 0;
             labelCommandeStatut.Text = "---";
             // 
@@ -1556,10 +1461,9 @@
             // 
             labelCommandeClient.AutoSize = true;
             labelCommandeClient.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelCommandeClient.Location = new Point(30, 140);
-            labelCommandeClient.Margin = new Padding(4, 0, 4, 0);
+            labelCommandeClient.Location = new Point(21, 84);
             labelCommandeClient.Name = "labelCommandeClient";
-            labelCommandeClient.Size = new Size(36, 28);
+            labelCommandeClient.Size = new Size(27, 19);
             labelCommandeClient.TabIndex = 0;
             labelCommandeClient.Text = "---";
             // 
@@ -1567,10 +1471,9 @@
             // 
             labelPaiementCommande.AutoSize = true;
             labelPaiementCommande.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelPaiementCommande.Location = new Point(400, 190);
-            labelPaiementCommande.Margin = new Padding(4, 0, 4, 0);
+            labelPaiementCommande.Location = new Point(280, 114);
             labelPaiementCommande.Name = "labelPaiementCommande";
-            labelPaiementCommande.Size = new Size(112, 28);
+            labelPaiementCommande.Size = new Size(80, 19);
             labelPaiementCommande.TabIndex = 0;
             labelPaiementCommande.Text = "Paiement :";
             // 
@@ -1578,10 +1481,9 @@
             // 
             labelDateCommande.AutoSize = true;
             labelDateCommande.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelDateCommande.Location = new Point(400, 110);
-            labelDateCommande.Margin = new Padding(4, 0, 4, 0);
+            labelDateCommande.Location = new Point(280, 66);
             labelDateCommande.Name = "labelDateCommande";
-            labelDateCommande.Size = new Size(68, 28);
+            labelDateCommande.Size = new Size(48, 19);
             labelDateCommande.TabIndex = 0;
             labelDateCommande.Text = "Date :";
             // 
@@ -1589,10 +1491,9 @@
             // 
             labelStatutCommande.AutoSize = true;
             labelStatutCommande.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelStatutCommande.Location = new Point(30, 190);
-            labelStatutCommande.Margin = new Padding(4, 0, 4, 0);
+            labelStatutCommande.Location = new Point(21, 114);
             labelStatutCommande.Name = "labelStatutCommande";
-            labelStatutCommande.Size = new Size(81, 28);
+            labelStatutCommande.Size = new Size(56, 19);
             labelStatutCommande.TabIndex = 0;
             labelStatutCommande.Text = "Statut :";
             // 
@@ -1600,10 +1501,9 @@
             // 
             labelClientCommande.AutoSize = true;
             labelClientCommande.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelClientCommande.Location = new Point(30, 110);
-            labelClientCommande.Margin = new Padding(4, 0, 4, 0);
+            labelClientCommande.Location = new Point(21, 66);
             labelClientCommande.Name = "labelClientCommande";
-            labelClientCommande.Size = new Size(78, 28);
+            labelClientCommande.Size = new Size(55, 19);
             labelClientCommande.TabIndex = 0;
             labelClientCommande.Text = "Client :";
             // 
@@ -1612,10 +1512,9 @@
             labelCommandeDate.AutoSize = true;
             labelCommandeDate.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelCommandeDate.ForeColor = SystemColors.ControlDarkDark;
-            labelCommandeDate.Location = new Point(30, 70);
-            labelCommandeDate.Margin = new Padding(4, 0, 4, 0);
+            labelCommandeDate.Location = new Point(21, 42);
             labelCommandeDate.Name = "labelCommandeDate";
-            labelCommandeDate.Size = new Size(230, 25);
+            labelCommandeDate.Size = new Size(148, 15);
             labelCommandeDate.TabIndex = 0;
             labelCommandeDate.Text = "Commande du 05/11/2025";
             // 
@@ -1623,10 +1522,9 @@
             // 
             labelCommandeNumero.AutoSize = true;
             labelCommandeNumero.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelCommandeNumero.Location = new Point(30, 30);
-            labelCommandeNumero.Margin = new Padding(4, 0, 4, 0);
+            labelCommandeNumero.Location = new Point(21, 18);
             labelCommandeNumero.Name = "labelCommandeNumero";
-            labelCommandeNumero.Size = new Size(608, 38);
+            labelCommandeNumero.Size = new Size(411, 25);
             labelCommandeNumero.TabIndex = 0;
             labelCommandeNumero.Text = "Détails de la commande CMD20251105-0001";
             // 
@@ -1636,10 +1534,9 @@
             panelClients.Controls.Add(gridClients);
             panelClients.Controls.Add(panelClientsSearch);
             panelClients.Controls.Add(panelClientsHeader);
-            panelClients.Location = new Point(244, 77);
-            panelClients.Margin = new Padding(4, 5, 4, 5);
+            panelClients.Location = new Point(171, 46);
             panelClients.Name = "panelClients";
-            panelClients.Size = new Size(1160, 767);
+            panelClients.Size = new Size(812, 460);
             panelClients.TabIndex = 9;
             panelClients.Visible = false;
             // 
@@ -1667,10 +1564,9 @@
             AddClientPanel.Controls.Add(labelNumeroClient);
             AddClientPanel.Controls.Add(labelClientSubtitle);
             AddClientPanel.Controls.Add(labelClientTitle);
-            AddClientPanel.Location = new Point(319, 117);
-            AddClientPanel.Margin = new Padding(4, 5, 4, 5);
+            AddClientPanel.Location = new Point(223, 70);
             AddClientPanel.Name = "AddClientPanel";
-            AddClientPanel.Size = new Size(646, 610);
+            AddClientPanel.Size = new Size(453, 367);
             AddClientPanel.TabIndex = 10;
             AddClientPanel.Visible = false;
             // 
@@ -1682,12 +1578,11 @@
             iconPictureBoxCloseClient.IconChar = FontAwesome.Sharp.IconChar.Close;
             iconPictureBoxCloseClient.IconColor = Color.Black;
             iconPictureBoxCloseClient.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBoxCloseClient.IconSize = 39;
-            iconPictureBoxCloseClient.Location = new Point(607, -2);
-            iconPictureBoxCloseClient.Margin = new Padding(4, 5, 4, 5);
+            iconPictureBoxCloseClient.IconSize = 27;
+            iconPictureBoxCloseClient.Location = new Point(425, -1);
             iconPictureBoxCloseClient.Name = "iconPictureBoxCloseClient";
-            iconPictureBoxCloseClient.Padding = new Padding(0, 50, 0, 0);
-            iconPictureBoxCloseClient.Size = new Size(39, 48);
+            iconPictureBoxCloseClient.Padding = new Padding(0, 30, 0, 0);
+            iconPictureBoxCloseClient.Size = new Size(27, 29);
             iconPictureBoxCloseClient.SizeMode = PictureBoxSizeMode.Zoom;
             iconPictureBoxCloseClient.TabIndex = 4;
             iconPictureBoxCloseClient.TabStop = false;
@@ -1695,10 +1590,9 @@
             // 
             // buttonAnnulerClient
             // 
-            buttonAnnulerClient.Location = new Point(511, 542);
-            buttonAnnulerClient.Margin = new Padding(4, 5, 4, 5);
+            buttonAnnulerClient.Location = new Point(358, 325);
             buttonAnnulerClient.Name = "buttonAnnulerClient";
-            buttonAnnulerClient.Size = new Size(107, 52);
+            buttonAnnulerClient.Size = new Size(75, 31);
             buttonAnnulerClient.TabIndex = 3;
             buttonAnnulerClient.Text = "Annuler";
             buttonAnnulerClient.UseVisualStyleBackColor = true;
@@ -1709,10 +1603,9 @@
             buttonAjouterClient.BackColor = Color.Black;
             buttonAjouterClient.FlatStyle = FlatStyle.Flat;
             buttonAjouterClient.ForeColor = Color.White;
-            buttonAjouterClient.Location = new Point(396, 542);
-            buttonAjouterClient.Margin = new Padding(4, 5, 4, 5);
+            buttonAjouterClient.Location = new Point(277, 325);
             buttonAjouterClient.Name = "buttonAjouterClient";
-            buttonAjouterClient.Size = new Size(107, 52);
+            buttonAjouterClient.Size = new Size(75, 31);
             buttonAjouterClient.TabIndex = 2;
             buttonAjouterClient.Text = "Ajouter";
             buttonAjouterClient.UseVisualStyleBackColor = false;
@@ -1720,145 +1613,129 @@
             // 
             // txtVille
             // 
-            txtVille.Location = new Point(30, 450);
-            txtVille.Margin = new Padding(4, 5, 4, 5);
+            txtVille.Location = new Point(21, 270);
             txtVille.Name = "txtVille";
-            txtVille.Size = new Size(280, 31);
+            txtVille.Size = new Size(197, 23);
             txtVille.TabIndex = 1;
             // 
             // dateNaissanceClient
             // 
-            dateNaissanceClient.Location = new Point(30, 370);
-            dateNaissanceClient.Margin = new Padding(4, 5, 4, 5);
+            dateNaissanceClient.Location = new Point(21, 222);
             dateNaissanceClient.Name = "dateNaissanceClient";
-            dateNaissanceClient.Size = new Size(586, 31);
+            dateNaissanceClient.Size = new Size(411, 23);
             dateNaissanceClient.TabIndex = 2;
             // 
             // txtEmailClient
             // 
-            txtEmailClient.Location = new Point(336, 290);
-            txtEmailClient.Margin = new Padding(4, 5, 4, 5);
+            txtEmailClient.Location = new Point(235, 174);
             txtEmailClient.Name = "txtEmailClient";
-            txtEmailClient.Size = new Size(280, 31);
+            txtEmailClient.Size = new Size(197, 23);
             txtEmailClient.TabIndex = 1;
             // 
             // txtTelephoneClient
             // 
-            txtTelephoneClient.Location = new Point(30, 290);
-            txtTelephoneClient.Margin = new Padding(4, 5, 4, 5);
+            txtTelephoneClient.Location = new Point(21, 174);
             txtTelephoneClient.Name = "txtTelephoneClient";
-            txtTelephoneClient.Size = new Size(280, 31);
+            txtTelephoneClient.Size = new Size(197, 23);
             txtTelephoneClient.TabIndex = 1;
             // 
             // txtCIN
             // 
-            txtCIN.Location = new Point(336, 130);
-            txtCIN.Margin = new Padding(4, 5, 4, 5);
+            txtCIN.Location = new Point(235, 78);
             txtCIN.Name = "txtCIN";
-            txtCIN.Size = new Size(280, 31);
+            txtCIN.Size = new Size(197, 23);
             txtCIN.TabIndex = 1;
             // 
             // txtPrenomClient
             // 
-            txtPrenomClient.Location = new Point(336, 210);
-            txtPrenomClient.Margin = new Padding(4, 5, 4, 5);
+            txtPrenomClient.Location = new Point(235, 126);
             txtPrenomClient.Name = "txtPrenomClient";
-            txtPrenomClient.Size = new Size(280, 31);
+            txtPrenomClient.Size = new Size(197, 23);
             txtPrenomClient.TabIndex = 1;
             // 
             // txtNomClient
             // 
-            txtNomClient.Location = new Point(30, 210);
-            txtNomClient.Margin = new Padding(4, 5, 4, 5);
+            txtNomClient.Location = new Point(21, 126);
             txtNomClient.Name = "txtNomClient";
-            txtNomClient.Size = new Size(280, 31);
+            txtNomClient.Size = new Size(197, 23);
             txtNomClient.TabIndex = 1;
             // 
             // txtNumeroClient
             // 
-            txtNumeroClient.Location = new Point(30, 130);
-            txtNumeroClient.Margin = new Padding(4, 5, 4, 5);
+            txtNumeroClient.Location = new Point(21, 78);
             txtNumeroClient.Name = "txtNumeroClient";
-            txtNumeroClient.Size = new Size(280, 31);
+            txtNumeroClient.Size = new Size(197, 23);
             txtNumeroClient.TabIndex = 1;
             // 
             // labelVille
             // 
             labelVille.AutoSize = true;
-            labelVille.Location = new Point(30, 420);
-            labelVille.Margin = new Padding(4, 0, 4, 0);
+            labelVille.Location = new Point(21, 252);
             labelVille.Name = "labelVille";
-            labelVille.Size = new Size(44, 25);
+            labelVille.Size = new Size(29, 15);
             labelVille.TabIndex = 0;
             labelVille.Text = "Ville";
             // 
             // labelDateNaissance
             // 
             labelDateNaissance.AutoSize = true;
-            labelDateNaissance.Location = new Point(30, 340);
-            labelDateNaissance.Margin = new Padding(4, 0, 4, 0);
+            labelDateNaissance.Location = new Point(21, 204);
             labelDateNaissance.Name = "labelDateNaissance";
-            labelDateNaissance.Size = new Size(154, 25);
+            labelDateNaissance.Size = new Size(101, 15);
             labelDateNaissance.TabIndex = 0;
             labelDateNaissance.Text = "Date de naissance";
             // 
             // labelEmailClient
             // 
             labelEmailClient.AutoSize = true;
-            labelEmailClient.Location = new Point(336, 260);
-            labelEmailClient.Margin = new Padding(4, 0, 4, 0);
+            labelEmailClient.Location = new Point(235, 156);
             labelEmailClient.Name = "labelEmailClient";
-            labelEmailClient.Size = new Size(54, 25);
+            labelEmailClient.Size = new Size(36, 15);
             labelEmailClient.TabIndex = 0;
             labelEmailClient.Text = "Email";
             // 
             // labelTelephoneClient
             // 
             labelTelephoneClient.AutoSize = true;
-            labelTelephoneClient.Location = new Point(30, 260);
-            labelTelephoneClient.Margin = new Padding(4, 0, 4, 0);
+            labelTelephoneClient.Location = new Point(21, 156);
             labelTelephoneClient.Name = "labelTelephoneClient";
-            labelTelephoneClient.Size = new Size(92, 25);
+            labelTelephoneClient.Size = new Size(62, 15);
             labelTelephoneClient.TabIndex = 0;
             labelTelephoneClient.Text = "Téléphone";
             // 
             // labelCIN
             // 
             labelCIN.AutoSize = true;
-            labelCIN.Location = new Point(336, 100);
-            labelCIN.Margin = new Padding(4, 0, 4, 0);
+            labelCIN.Location = new Point(235, 60);
             labelCIN.Name = "labelCIN";
-            labelCIN.Size = new Size(41, 25);
+            labelCIN.Size = new Size(27, 15);
             labelCIN.TabIndex = 0;
             labelCIN.Text = "CIN";
             // 
             // labelPrenomClient
             // 
             labelPrenomClient.AutoSize = true;
-            labelPrenomClient.Location = new Point(336, 180);
-            labelPrenomClient.Margin = new Padding(4, 0, 4, 0);
+            labelPrenomClient.Location = new Point(235, 108);
             labelPrenomClient.Name = "labelPrenomClient";
-            labelPrenomClient.Size = new Size(87, 25);
+            labelPrenomClient.Size = new Size(57, 15);
             labelPrenomClient.TabIndex = 0;
             labelPrenomClient.Text = "Prénom *";
             // 
             // labelNomClient
             // 
             labelNomClient.AutoSize = true;
-            labelNomClient.Location = new Point(30, 180);
-            labelNomClient.Margin = new Padding(4, 0, 4, 0);
+            labelNomClient.Location = new Point(21, 108);
             labelNomClient.Name = "labelNomClient";
-            labelNomClient.Size = new Size(65, 25);
+            labelNomClient.Size = new Size(42, 15);
             labelNomClient.TabIndex = 0;
             labelNomClient.Text = "Nom *";
             // 
             // labelNumeroClient
             // 
             labelNumeroClient.AutoSize = true;
-            labelNumeroClient.Location = new Point(30, 100);
-            labelNumeroClient.Margin = new Padding(4, 0, 4, 0);
+            labelNumeroClient.Location = new Point(21, 60);
             labelNumeroClient.Name = "labelNumeroClient";
-            labelNumeroClient.Size = new Size(136, 25);
+            labelNumeroClient.Size = new Size(91, 15);
             labelNumeroClient.TabIndex = 0;
             labelNumeroClient.Text = "Numéro client *";
             // 
@@ -1867,10 +1744,9 @@
             labelClientSubtitle.AutoSize = true;
             labelClientSubtitle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelClientSubtitle.ForeColor = SystemColors.ControlDarkDark;
-            labelClientSubtitle.Location = new Point(190, 62);
-            labelClientSubtitle.Margin = new Padding(4, 0, 4, 0);
+            labelClientSubtitle.Location = new Point(133, 37);
             labelClientSubtitle.Name = "labelClientSubtitle";
-            labelClientSubtitle.Size = new Size(303, 25);
+            labelClientSubtitle.Size = new Size(202, 15);
             labelClientSubtitle.TabIndex = 0;
             labelClientSubtitle.Text = "Remplissez les informations du client";
             // 
@@ -1878,10 +1754,9 @@
             // 
             labelClientTitle.AutoSize = true;
             labelClientTitle.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelClientTitle.Location = new Point(190, 20);
-            labelClientTitle.Margin = new Padding(4, 0, 4, 0);
+            labelClientTitle.Location = new Point(133, 12);
             labelClientTitle.Name = "labelClientTitle";
-            labelClientTitle.Size = new Size(197, 32);
+            labelClientTitle.Size = new Size(131, 22);
             labelClientTitle.TabIndex = 0;
             labelClientTitle.Text = "Nouveau client";
             // 
@@ -1894,11 +1769,12 @@
             gridClients.BorderStyle = BorderStyle.None;
             gridClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridClients.Columns.AddRange(new DataGridViewColumn[] { ClientsActions });
-            gridClients.Location = new Point(21, 287);
+            gridClients.Location = new Point(15, 172);
+            gridClients.Margin = new Padding(2, 2, 2, 2);
             gridClients.Name = "gridClients";
             gridClients.RowHeadersVisible = false;
             gridClients.RowHeadersWidth = 62;
-            gridClients.Size = new Size(1306, 560);
+            gridClients.Size = new Size(914, 336);
             gridClients.TabIndex = 2;
             gridClients.CellClick += gridClients_CellClick;
             gridClients.CellPainting += gridClients_CellPainting;
@@ -1909,17 +1785,15 @@
             ClientsActions.MinimumWidth = 100;
             ClientsActions.Name = "ClientsActions";
             ClientsActions.ReadOnly = true;
-            ClientsActions.Width = 107;
             // 
             // panelClientsSearch
             // 
             panelClientsSearch.Controls.Add(resetClientBtn);
             panelClientsSearch.Controls.Add(searchClientBtn);
             panelClientsSearch.Controls.Add(searchClientTxt);
-            panelClientsSearch.Location = new Point(0, 117);
-            panelClientsSearch.Margin = new Padding(4, 5, 4, 5);
+            panelClientsSearch.Location = new Point(0, 70);
             panelClientsSearch.Name = "panelClientsSearch";
-            panelClientsSearch.Size = new Size(1417, 108);
+            panelClientsSearch.Size = new Size(992, 65);
             panelClientsSearch.TabIndex = 1;
             // 
             // resetClientBtn
@@ -1935,11 +1809,10 @@
             resetClientBtn.IconFont = FontAwesome.Sharp.IconFont.Solid;
             resetClientBtn.IconSize = 16;
             resetClientBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            resetClientBtn.Location = new Point(1147, 27);
-            resetClientBtn.Margin = new Padding(4, 5, 4, 5);
+            resetClientBtn.Location = new Point(803, 16);
             resetClientBtn.Name = "resetClientBtn";
-            resetClientBtn.Padding = new Padding(11, 0, 0, 0);
-            resetClientBtn.Size = new Size(137, 47);
+            resetClientBtn.Padding = new Padding(8, 0, 0, 0);
+            resetClientBtn.Size = new Size(96, 28);
             resetClientBtn.TabIndex = 13;
             resetClientBtn.Text = "Effacer";
             resetClientBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -1959,11 +1832,10 @@
             searchClientBtn.IconFont = FontAwesome.Sharp.IconFont.Solid;
             searchClientBtn.IconSize = 16;
             searchClientBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            searchClientBtn.Location = new Point(999, 28);
-            searchClientBtn.Margin = new Padding(4, 5, 4, 5);
+            searchClientBtn.Location = new Point(699, 17);
             searchClientBtn.Name = "searchClientBtn";
-            searchClientBtn.Padding = new Padding(11, 0, 0, 0);
-            searchClientBtn.Size = new Size(137, 47);
+            searchClientBtn.Padding = new Padding(8, 0, 0, 0);
+            searchClientBtn.Size = new Size(96, 28);
             searchClientBtn.TabIndex = 12;
             searchClientBtn.Text = "Chercher";
             searchClientBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -1975,11 +1847,10 @@
             searchClientTxt.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             searchClientTxt.BorderStyle = BorderStyle.FixedSingle;
             searchClientTxt.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            searchClientTxt.Location = new Point(26, 33);
-            searchClientTxt.Margin = new Padding(4, 5, 4, 5);
+            searchClientTxt.Location = new Point(18, 20);
             searchClientTxt.Name = "searchClientTxt";
             searchClientTxt.PlaceholderText = "  Rechercher par nom, prénom, numéro ou téléphone...";
-            searchClientTxt.Size = new Size(938, 34);
+            searchClientTxt.Size = new Size(657, 25);
             searchClientTxt.TabIndex = 10;
             // 
             // panelClientsHeader
@@ -1989,10 +1860,9 @@
             panelClientsHeader.Controls.Add(buttonNouveauClient);
             panelClientsHeader.Dock = DockStyle.Top;
             panelClientsHeader.Location = new Point(0, 0);
-            panelClientsHeader.Margin = new Padding(4, 5, 4, 5);
             panelClientsHeader.Name = "panelClientsHeader";
-            panelClientsHeader.Padding = new Padding(14, 17, 14, 17);
-            panelClientsHeader.Size = new Size(1160, 117);
+            panelClientsHeader.Padding = new Padding(10, 10, 10, 10);
+            panelClientsHeader.Size = new Size(812, 70);
             panelClientsHeader.TabIndex = 0;
             // 
             // labelClientsTitle
@@ -2000,10 +1870,9 @@
             labelClientsTitle.AutoSize = true;
             labelClientsTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             labelClientsTitle.ForeColor = Color.FromArgb(1, 109, 72);
-            labelClientsTitle.Location = new Point(53, 27);
-            labelClientsTitle.Margin = new Padding(4, 0, 4, 0);
+            labelClientsTitle.Location = new Point(37, 16);
             labelClientsTitle.Name = "labelClientsTitle";
-            labelClientsTitle.Size = new Size(380, 54);
+            labelClientsTitle.Size = new Size(260, 37);
             labelClientsTitle.TabIndex = 4;
             labelClientsTitle.Text = "Gestion des Clients";
             // 
@@ -2020,11 +1889,10 @@
             buttonNouveauClient.IconFont = FontAwesome.Sharp.IconFont.Solid;
             buttonNouveauClient.IconSize = 16;
             buttonNouveauClient.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonNouveauClient.Location = new Point(857, 40);
-            buttonNouveauClient.Margin = new Padding(4, 5, 4, 5);
+            buttonNouveauClient.Location = new Point(600, 24);
             buttonNouveauClient.Name = "buttonNouveauClient";
-            buttonNouveauClient.Padding = new Padding(11, 0, 0, 0);
-            buttonNouveauClient.Size = new Size(286, 53);
+            buttonNouveauClient.Padding = new Padding(8, 0, 0, 0);
+            buttonNouveauClient.Size = new Size(200, 32);
             buttonNouveauClient.TabIndex = 3;
             buttonNouveauClient.Text = "  Nouveau client";
             buttonNouveauClient.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -2037,10 +1905,9 @@
             panelCommandes.Controls.Add(gridCommandes);
             panelCommandes.Controls.Add(panelCommandesSearch);
             panelCommandes.Controls.Add(panelCommandesHeader);
-            panelCommandes.Location = new Point(244, 77);
-            panelCommandes.Margin = new Padding(4, 5, 4, 5);
+            panelCommandes.Location = new Point(171, 46);
             panelCommandes.Name = "panelCommandes";
-            panelCommandes.Size = new Size(1211, 767);
+            panelCommandes.Size = new Size(848, 460);
             panelCommandes.TabIndex = 11;
             panelCommandes.Visible = false;
             // 
@@ -2053,11 +1920,12 @@
             gridCommandes.BorderStyle = BorderStyle.None;
             gridCommandes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridCommandes.Columns.AddRange(new DataGridViewColumn[] { CommandesActions });
-            gridCommandes.Location = new Point(21, 287);
+            gridCommandes.Location = new Point(15, 172);
+            gridCommandes.Margin = new Padding(2, 2, 2, 2);
             gridCommandes.Name = "gridCommandes";
             gridCommandes.RowHeadersVisible = false;
             gridCommandes.RowHeadersWidth = 62;
-            gridCommandes.Size = new Size(1306, 560);
+            gridCommandes.Size = new Size(914, 336);
             gridCommandes.TabIndex = 2;
             gridCommandes.CellClick += gridCommandes_CellClick;
             gridCommandes.CellPainting += gridCommandes_CellPainting;
@@ -2068,7 +1936,6 @@
             CommandesActions.MinimumWidth = 100;
             CommandesActions.Name = "CommandesActions";
             CommandesActions.ReadOnly = true;
-            CommandesActions.Width = 107;
             // 
             // panelCommandesSearch
             // 
@@ -2076,11 +1943,10 @@
             panelCommandesSearch.Controls.Add(resetCommandeBtn);
             panelCommandesSearch.Controls.Add(searchCommandeBtn);
             panelCommandesSearch.Controls.Add(searchCommandeTxt);
-            panelCommandesSearch.Location = new Point(0, 117);
-            panelCommandesSearch.Margin = new Padding(4, 5, 4, 5);
+            panelCommandesSearch.Location = new Point(0, 70);
             panelCommandesSearch.Name = "panelCommandesSearch";
-            panelCommandesSearch.Padding = new Padding(14, 17, 14, 17);
-            panelCommandesSearch.Size = new Size(1207, 108);
+            panelCommandesSearch.Padding = new Padding(10, 10, 10, 10);
+            panelCommandesSearch.Size = new Size(845, 65);
             panelCommandesSearch.TabIndex = 1;
             // 
             // resetCommandeBtn
@@ -2096,11 +1962,10 @@
             resetCommandeBtn.IconFont = FontAwesome.Sharp.IconFont.Solid;
             resetCommandeBtn.IconSize = 16;
             resetCommandeBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            resetCommandeBtn.Location = new Point(1052, 32);
-            resetCommandeBtn.Margin = new Padding(4, 5, 4, 5);
+            resetCommandeBtn.Location = new Point(736, 19);
             resetCommandeBtn.Name = "resetCommandeBtn";
-            resetCommandeBtn.Padding = new Padding(11, 0, 0, 0);
-            resetCommandeBtn.Size = new Size(137, 47);
+            resetCommandeBtn.Padding = new Padding(8, 0, 0, 0);
+            resetCommandeBtn.Size = new Size(96, 28);
             resetCommandeBtn.TabIndex = 13;
             resetCommandeBtn.Text = "Effacer";
             resetCommandeBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -2120,11 +1985,10 @@
             searchCommandeBtn.IconFont = FontAwesome.Sharp.IconFont.Solid;
             searchCommandeBtn.IconSize = 16;
             searchCommandeBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            searchCommandeBtn.Location = new Point(888, 32);
-            searchCommandeBtn.Margin = new Padding(4, 5, 4, 5);
+            searchCommandeBtn.Location = new Point(622, 19);
             searchCommandeBtn.Name = "searchCommandeBtn";
-            searchCommandeBtn.Padding = new Padding(11, 0, 0, 0);
-            searchCommandeBtn.Size = new Size(137, 47);
+            searchCommandeBtn.Padding = new Padding(8, 0, 0, 0);
+            searchCommandeBtn.Size = new Size(96, 28);
             searchCommandeBtn.TabIndex = 12;
             searchCommandeBtn.Text = "Chercher";
             searchCommandeBtn.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -2136,11 +2000,10 @@
             searchCommandeTxt.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             searchCommandeTxt.BorderStyle = BorderStyle.FixedSingle;
             searchCommandeTxt.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            searchCommandeTxt.Location = new Point(26, 40);
-            searchCommandeTxt.Margin = new Padding(4, 5, 4, 5);
+            searchCommandeTxt.Location = new Point(18, 24);
             searchCommandeTxt.Name = "searchCommandeTxt";
             searchCommandeTxt.PlaceholderText = "  Rechercher par numéro ou client...";
-            searchCommandeTxt.Size = new Size(850, 34);
+            searchCommandeTxt.Size = new Size(596, 25);
             searchCommandeTxt.TabIndex = 10;
             // 
             // panelCommandesHeader
@@ -2151,10 +2014,9 @@
             panelCommandesHeader.Controls.Add(buttonNouvelleCommande);
             panelCommandesHeader.Dock = DockStyle.Top;
             panelCommandesHeader.Location = new Point(0, 0);
-            panelCommandesHeader.Margin = new Padding(4, 5, 4, 5);
             panelCommandesHeader.Name = "panelCommandesHeader";
-            panelCommandesHeader.Padding = new Padding(14, 17, 14, 17);
-            panelCommandesHeader.Size = new Size(1211, 117);
+            panelCommandesHeader.Padding = new Padding(10, 10, 10, 10);
+            panelCommandesHeader.Size = new Size(848, 70);
             panelCommandesHeader.TabIndex = 0;
             // 
             // labelCommandesTitle
@@ -2162,10 +2024,9 @@
             labelCommandesTitle.AutoSize = true;
             labelCommandesTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
             labelCommandesTitle.ForeColor = Color.FromArgb(1, 109, 72);
-            labelCommandesTitle.Location = new Point(53, 17);
-            labelCommandesTitle.Margin = new Padding(4, 0, 4, 0);
+            labelCommandesTitle.Location = new Point(37, 10);
             labelCommandesTitle.Name = "labelCommandesTitle";
-            labelCommandesTitle.Size = new Size(487, 54);
+            labelCommandesTitle.Size = new Size(332, 37);
             labelCommandesTitle.TabIndex = 4;
             labelCommandesTitle.Text = "Gestion des Commandes";
             // 
@@ -2174,10 +2035,9 @@
             labelCommandesSubtitle.AutoSize = true;
             labelCommandesSubtitle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelCommandesSubtitle.ForeColor = SystemColors.ControlDarkDark;
-            labelCommandesSubtitle.Location = new Point(53, 71);
-            labelCommandesSubtitle.Margin = new Padding(4, 0, 4, 0);
+            labelCommandesSubtitle.Location = new Point(37, 43);
             labelCommandesSubtitle.Name = "labelCommandesSubtitle";
-            labelCommandesSubtitle.Size = new Size(323, 25);
+            labelCommandesSubtitle.Size = new Size(214, 15);
             labelCommandesSubtitle.TabIndex = 5;
             labelCommandesSubtitle.Text = "Suivi et gestion des commandes clients";
             // 
@@ -2194,11 +2054,10 @@
             buttonNouvelleCommande.IconFont = FontAwesome.Sharp.IconFont.Solid;
             buttonNouvelleCommande.IconSize = 16;
             buttonNouvelleCommande.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonNouvelleCommande.Location = new Point(908, 40);
-            buttonNouvelleCommande.Margin = new Padding(4, 5, 4, 5);
+            buttonNouvelleCommande.Location = new Point(636, 24);
             buttonNouvelleCommande.Name = "buttonNouvelleCommande";
-            buttonNouvelleCommande.Padding = new Padding(11, 0, 0, 0);
-            buttonNouvelleCommande.Size = new Size(286, 53);
+            buttonNouvelleCommande.Padding = new Padding(8, 0, 0, 0);
+            buttonNouvelleCommande.Size = new Size(200, 32);
             buttonNouvelleCommande.TabIndex = 3;
             buttonNouvelleCommande.Text = "  Nouvelle commande";
             buttonNouvelleCommande.TextImageRelation = TextImageRelation.ImageBeforeText;
@@ -2214,29 +2073,26 @@
             dashboard.Controls.Add(label1);
             dashboard.Controls.Add(label3);
             dashboard.Dock = DockStyle.Fill;
-            dashboard.Location = new Point(244, 77);
-            dashboard.Margin = new Padding(4, 5, 4, 5);
+            dashboard.Location = new Point(171, 46);
             dashboard.Name = "dashboard";
-            dashboard.Size = new Size(1333, 885);
+            dashboard.Size = new Size(799, 427);
             dashboard.TabIndex = 8;
             // 
             // panelExpiry
             // 
             panelExpiry.AutoScroll = true;
             panelExpiry.BorderStyle = BorderStyle.FixedSingle;
-            panelExpiry.Location = new Point(720, 420);
-            panelExpiry.Margin = new Padding(4, 5, 4, 5);
+            panelExpiry.Location = new Point(504, 252);
             panelExpiry.Name = "panelExpiry";
-            panelExpiry.Size = new Size(599, 399);
+            panelExpiry.Size = new Size(420, 240);
             panelExpiry.TabIndex = 5;
             // 
             // panelLowStock
             // 
             panelLowStock.BorderStyle = BorderStyle.FixedSingle;
-            panelLowStock.Location = new Point(43, 420);
-            panelLowStock.Margin = new Padding(4, 5, 4, 5);
+            panelLowStock.Location = new Point(30, 252);
             panelLowStock.Name = "panelLowStock";
-            panelLowStock.Size = new Size(599, 399);
+            panelLowStock.Size = new Size(420, 240);
             panelLowStock.TabIndex = 5;
             // 
             // panel5
@@ -2244,10 +2100,9 @@
             panel5.BorderStyle = BorderStyle.FixedSingle;
             panel5.Controls.Add(panel11);
             panel5.Controls.Add(iconPictureBox3);
-            panel5.Location = new Point(43, 265);
-            panel5.Margin = new Padding(4, 5, 4, 5);
+            panel5.Location = new Point(30, 159);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1278, 95);
+            panel5.Size = new Size(895, 58);
             panel5.TabIndex = 2;
             // 
             // panel11
@@ -2255,20 +2110,18 @@
             panel11.Controls.Add(lblExpiry);
             panel11.Controls.Add(AlertePeremption);
             panel11.Dock = DockStyle.Fill;
-            panel11.Location = new Point(43, 0);
-            panel11.Margin = new Padding(4, 5, 4, 5);
+            panel11.Location = new Point(30, 0);
             panel11.Name = "panel11";
-            panel11.Size = new Size(1233, 93);
+            panel11.Size = new Size(863, 56);
             panel11.TabIndex = 1;
             // 
             // lblExpiry
             // 
             lblExpiry.AutoSize = true;
             lblExpiry.ForeColor = Color.Orange;
-            lblExpiry.Location = new Point(47, 47);
-            lblExpiry.Margin = new Padding(4, 0, 4, 0);
+            lblExpiry.Location = new Point(33, 28);
             lblExpiry.Name = "lblExpiry";
-            lblExpiry.Size = new Size(59, 25);
+            lblExpiry.Size = new Size(38, 15);
             lblExpiry.TabIndex = 1;
             lblExpiry.Text = "label5";
             // 
@@ -2277,10 +2130,9 @@
             AlertePeremption.AutoSize = true;
             AlertePeremption.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             AlertePeremption.ForeColor = Color.DarkOrange;
-            AlertePeremption.Location = new Point(20, 12);
-            AlertePeremption.Margin = new Padding(4, 0, 4, 0);
+            AlertePeremption.Location = new Point(14, 7);
             AlertePeremption.Name = "AlertePeremption";
-            AlertePeremption.Size = new Size(179, 28);
+            AlertePeremption.Size = new Size(119, 17);
             AlertePeremption.TabIndex = 0;
             AlertePeremption.Text = "Alerte Péremption";
             // 
@@ -2292,11 +2144,10 @@
             iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Warning;
             iconPictureBox3.IconColor = Color.DarkOrange;
             iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox3.IconSize = 43;
+            iconPictureBox3.IconSize = 30;
             iconPictureBox3.Location = new Point(0, 0);
-            iconPictureBox3.Margin = new Padding(4, 5, 4, 5);
             iconPictureBox3.Name = "iconPictureBox3";
-            iconPictureBox3.Size = new Size(43, 93);
+            iconPictureBox3.Size = new Size(30, 56);
             iconPictureBox3.TabIndex = 0;
             iconPictureBox3.TabStop = false;
             // 
@@ -2305,10 +2156,9 @@
             panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(panel10);
             panel4.Controls.Add(iconPictureBox2);
-            panel4.Location = new Point(43, 158);
-            panel4.Margin = new Padding(4, 5, 4, 5);
+            panel4.Location = new Point(30, 95);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1278, 95);
+            panel4.Size = new Size(895, 58);
             panel4.TabIndex = 2;
             // 
             // panel10
@@ -2316,20 +2166,18 @@
             panel10.Controls.Add(lblLowStock);
             panel10.Controls.Add(AlerteStock);
             panel10.Dock = DockStyle.Fill;
-            panel10.Location = new Point(43, 0);
-            panel10.Margin = new Padding(4, 5, 4, 5);
+            panel10.Location = new Point(30, 0);
             panel10.Name = "panel10";
-            panel10.Size = new Size(1233, 93);
+            panel10.Size = new Size(863, 56);
             panel10.TabIndex = 1;
             // 
             // lblLowStock
             // 
             lblLowStock.AutoSize = true;
             lblLowStock.ForeColor = Color.IndianRed;
-            lblLowStock.Location = new Point(47, 47);
-            lblLowStock.Margin = new Padding(4, 0, 4, 0);
+            lblLowStock.Location = new Point(33, 28);
             lblLowStock.Name = "lblLowStock";
-            lblLowStock.Size = new Size(59, 25);
+            lblLowStock.Size = new Size(38, 15);
             lblLowStock.TabIndex = 1;
             lblLowStock.Text = "label5";
             // 
@@ -2338,10 +2186,9 @@
             AlerteStock.AutoSize = true;
             AlerteStock.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             AlerteStock.ForeColor = Color.IndianRed;
-            AlerteStock.Location = new Point(20, 12);
-            AlerteStock.Margin = new Padding(4, 0, 4, 0);
+            AlerteStock.Location = new Point(14, 7);
             AlerteStock.Name = "AlerteStock";
-            AlerteStock.Size = new Size(122, 28);
+            AlerteStock.Size = new Size(81, 17);
             AlerteStock.TabIndex = 0;
             AlerteStock.Text = "Alerte Stock";
             // 
@@ -2353,11 +2200,10 @@
             iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Warning;
             iconPictureBox2.IconColor = Color.Firebrick;
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBox2.IconSize = 43;
+            iconPictureBox2.IconSize = 30;
             iconPictureBox2.Location = new Point(0, 0);
-            iconPictureBox2.Margin = new Padding(4, 5, 4, 5);
             iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(43, 93);
+            iconPictureBox2.Size = new Size(30, 56);
             iconPictureBox2.TabIndex = 0;
             iconPictureBox2.TabStop = false;
             // 
@@ -2366,10 +2212,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlDarkDark;
-            label1.Location = new Point(43, 102);
-            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Location = new Point(30, 61);
             label1.Name = "label1";
-            label1.Size = new Size(336, 31);
+            label1.Size = new Size(218, 20);
             label1.TabIndex = 1;
             label1.Text = "Statistiques de votre pharmacie";
             // 
@@ -2377,10 +2222,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(26, 40);
-            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Location = new Point(18, 24);
             label3.Name = "label3";
-            label3.Size = new Size(290, 48);
+            label3.Size = new Size(199, 32);
             label3.TabIndex = 0;
             label3.Text = "Tableau de bord";
             // 
@@ -2388,15 +2232,15 @@
             // 
             comboStatutCommande.Location = new Point(0, 0);
             comboStatutCommande.Name = "comboStatutCommande";
-            comboStatutCommande.Size = new Size(121, 33);
+            comboStatutCommande.Size = new Size(121, 23);
             comboStatutCommande.TabIndex = 0;
             // 
             // AdminMedicament
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1577, 962);
+            ClientSize = new Size(970, 473);
             Controls.Add(panelCommandes);
             Controls.Add(panelClients);
             Controls.Add(dashboard);
@@ -2404,7 +2248,6 @@
             Controls.Add(panelTop);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 5, 4, 5);
             Name = "AdminMedicament";
             Text = "AdminMedicament";
             Load += AdminMedicament_Load;
