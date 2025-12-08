@@ -41,17 +41,19 @@
             Email = new TextBox();
             Password = new TextBox();
             message = new Label();
+            panel3 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(363, 23);
+            pictureBox1.Location = new Point(25, 147);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(87, 71);
+            pictureBox1.Size = new Size(415, 214);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -61,7 +63,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Bauhaus 93", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.FromArgb(1, 109, 72);
-            label1.Location = new Point(355, 115);
+            label1.Location = new Point(207, 97);
             label1.Name = "label1";
             label1.Size = new Size(102, 36);
             label1.TabIndex = 1;
@@ -74,7 +76,7 @@
             iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User;
             iconPictureBox1.IconColor = Color.FromArgb(1, 109, 72);
             iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconPictureBox1.Location = new Point(280, 183);
+            iconPictureBox1.Location = new Point(132, 165);
             iconPictureBox1.Name = "iconPictureBox1";
             iconPictureBox1.Size = new Size(32, 32);
             iconPictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -85,7 +87,7 @@
             // 
             panel1.BackColor = Color.FromArgb(1, 109, 72);
             panel1.ForeColor = Color.FromArgb(1, 109, 72);
-            panel1.Location = new Point(306, 221);
+            panel1.Location = new Point(158, 203);
             panel1.Name = "panel1";
             panel1.Size = new Size(200, 1);
             panel1.TabIndex = 3;
@@ -93,7 +95,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(1, 109, 72);
-            panel2.Location = new Point(306, 296);
+            panel2.Location = new Point(158, 278);
             panel2.Name = "panel2";
             panel2.Size = new Size(200, 1);
             panel2.TabIndex = 5;
@@ -105,7 +107,7 @@
             iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Lock;
             iconPictureBox2.IconColor = Color.FromArgb(1, 109, 72);
             iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            iconPictureBox2.Location = new Point(280, 258);
+            iconPictureBox2.Location = new Point(132, 240);
             iconPictureBox2.Name = "iconPictureBox2";
             iconPictureBox2.Size = new Size(32, 32);
             iconPictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -119,7 +121,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Bahnschrift", 14F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(296, 341);
+            button1.Location = new Point(148, 323);
             button1.Name = "button1";
             button1.Size = new Size(220, 36);
             button1.TabIndex = 6;
@@ -132,7 +134,7 @@
             label2.AutoSize = true;
             label2.Cursor = Cursors.Hand;
             label2.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label2.Location = new Point(454, 321);
+            label2.Location = new Point(306, 303);
             label2.Name = "label2";
             label2.Size = new Size(59, 16);
             label2.TabIndex = 7;
@@ -144,7 +146,7 @@
             label3.AutoSize = true;
             label3.Cursor = Cursors.Hand;
             label3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point, 0);
-            label3.Location = new Point(389, 401);
+            label3.Location = new Point(241, 383);
             label3.Name = "label3";
             label3.Size = new Size(34, 16);
             label3.TabIndex = 8;
@@ -154,20 +156,20 @@
             // Email
             // 
             Email.BorderStyle = BorderStyle.None;
-            Email.Location = new Point(315, 191);
+            Email.Location = new Point(167, 173);
             Email.MaxLength = 50;
             Email.Name = "Email";
-            Email.PlaceholderText = "client@gmail.com";
+            Email.PlaceholderText = "Username";
             Email.Size = new Size(182, 16);
             Email.TabIndex = 9;
             // 
             // Password
             // 
             Password.BorderStyle = BorderStyle.None;
-            Password.Location = new Point(315, 266);
+            Password.Location = new Point(167, 248);
             Password.MaxLength = 50;
             Password.Name = "Password";
-            Password.PlaceholderText = "Password123";
+            Password.PlaceholderText = "Password";
             Password.Size = new Size(182, 16);
             Password.TabIndex = 10;
             Password.UseSystemPasswordChar = true;
@@ -175,11 +177,21 @@
             // message
             // 
             message.AutoSize = true;
-            message.Location = new Point(517, 398);
+            message.ForeColor = Color.IndianRed;
+            message.Location = new Point(143, 423);
             message.Margin = new Padding(2, 0, 2, 0);
             message.Name = "message";
             message.Size = new Size(0, 15);
             message.TabIndex = 11;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = SystemColors.InactiveCaption;
+            panel3.Controls.Add(pictureBox1);
+            panel3.Location = new Point(531, -2);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(452, 529);
+            panel3.TabIndex = 12;
             // 
             // Connexion
             // 
@@ -187,7 +199,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(983, 526);
+            Controls.Add(panel3);
             Controls.Add(message);
             Controls.Add(Password);
             Controls.Add(Email);
@@ -195,7 +208,6 @@
             Controls.Add(label2);
             Controls.Add(button1);
             Controls.Add(panel2);
-            Controls.Add(pictureBox1);
             Controls.Add(iconPictureBox2);
             Controls.Add(panel1);
             Controls.Add(label1);
@@ -209,6 +221,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)iconPictureBox2).EndInit();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -227,5 +240,6 @@
         private TextBox Email;
         private TextBox Password;
         private Label message;
+        private Panel panel3;
     }
 }

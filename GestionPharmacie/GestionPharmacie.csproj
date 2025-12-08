@@ -13,6 +13,7 @@
     <PackageReference Include="LiveCharts.WinForms" Version="0.9.7.1" />
     <PackageReference Include="LiveCharts.WinForms.NetCore3" Version="0.9.8" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.2" />
+    <PackageReference Include="ScottPlot.WinForms" Version="5.1.57" />
   </ItemGroup>
 
   <ItemGroup>

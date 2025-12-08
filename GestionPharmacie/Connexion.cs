@@ -39,18 +39,23 @@ namespace GestionPharmacie
             else
             {
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "data source = DESKTOP-DDPB0HH\\GI2_1;initial catalog=GestionPharmacie;" +
+                conn.ConnectionString = "data source = LAPTOP-G7L9QSSV;initial catalog=AppPharmacie;" +
                         "integrated security=True;TrustServerCertificate=True";
-                String sql = "select * from Utilisateurs where Email ='" + Email.Text + "' and MotDePasse='" + Password.Text + "'";
+                String sql = "select * from Utilisateurs where NomUtilisateur='" + Email.Text + "' and MotDePasse='" + Password.Text + "'";
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
-                    AdminMedicament admin = new AdminMedicament();
+                    Utilisateur utilisateur = new Utilisateur(reader.GetInt32(0));
+                    AdminMedicament admin = new AdminMedicament(utilisateur);
                     admin.Show();
                     this.Hide();
+                }
+                else
+                {
+                    message.Text = "Nom d'utilisateur ou mot de passe incorrect";
                 }
             }
         }

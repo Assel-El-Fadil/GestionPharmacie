@@ -44,7 +44,6 @@
             Ajouter = new Button();
             tabControl1 = new TabControl();
             Information = new TabPage();
-            iconButton8 = new FontAwesome.Sharp.IconButton();
             FormeCbox = new ComboBox();
             categorieCbox = new ComboBox();
             DescTxt = new TextBox();
@@ -126,11 +125,9 @@
             labelMontantTotalCommande = new Label();
             gridCommandeItems = new DataGridView();
             labelArticlesCommande = new Label();
-            labelCommandePaiement = new Label();
             labelCommandeDateValue = new Label();
             labelCommandeStatut = new Label();
             labelCommandeClient = new Label();
-            labelPaiementCommande = new Label();
             labelDateCommande = new Label();
             labelStatutCommande = new Label();
             labelClientCommande = new Label();
@@ -138,25 +135,14 @@
             labelCommandeNumero = new Label();
             panelClients = new Panel();
             AddClientPanel = new Panel();
-            iconPictureBoxCloseClient = new FontAwesome.Sharp.IconPictureBox();
             buttonAnnulerClient = new Button();
             buttonAjouterClient = new Button();
-            txtVille = new TextBox();
-            dateNaissanceClient = new DateTimePicker();
-            txtEmailClient = new TextBox();
             txtTelephoneClient = new TextBox();
-            txtCIN = new TextBox();
             txtPrenomClient = new TextBox();
             txtNomClient = new TextBox();
-            txtNumeroClient = new TextBox();
-            labelVille = new Label();
-            labelDateNaissance = new Label();
-            labelEmailClient = new Label();
             labelTelephoneClient = new Label();
-            labelCIN = new Label();
             labelPrenomClient = new Label();
             labelNomClient = new Label();
-            labelNumeroClient = new Label();
             labelClientSubtitle = new Label();
             labelClientTitle = new Label();
             gridClients = new DataGridView();
@@ -169,6 +155,25 @@
             labelClientsTitle = new Label();
             buttonNouveauClient = new FontAwesome.Sharp.IconButton();
             panelCommandes = new Panel();
+            panelAjoutComm = new Panel();
+            panel6 = new Panel();
+            remisetxt = new TextBox();
+            remarques = new TextBox();
+            qnttxt = new TextBox();
+            medcbox = new ComboBox();
+            clientcbox = new ComboBox();
+            iconPictureBox5 = new FontAwesome.Sharp.IconPictureBox();
+            button5 = new Button();
+            button4 = new Button();
+            button3 = new Button();
+            lblmontant = new Label();
+            label46 = new Label();
+            label49 = new Label();
+            label50 = new Label();
+            label48 = new Label();
+            label47 = new Label();
+            label53 = new Label();
+            label55 = new Label();
             gridCommandes = new DataGridView();
             CommandesActions = new DataGridViewTextBoxColumn();
             panelCommandesSearch = new Panel();
@@ -180,6 +185,9 @@
             labelCommandesSubtitle = new Label();
             buttonNouvelleCommande = new FontAwesome.Sharp.IconButton();
             dashboard = new Panel();
+            label52 = new Label();
+            TopClientsChart = new LiveCharts.WinForms.CartesianChart();
+            TopMedPie = new LiveCharts.WinForms.PieChart();
             panelExpiry = new Panel();
             panelLowStock = new Panel();
             panel5 = new Panel();
@@ -193,6 +201,8 @@
             AlerteStock = new Label();
             iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             label1 = new Label();
+            label51 = new Label();
+            label45 = new Label();
             label3 = new Label();
             PanelStats = new Panel();
             CategorieChart = new LiveCharts.WinForms.CartesianChart();
@@ -213,6 +223,8 @@
             label33 = new Label();
             label19 = new Label();
             comboStatutCommande = new ComboBox();
+            label54 = new Label();
+            label56 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -233,11 +245,12 @@
             ((System.ComponentModel.ISupportInitialize)gridCommandeItems).BeginInit();
             panelClients.SuspendLayout();
             AddClientPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBoxCloseClient).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridClients).BeginInit();
             panelClientsSearch.SuspendLayout();
             panelClientsHeader.SuspendLayout();
             panelCommandes.SuspendLayout();
+            panelAjoutComm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridCommandes).BeginInit();
             panelCommandesSearch.SuspendLayout();
             panelCommandesHeader.SuspendLayout();
@@ -300,7 +313,7 @@
             iconButton5.Dock = DockStyle.Top;
             iconButton5.FlatAppearance.BorderSize = 0;
             iconButton5.FlatStyle = FlatStyle.Flat;
-            iconButton5.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            iconButton5.Font = new Font("Georgia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             iconButton5.ForeColor = Color.FromArgb(60, 60, 60);
             iconButton5.IconChar = FontAwesome.Sharp.IconChar.BarChart;
             iconButton5.IconColor = Color.FromArgb(60, 60, 60);
@@ -325,7 +338,7 @@
             iconButton4.Dock = DockStyle.Top;
             iconButton4.FlatAppearance.BorderSize = 0;
             iconButton4.FlatStyle = FlatStyle.Flat;
-            iconButton4.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            iconButton4.Font = new Font("Georgia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             iconButton4.ForeColor = Color.FromArgb(60, 60, 60);
             iconButton4.IconChar = FontAwesome.Sharp.IconChar.Users;
             iconButton4.IconColor = Color.FromArgb(60, 60, 60);
@@ -350,7 +363,7 @@
             iconButton3.Dock = DockStyle.Top;
             iconButton3.FlatAppearance.BorderSize = 0;
             iconButton3.FlatStyle = FlatStyle.Flat;
-            iconButton3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            iconButton3.Font = new Font("Georgia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             iconButton3.ForeColor = Color.FromArgb(60, 60, 60);
             iconButton3.IconChar = FontAwesome.Sharp.IconChar.CartShopping;
             iconButton3.IconColor = Color.FromArgb(60, 60, 60);
@@ -370,12 +383,12 @@
             // 
             // iconButton2
             // 
-            iconButton2.BackColor = Color.FromArgb(74, 157, 122);
+            iconButton2.BackColor = SystemColors.InactiveCaption;
             iconButton2.Cursor = Cursors.Hand;
             iconButton2.Dock = DockStyle.Top;
             iconButton2.FlatAppearance.BorderSize = 0;
             iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            iconButton2.Font = new Font("Georgia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             iconButton2.ForeColor = Color.FromArgb(60, 60, 60);
             iconButton2.IconChar = FontAwesome.Sharp.IconChar.Pills;
             iconButton2.IconColor = Color.FromArgb(60, 60, 60);
@@ -395,12 +408,12 @@
             // 
             // iconButton1
             // 
-            iconButton1.BackColor = Color.Transparent;
+            iconButton1.BackColor = Color.FromArgb(74, 157, 122);
             iconButton1.Cursor = Cursors.Hand;
             iconButton1.Dock = DockStyle.Top;
             iconButton1.FlatAppearance.BorderSize = 0;
             iconButton1.FlatStyle = FlatStyle.Flat;
-            iconButton1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            iconButton1.Font = new Font("Georgia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             iconButton1.ForeColor = Color.FromArgb(60, 60, 60);
             iconButton1.IconChar = FontAwesome.Sharp.IconChar.Grip;
             iconButton1.IconColor = Color.FromArgb(60, 60, 60);
@@ -447,7 +460,7 @@
             AddPanel.Controls.Add(Ajouter);
             AddPanel.Controls.Add(tabControl1);
             AddPanel.Controls.Add(label2);
-            AddPanel.Location = new Point(223, 70);
+            AddPanel.Location = new Point(221, 73);
             AddPanel.Name = "AddPanel";
             AddPanel.Size = new Size(453, 367);
             AddPanel.TabIndex = 5;
@@ -508,7 +521,6 @@
             // Information
             // 
             Information.BackColor = Color.White;
-            Information.Controls.Add(iconButton8);
             Information.Controls.Add(FormeCbox);
             Information.Controls.Add(categorieCbox);
             Information.Controls.Add(DescTxt);
@@ -525,22 +537,10 @@
             Information.Controls.Add(label4);
             Information.Location = new Point(4, 24);
             Information.Name = "Information";
-            Information.Padding = new Padding(3, 3, 3, 3);
+            Information.Padding = new Padding(3);
             Information.Size = new Size(402, 244);
             Information.TabIndex = 0;
             Information.Text = "Information Generale";
-            // 
-            // iconButton8
-            // 
-            iconButton8.IconChar = FontAwesome.Sharp.IconChar.None;
-            iconButton8.IconColor = Color.Black;
-            iconButton8.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconButton8.Location = new Point(233, 12);
-            iconButton8.Name = "iconButton8";
-            iconButton8.Size = new Size(75, 23);
-            iconButton8.TabIndex = 3;
-            iconButton8.Text = "iconButton8";
-            iconButton8.UseVisualStyleBackColor = true;
             // 
             // FormeCbox
             // 
@@ -581,7 +581,7 @@
             // 
             // NumlotTxt
             // 
-            NumlotTxt.Location = new Point(237, 41);
+            NumlotTxt.Location = new Point(238, 41);
             NumlotTxt.Name = "NumlotTxt";
             NumlotTxt.Size = new Size(143, 23);
             NumlotTxt.TabIndex = 1;
@@ -672,7 +672,7 @@
             tabPage2.Controls.Add(label13);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3, 3, 3, 3);
+            tabPage2.Padding = new Padding(3);
             tabPage2.Size = new Size(402, 244);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Stock et Prix";
@@ -803,11 +803,12 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(815, 16);
+            label7.Font = new Font("Georgia", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.Location = new Point(780, 16);
             label7.Name = "label7";
-            label7.Size = new Size(38, 15);
+            label7.Size = new Size(95, 16);
             label7.TabIndex = 1;
-            label7.Text = "label7";
+            label7.Text = "Pharmacien";
             // 
             // iconButton9
             // 
@@ -869,7 +870,7 @@
             GridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             GridView1.Columns.AddRange(new DataGridViewColumn[] { Actions });
             GridView1.Location = new Point(15, 172);
-            GridView1.Margin = new Padding(2, 2, 2, 2);
+            GridView1.Margin = new Padding(2);
             GridView1.Name = "GridView1";
             GridView1.RowHeadersVisible = false;
             GridView1.RowHeadersWidth = 62;
@@ -925,9 +926,9 @@
             panelmedicaments.Controls.Add(AddPanel);
             panelmedicaments.Controls.Add(panel3);
             panelmedicaments.Controls.Add(GridView1);
-            panelmedicaments.Location = new Point(1084, 98);
+            panelmedicaments.Location = new Point(500, 46);
             panelmedicaments.Name = "panelmedicaments";
-            panelmedicaments.Size = new Size(232, 268);
+            panelmedicaments.Size = new Size(205, 166);
             panelmedicaments.TabIndex = 7;
             panelmedicaments.Visible = false;
             // 
@@ -935,22 +936,23 @@
             // 
             panelSearch.BackColor = Color.White;
             panelSearch.Controls.Add(labelTitle);
+            panelSearch.Controls.Add(label54);
             panelSearch.Controls.Add(buttonNouveau);
             panelSearch.Dock = DockStyle.Top;
             panelSearch.Location = new Point(0, 0);
             panelSearch.Name = "panelSearch";
             panelSearch.Padding = new Padding(10);
-            panelSearch.Size = new Size(232, 70);
+            panelSearch.Size = new Size(205, 70);
             panelSearch.TabIndex = 2;
             // 
             // labelTitle
             // 
             labelTitle.AutoSize = true;
-            labelTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            labelTitle.ForeColor = Color.FromArgb(1, 109, 72);
-            labelTitle.Location = new Point(37, 16);
+            labelTitle.Font = new Font("Georgia", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTitle.ForeColor = Color.Black;
+            labelTitle.Location = new Point(28, 10);
             labelTitle.Name = "labelTitle";
-            labelTitle.Size = new Size(346, 37);
+            labelTitle.Size = new Size(370, 31);
             labelTitle.TabIndex = 4;
             labelTitle.Text = "Gestion des Médicaments";
             // 
@@ -967,7 +969,7 @@
             buttonNouveau.IconFont = FontAwesome.Sharp.IconFont.Solid;
             buttonNouveau.IconSize = 16;
             buttonNouveau.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonNouveau.Location = new Point(20, 24);
+            buttonNouveau.Location = new Point(-7, 24);
             buttonNouveau.Name = "buttonNouveau";
             buttonNouveau.Padding = new Padding(8, 0, 0, 0);
             buttonNouveau.Size = new Size(200, 32);
@@ -1372,17 +1374,15 @@
             ViewCommande.Controls.Add(labelMontantTotalCommande);
             ViewCommande.Controls.Add(gridCommandeItems);
             ViewCommande.Controls.Add(labelArticlesCommande);
-            ViewCommande.Controls.Add(labelCommandePaiement);
             ViewCommande.Controls.Add(labelCommandeDateValue);
             ViewCommande.Controls.Add(labelCommandeStatut);
             ViewCommande.Controls.Add(labelCommandeClient);
-            ViewCommande.Controls.Add(labelPaiementCommande);
             ViewCommande.Controls.Add(labelDateCommande);
             ViewCommande.Controls.Add(labelStatutCommande);
             ViewCommande.Controls.Add(labelClientCommande);
             ViewCommande.Controls.Add(labelCommandeDate);
             ViewCommande.Controls.Add(labelCommandeNumero);
-            ViewCommande.Location = new Point(103, 7);
+            ViewCommande.Location = new Point(139, 72);
             ViewCommande.Name = "ViewCommande";
             ViewCommande.Size = new Size(598, 394);
             ViewCommande.TabIndex = 12;
@@ -1444,7 +1444,7 @@
             gridCommandeItems.BorderStyle = BorderStyle.None;
             gridCommandeItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridCommandeItems.Location = new Point(21, 178);
-            gridCommandeItems.Margin = new Padding(2, 2, 2, 2);
+            gridCommandeItems.Margin = new Padding(2);
             gridCommandeItems.Name = "gridCommandeItems";
             gridCommandeItems.RowHeadersVisible = false;
             gridCommandeItems.RowHeadersWidth = 62;
@@ -1460,16 +1460,6 @@
             labelArticlesCommande.Size = new Size(164, 21);
             labelArticlesCommande.TabIndex = 0;
             labelArticlesCommande.Text = "Articles commandés";
-            // 
-            // labelCommandePaiement
-            // 
-            labelCommandePaiement.AutoSize = true;
-            labelCommandePaiement.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelCommandePaiement.Location = new Point(282, 130);
-            labelCommandePaiement.Name = "labelCommandePaiement";
-            labelCommandePaiement.Size = new Size(27, 19);
-            labelCommandePaiement.TabIndex = 0;
-            labelCommandePaiement.Text = "---";
             // 
             // labelCommandeDateValue
             // 
@@ -1487,9 +1477,9 @@
             labelCommandeStatut.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelCommandeStatut.Location = new Point(21, 132);
             labelCommandeStatut.Name = "labelCommandeStatut";
-            labelCommandeStatut.Size = new Size(27, 19);
+            labelCommandeStatut.Size = new Size(52, 19);
             labelCommandeStatut.TabIndex = 0;
-            labelCommandeStatut.Text = "---";
+            labelCommandeStatut.Text = "Validée";
             // 
             // labelCommandeClient
             // 
@@ -1500,16 +1490,6 @@
             labelCommandeClient.Size = new Size(27, 19);
             labelCommandeClient.TabIndex = 0;
             labelCommandeClient.Text = "---";
-            // 
-            // labelPaiementCommande
-            // 
-            labelPaiementCommande.AutoSize = true;
-            labelPaiementCommande.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelPaiementCommande.Location = new Point(280, 114);
-            labelPaiementCommande.Name = "labelPaiementCommande";
-            labelPaiementCommande.Size = new Size(80, 19);
-            labelPaiementCommande.TabIndex = 0;
-            labelPaiementCommande.Text = "Paiement :";
             // 
             // labelDateCommande
             // 
@@ -1546,7 +1526,7 @@
             labelCommandeDate.AutoSize = true;
             labelCommandeDate.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelCommandeDate.ForeColor = SystemColors.ControlDarkDark;
-            labelCommandeDate.Location = new Point(21, 42);
+            labelCommandeDate.Location = new Point(21, 43);
             labelCommandeDate.Name = "labelCommandeDate";
             labelCommandeDate.Size = new Size(148, 15);
             labelCommandeDate.TabIndex = 0;
@@ -1568,63 +1548,34 @@
             panelClients.Controls.Add(gridClients);
             panelClients.Controls.Add(panelClientsSearch);
             panelClients.Controls.Add(panelClientsHeader);
-            panelClients.Location = new Point(171, 46);
+            panelClients.Location = new Point(770, 46);
             panelClients.Name = "panelClients";
-            panelClients.Size = new Size(812, 460);
+            panelClients.Size = new Size(334, 163);
             panelClients.TabIndex = 9;
             panelClients.Visible = false;
             // 
             // AddClientPanel
             // 
             AddClientPanel.BorderStyle = BorderStyle.FixedSingle;
-            AddClientPanel.Controls.Add(iconPictureBoxCloseClient);
             AddClientPanel.Controls.Add(buttonAnnulerClient);
             AddClientPanel.Controls.Add(buttonAjouterClient);
-            AddClientPanel.Controls.Add(txtVille);
-            AddClientPanel.Controls.Add(dateNaissanceClient);
-            AddClientPanel.Controls.Add(txtEmailClient);
             AddClientPanel.Controls.Add(txtTelephoneClient);
-            AddClientPanel.Controls.Add(txtCIN);
             AddClientPanel.Controls.Add(txtPrenomClient);
             AddClientPanel.Controls.Add(txtNomClient);
-            AddClientPanel.Controls.Add(txtNumeroClient);
-            AddClientPanel.Controls.Add(labelVille);
-            AddClientPanel.Controls.Add(labelDateNaissance);
-            AddClientPanel.Controls.Add(labelEmailClient);
             AddClientPanel.Controls.Add(labelTelephoneClient);
-            AddClientPanel.Controls.Add(labelCIN);
             AddClientPanel.Controls.Add(labelPrenomClient);
             AddClientPanel.Controls.Add(labelNomClient);
-            AddClientPanel.Controls.Add(labelNumeroClient);
             AddClientPanel.Controls.Add(labelClientSubtitle);
             AddClientPanel.Controls.Add(labelClientTitle);
-            AddClientPanel.Location = new Point(223, 70);
+            AddClientPanel.Location = new Point(574, 135);
             AddClientPanel.Name = "AddClientPanel";
-            AddClientPanel.Size = new Size(453, 367);
+            AddClientPanel.Size = new Size(358, 394);
             AddClientPanel.TabIndex = 10;
             AddClientPanel.Visible = false;
             // 
-            // iconPictureBoxCloseClient
-            // 
-            iconPictureBoxCloseClient.BackColor = Color.White;
-            iconPictureBoxCloseClient.Cursor = Cursors.Hand;
-            iconPictureBoxCloseClient.ForeColor = Color.Black;
-            iconPictureBoxCloseClient.IconChar = FontAwesome.Sharp.IconChar.Close;
-            iconPictureBoxCloseClient.IconColor = Color.Black;
-            iconPictureBoxCloseClient.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconPictureBoxCloseClient.IconSize = 27;
-            iconPictureBoxCloseClient.Location = new Point(425, -1);
-            iconPictureBoxCloseClient.Name = "iconPictureBoxCloseClient";
-            iconPictureBoxCloseClient.Padding = new Padding(0, 30, 0, 0);
-            iconPictureBoxCloseClient.Size = new Size(27, 29);
-            iconPictureBoxCloseClient.SizeMode = PictureBoxSizeMode.Zoom;
-            iconPictureBoxCloseClient.TabIndex = 4;
-            iconPictureBoxCloseClient.TabStop = false;
-            iconPictureBoxCloseClient.Click += iconPictureBoxCloseClient_Click;
-            // 
             // buttonAnnulerClient
             // 
-            buttonAnnulerClient.Location = new Point(358, 325);
+            buttonAnnulerClient.Location = new Point(191, 340);
             buttonAnnulerClient.Name = "buttonAnnulerClient";
             buttonAnnulerClient.Size = new Size(75, 31);
             buttonAnnulerClient.TabIndex = 3;
@@ -1637,7 +1588,7 @@
             buttonAjouterClient.BackColor = Color.Black;
             buttonAjouterClient.FlatStyle = FlatStyle.Flat;
             buttonAjouterClient.ForeColor = Color.White;
-            buttonAjouterClient.Location = new Point(277, 325);
+            buttonAjouterClient.Location = new Point(86, 341);
             buttonAjouterClient.Name = "buttonAjouterClient";
             buttonAjouterClient.Size = new Size(75, 31);
             buttonAjouterClient.TabIndex = 2;
@@ -1645,111 +1596,40 @@
             buttonAjouterClient.UseVisualStyleBackColor = false;
             buttonAjouterClient.Click += buttonAjouterClient_Click;
             // 
-            // txtVille
-            // 
-            txtVille.Location = new Point(21, 270);
-            txtVille.Name = "txtVille";
-            txtVille.Size = new Size(197, 23);
-            txtVille.TabIndex = 1;
-            // 
-            // dateNaissanceClient
-            // 
-            dateNaissanceClient.Location = new Point(21, 222);
-            dateNaissanceClient.Name = "dateNaissanceClient";
-            dateNaissanceClient.Size = new Size(411, 23);
-            dateNaissanceClient.TabIndex = 2;
-            // 
-            // txtEmailClient
-            // 
-            txtEmailClient.Location = new Point(235, 174);
-            txtEmailClient.Name = "txtEmailClient";
-            txtEmailClient.Size = new Size(197, 23);
-            txtEmailClient.TabIndex = 1;
-            // 
             // txtTelephoneClient
             // 
-            txtTelephoneClient.Location = new Point(21, 174);
+            txtTelephoneClient.Location = new Point(78, 257);
             txtTelephoneClient.Name = "txtTelephoneClient";
             txtTelephoneClient.Size = new Size(197, 23);
             txtTelephoneClient.TabIndex = 1;
             // 
-            // txtCIN
-            // 
-            txtCIN.Location = new Point(235, 78);
-            txtCIN.Name = "txtCIN";
-            txtCIN.Size = new Size(197, 23);
-            txtCIN.TabIndex = 1;
-            // 
             // txtPrenomClient
             // 
-            txtPrenomClient.Location = new Point(235, 126);
+            txtPrenomClient.Location = new Point(78, 183);
             txtPrenomClient.Name = "txtPrenomClient";
             txtPrenomClient.Size = new Size(197, 23);
             txtPrenomClient.TabIndex = 1;
             // 
             // txtNomClient
             // 
-            txtNomClient.Location = new Point(21, 126);
+            txtNomClient.Location = new Point(78, 104);
             txtNomClient.Name = "txtNomClient";
             txtNomClient.Size = new Size(197, 23);
             txtNomClient.TabIndex = 1;
             // 
-            // txtNumeroClient
-            // 
-            txtNumeroClient.Location = new Point(21, 78);
-            txtNumeroClient.Name = "txtNumeroClient";
-            txtNumeroClient.Size = new Size(197, 23);
-            txtNumeroClient.TabIndex = 1;
-            // 
-            // labelVille
-            // 
-            labelVille.AutoSize = true;
-            labelVille.Location = new Point(21, 252);
-            labelVille.Name = "labelVille";
-            labelVille.Size = new Size(29, 15);
-            labelVille.TabIndex = 0;
-            labelVille.Text = "Ville";
-            // 
-            // labelDateNaissance
-            // 
-            labelDateNaissance.AutoSize = true;
-            labelDateNaissance.Location = new Point(21, 204);
-            labelDateNaissance.Name = "labelDateNaissance";
-            labelDateNaissance.Size = new Size(101, 15);
-            labelDateNaissance.TabIndex = 0;
-            labelDateNaissance.Text = "Date de naissance";
-            // 
-            // labelEmailClient
-            // 
-            labelEmailClient.AutoSize = true;
-            labelEmailClient.Location = new Point(235, 156);
-            labelEmailClient.Name = "labelEmailClient";
-            labelEmailClient.Size = new Size(36, 15);
-            labelEmailClient.TabIndex = 0;
-            labelEmailClient.Text = "Email";
-            // 
             // labelTelephoneClient
             // 
             labelTelephoneClient.AutoSize = true;
-            labelTelephoneClient.Location = new Point(21, 156);
+            labelTelephoneClient.Location = new Point(93, 236);
             labelTelephoneClient.Name = "labelTelephoneClient";
             labelTelephoneClient.Size = new Size(62, 15);
             labelTelephoneClient.TabIndex = 0;
             labelTelephoneClient.Text = "Téléphone";
             // 
-            // labelCIN
-            // 
-            labelCIN.AutoSize = true;
-            labelCIN.Location = new Point(235, 60);
-            labelCIN.Name = "labelCIN";
-            labelCIN.Size = new Size(27, 15);
-            labelCIN.TabIndex = 0;
-            labelCIN.Text = "CIN";
-            // 
             // labelPrenomClient
             // 
             labelPrenomClient.AutoSize = true;
-            labelPrenomClient.Location = new Point(235, 108);
+            labelPrenomClient.Location = new Point(93, 164);
             labelPrenomClient.Name = "labelPrenomClient";
             labelPrenomClient.Size = new Size(57, 15);
             labelPrenomClient.TabIndex = 0;
@@ -1758,27 +1638,18 @@
             // labelNomClient
             // 
             labelNomClient.AutoSize = true;
-            labelNomClient.Location = new Point(21, 108);
+            labelNomClient.Location = new Point(93, 82);
             labelNomClient.Name = "labelNomClient";
             labelNomClient.Size = new Size(42, 15);
             labelNomClient.TabIndex = 0;
             labelNomClient.Text = "Nom *";
-            // 
-            // labelNumeroClient
-            // 
-            labelNumeroClient.AutoSize = true;
-            labelNumeroClient.Location = new Point(21, 60);
-            labelNumeroClient.Name = "labelNumeroClient";
-            labelNumeroClient.Size = new Size(91, 15);
-            labelNumeroClient.TabIndex = 0;
-            labelNumeroClient.Text = "Numéro client *";
             // 
             // labelClientSubtitle
             // 
             labelClientSubtitle.AutoSize = true;
             labelClientSubtitle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             labelClientSubtitle.ForeColor = SystemColors.ControlDarkDark;
-            labelClientSubtitle.Location = new Point(133, 37);
+            labelClientSubtitle.Location = new Point(78, 36);
             labelClientSubtitle.Name = "labelClientSubtitle";
             labelClientSubtitle.Size = new Size(202, 15);
             labelClientSubtitle.TabIndex = 0;
@@ -1788,7 +1659,7 @@
             // 
             labelClientTitle.AutoSize = true;
             labelClientTitle.Font = new Font("Times New Roman", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelClientTitle.Location = new Point(133, 12);
+            labelClientTitle.Location = new Point(103, 13);
             labelClientTitle.Name = "labelClientTitle";
             labelClientTitle.Size = new Size(131, 22);
             labelClientTitle.TabIndex = 0;
@@ -1804,7 +1675,7 @@
             gridClients.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridClients.Columns.AddRange(new DataGridViewColumn[] { ClientsActions });
             gridClients.Location = new Point(15, 172);
-            gridClients.Margin = new Padding(2, 2, 2, 2);
+            gridClients.Margin = new Padding(2);
             gridClients.Name = "gridClients";
             gridClients.RowHeadersVisible = false;
             gridClients.RowHeadersWidth = 62;
@@ -1891,22 +1762,23 @@
             // 
             panelClientsHeader.BackColor = Color.White;
             panelClientsHeader.Controls.Add(labelClientsTitle);
+            panelClientsHeader.Controls.Add(label56);
             panelClientsHeader.Controls.Add(buttonNouveauClient);
             panelClientsHeader.Dock = DockStyle.Top;
             panelClientsHeader.Location = new Point(0, 0);
             panelClientsHeader.Name = "panelClientsHeader";
-            panelClientsHeader.Padding = new Padding(10, 10, 10, 10);
-            panelClientsHeader.Size = new Size(812, 70);
+            panelClientsHeader.Padding = new Padding(10);
+            panelClientsHeader.Size = new Size(334, 70);
             panelClientsHeader.TabIndex = 0;
             // 
             // labelClientsTitle
             // 
             labelClientsTitle.AutoSize = true;
-            labelClientsTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            labelClientsTitle.ForeColor = Color.FromArgb(1, 109, 72);
+            labelClientsTitle.Font = new Font("Georgia", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelClientsTitle.ForeColor = Color.Black;
             labelClientsTitle.Location = new Point(37, 16);
             labelClientsTitle.Name = "labelClientsTitle";
-            labelClientsTitle.Size = new Size(260, 37);
+            labelClientsTitle.Size = new Size(280, 31);
             labelClientsTitle.TabIndex = 4;
             labelClientsTitle.Text = "Gestion des Clients";
             // 
@@ -1923,7 +1795,7 @@
             buttonNouveauClient.IconFont = FontAwesome.Sharp.IconFont.Solid;
             buttonNouveauClient.IconSize = 16;
             buttonNouveauClient.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonNouveauClient.Location = new Point(600, 24);
+            buttonNouveauClient.Location = new Point(122, 24);
             buttonNouveauClient.Name = "buttonNouveauClient";
             buttonNouveauClient.Padding = new Padding(8, 0, 0, 0);
             buttonNouveauClient.Size = new Size(200, 32);
@@ -1935,15 +1807,228 @@
             // 
             // panelCommandes
             // 
+            panelCommandes.Controls.Add(panelAjoutComm);
             panelCommandes.Controls.Add(ViewCommande);
             panelCommandes.Controls.Add(gridCommandes);
             panelCommandes.Controls.Add(panelCommandesSearch);
             panelCommandes.Controls.Add(panelCommandesHeader);
-            panelCommandes.Location = new Point(171, 46);
+            panelCommandes.Location = new Point(226, 285);
             panelCommandes.Name = "panelCommandes";
-            panelCommandes.Size = new Size(848, 460);
+            panelCommandes.Size = new Size(269, 209);
             panelCommandes.TabIndex = 11;
             panelCommandes.Visible = false;
+            // 
+            // panelAjoutComm
+            // 
+            panelAjoutComm.AutoScroll = true;
+            panelAjoutComm.BorderStyle = BorderStyle.FixedSingle;
+            panelAjoutComm.Controls.Add(panel6);
+            panelAjoutComm.Controls.Add(remisetxt);
+            panelAjoutComm.Controls.Add(remarques);
+            panelAjoutComm.Controls.Add(qnttxt);
+            panelAjoutComm.Controls.Add(medcbox);
+            panelAjoutComm.Controls.Add(clientcbox);
+            panelAjoutComm.Controls.Add(iconPictureBox5);
+            panelAjoutComm.Controls.Add(button5);
+            panelAjoutComm.Controls.Add(button4);
+            panelAjoutComm.Controls.Add(button3);
+            panelAjoutComm.Controls.Add(lblmontant);
+            panelAjoutComm.Controls.Add(label46);
+            panelAjoutComm.Controls.Add(label49);
+            panelAjoutComm.Controls.Add(label50);
+            panelAjoutComm.Controls.Add(label48);
+            panelAjoutComm.Controls.Add(label47);
+            panelAjoutComm.Controls.Add(label53);
+            panelAjoutComm.Controls.Add(label55);
+            panelAjoutComm.Location = new Point(142, 33);
+            panelAjoutComm.Name = "panelAjoutComm";
+            panelAjoutComm.Size = new Size(598, 461);
+            panelAjoutComm.TabIndex = 12;
+            panelAjoutComm.Visible = false;
+            panelAjoutComm.Paint += panelAjoutComm_Paint;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.Gray;
+            panel6.Location = new Point(80, 405);
+            panel6.MaximumSize = new Size(400, 1);
+            panel6.MinimumSize = new Size(400, 1);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(400, 1);
+            panel6.TabIndex = 7;
+            // 
+            // remisetxt
+            // 
+            remisetxt.Location = new Point(22, 319);
+            remisetxt.Name = "remisetxt";
+            remisetxt.Size = new Size(192, 23);
+            remisetxt.TabIndex = 6;
+            // 
+            // remarques
+            // 
+            remarques.Location = new Point(276, 319);
+            remarques.Name = "remarques";
+            remarques.Size = new Size(267, 23);
+            remarques.TabIndex = 6;
+            // 
+            // qnttxt
+            // 
+            qnttxt.Location = new Point(277, 131);
+            qnttxt.Name = "qnttxt";
+            qnttxt.Size = new Size(267, 23);
+            qnttxt.TabIndex = 6;
+            // 
+            // medcbox
+            // 
+            medcbox.FormattingEnabled = true;
+            medcbox.Location = new Point(22, 131);
+            medcbox.Name = "medcbox";
+            medcbox.Size = new Size(192, 23);
+            medcbox.TabIndex = 5;
+            // 
+            // clientcbox
+            // 
+            clientcbox.FormattingEnabled = true;
+            clientcbox.Location = new Point(22, 251);
+            clientcbox.Name = "clientcbox";
+            clientcbox.Size = new Size(192, 23);
+            clientcbox.TabIndex = 5;
+            // 
+            // iconPictureBox5
+            // 
+            iconPictureBox5.BackColor = Color.White;
+            iconPictureBox5.Cursor = Cursors.Hand;
+            iconPictureBox5.ForeColor = Color.Black;
+            iconPictureBox5.IconChar = FontAwesome.Sharp.IconChar.Close;
+            iconPictureBox5.IconColor = Color.Black;
+            iconPictureBox5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconPictureBox5.IconSize = 27;
+            iconPictureBox5.Location = new Point(568, 1);
+            iconPictureBox5.Name = "iconPictureBox5";
+            iconPictureBox5.Padding = new Padding(0, 30, 0, 0);
+            iconPictureBox5.Size = new Size(27, 29);
+            iconPictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            iconPictureBox5.TabIndex = 4;
+            iconPictureBox5.TabStop = false;
+            iconPictureBox5.Click += iconPictureBox5_Click;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(1, 109, 72);
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.ForeColor = SystemColors.ButtonHighlight;
+            button5.Location = new Point(346, 418);
+            button5.Name = "button5";
+            button5.Size = new Size(112, 31);
+            button5.TabIndex = 3;
+            button5.Text = "Confirmer ordre";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.Black;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.ForeColor = SystemColors.ButtonHighlight;
+            button4.Location = new Point(402, 177);
+            button4.Name = "button4";
+            button4.Size = new Size(138, 31);
+            button4.TabIndex = 3;
+            button4.Text = "Ajouter Médicament";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(479, 417);
+            button3.Name = "button3";
+            button3.Size = new Size(75, 31);
+            button3.TabIndex = 3;
+            button3.Text = "Fermer";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
+            // lblmontant
+            // 
+            lblmontant.AutoSize = true;
+            lblmontant.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblmontant.ForeColor = SystemColors.AppWorkspace;
+            lblmontant.Location = new Point(452, 364);
+            lblmontant.Name = "lblmontant";
+            lblmontant.Size = new Size(69, 21);
+            lblmontant.TabIndex = 0;
+            lblmontant.Text = "0.00 DH";
+            // 
+            // label46
+            // 
+            label46.AutoSize = true;
+            label46.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label46.ForeColor = SystemColors.AppWorkspace;
+            label46.Location = new Point(50, 364);
+            label46.Name = "label46";
+            label46.Size = new Size(115, 20);
+            label46.TabIndex = 0;
+            label46.Text = "Montant total :";
+            // 
+            // label49
+            // 
+            label49.AutoSize = true;
+            label49.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label49.Location = new Point(22, 296);
+            label49.Name = "label49";
+            label49.Size = new Size(65, 19);
+            label49.TabIndex = 0;
+            label49.Text = "Remise :";
+            // 
+            // label50
+            // 
+            label50.AutoSize = true;
+            label50.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label50.Location = new Point(277, 296);
+            label50.Name = "label50";
+            label50.Size = new Size(92, 19);
+            label50.TabIndex = 0;
+            label50.Text = "Remarques :";
+            // 
+            // label48
+            // 
+            label48.AutoSize = true;
+            label48.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label48.Location = new Point(276, 105);
+            label48.Name = "label48";
+            label48.Size = new Size(74, 19);
+            label48.TabIndex = 0;
+            label48.Text = "Quantité :";
+            // 
+            // label47
+            // 
+            label47.AutoSize = true;
+            label47.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label47.Location = new Point(22, 104);
+            label47.Name = "label47";
+            label47.Size = new Size(106, 19);
+            label47.TabIndex = 0;
+            label47.Text = "Médicaments :";
+            // 
+            // label53
+            // 
+            label53.AutoSize = true;
+            label53.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label53.Location = new Point(22, 229);
+            label53.Name = "label53";
+            label53.Size = new Size(55, 19);
+            label53.TabIndex = 0;
+            label53.Text = "Client :";
+            // 
+            // label55
+            // 
+            label55.AutoSize = true;
+            label55.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label55.Location = new Point(167, 22);
+            label55.Name = "label55";
+            label55.Size = new Size(253, 32);
+            label55.TabIndex = 0;
+            label55.Text = "Nouvelle Commande";
             // 
             // gridCommandes
             // 
@@ -1955,7 +2040,7 @@
             gridCommandes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gridCommandes.Columns.AddRange(new DataGridViewColumn[] { CommandesActions });
             gridCommandes.Location = new Point(15, 172);
-            gridCommandes.Margin = new Padding(2, 2, 2, 2);
+            gridCommandes.Margin = new Padding(2);
             gridCommandes.Name = "gridCommandes";
             gridCommandes.RowHeadersVisible = false;
             gridCommandes.RowHeadersWidth = 62;
@@ -1979,8 +2064,8 @@
             panelCommandesSearch.Controls.Add(searchCommandeTxt);
             panelCommandesSearch.Location = new Point(0, 70);
             panelCommandesSearch.Name = "panelCommandesSearch";
-            panelCommandesSearch.Padding = new Padding(10, 10, 10, 10);
-            panelCommandesSearch.Size = new Size(845, 65);
+            panelCommandesSearch.Padding = new Padding(10);
+            panelCommandesSearch.Size = new Size(933, 65);
             panelCommandesSearch.TabIndex = 1;
             // 
             // resetCommandeBtn
@@ -1996,7 +2081,7 @@
             resetCommandeBtn.IconFont = FontAwesome.Sharp.IconFont.Solid;
             resetCommandeBtn.IconSize = 16;
             resetCommandeBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            resetCommandeBtn.Location = new Point(736, 19);
+            resetCommandeBtn.Location = new Point(824, 19);
             resetCommandeBtn.Name = "resetCommandeBtn";
             resetCommandeBtn.Padding = new Padding(8, 0, 0, 0);
             resetCommandeBtn.Size = new Size(96, 28);
@@ -2019,7 +2104,7 @@
             searchCommandeBtn.IconFont = FontAwesome.Sharp.IconFont.Solid;
             searchCommandeBtn.IconSize = 16;
             searchCommandeBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            searchCommandeBtn.Location = new Point(622, 19);
+            searchCommandeBtn.Location = new Point(710, 19);
             searchCommandeBtn.Name = "searchCommandeBtn";
             searchCommandeBtn.Padding = new Padding(8, 0, 0, 0);
             searchCommandeBtn.Size = new Size(96, 28);
@@ -2037,7 +2122,7 @@
             searchCommandeTxt.Location = new Point(18, 24);
             searchCommandeTxt.Name = "searchCommandeTxt";
             searchCommandeTxt.PlaceholderText = "  Rechercher par numéro ou client...";
-            searchCommandeTxt.Size = new Size(596, 25);
+            searchCommandeTxt.Size = new Size(684, 25);
             searchCommandeTxt.TabIndex = 10;
             // 
             // panelCommandesHeader
@@ -2049,29 +2134,29 @@
             panelCommandesHeader.Dock = DockStyle.Top;
             panelCommandesHeader.Location = new Point(0, 0);
             panelCommandesHeader.Name = "panelCommandesHeader";
-            panelCommandesHeader.Padding = new Padding(10, 10, 10, 10);
-            panelCommandesHeader.Size = new Size(848, 70);
+            panelCommandesHeader.Padding = new Padding(10);
+            panelCommandesHeader.Size = new Size(269, 70);
             panelCommandesHeader.TabIndex = 0;
             // 
             // labelCommandesTitle
             // 
             labelCommandesTitle.AutoSize = true;
-            labelCommandesTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            labelCommandesTitle.ForeColor = Color.FromArgb(1, 109, 72);
+            labelCommandesTitle.Font = new Font("Georgia", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelCommandesTitle.ForeColor = Color.Black;
             labelCommandesTitle.Location = new Point(37, 10);
             labelCommandesTitle.Name = "labelCommandesTitle";
-            labelCommandesTitle.Size = new Size(332, 37);
+            labelCommandesTitle.Size = new Size(355, 31);
             labelCommandesTitle.TabIndex = 4;
             labelCommandesTitle.Text = "Gestion des Commandes";
             // 
             // labelCommandesSubtitle
             // 
             labelCommandesSubtitle.AutoSize = true;
-            labelCommandesSubtitle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelCommandesSubtitle.Font = new Font("Georgia", 11.25F);
             labelCommandesSubtitle.ForeColor = SystemColors.ControlDarkDark;
-            labelCommandesSubtitle.Location = new Point(37, 43);
+            labelCommandesSubtitle.Location = new Point(37, 45);
             labelCommandesSubtitle.Name = "labelCommandesSubtitle";
-            labelCommandesSubtitle.Size = new Size(214, 15);
+            labelCommandesSubtitle.Size = new Size(264, 18);
             labelCommandesSubtitle.TabIndex = 5;
             labelCommandesSubtitle.Text = "Suivi et gestion des commandes clients";
             // 
@@ -2088,7 +2173,7 @@
             buttonNouvelleCommande.IconFont = FontAwesome.Sharp.IconFont.Solid;
             buttonNouvelleCommande.IconSize = 16;
             buttonNouvelleCommande.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonNouvelleCommande.Location = new Point(636, 24);
+            buttonNouvelleCommande.Location = new Point(57, 24);
             buttonNouvelleCommande.Name = "buttonNouvelleCommande";
             buttonNouvelleCommande.Padding = new Padding(8, 0, 0, 0);
             buttonNouvelleCommande.Size = new Size(200, 32);
@@ -2096,26 +2181,57 @@
             buttonNouvelleCommande.Text = "  Nouvelle commande";
             buttonNouvelleCommande.TextImageRelation = TextImageRelation.ImageBeforeText;
             buttonNouvelleCommande.UseVisualStyleBackColor = false;
+            buttonNouvelleCommande.Click += buttonNouvelleCommande_Click;
             // 
             // dashboard
             // 
             dashboard.AutoScroll = true;
+            dashboard.Controls.Add(label52);
+            dashboard.Controls.Add(TopClientsChart);
+            dashboard.Controls.Add(TopMedPie);
             dashboard.Controls.Add(panelExpiry);
             dashboard.Controls.Add(panelLowStock);
             dashboard.Controls.Add(panel5);
             dashboard.Controls.Add(panel4);
             dashboard.Controls.Add(label1);
+            dashboard.Controls.Add(label51);
+            dashboard.Controls.Add(label45);
             dashboard.Controls.Add(label3);
-            dashboard.Location = new Point(1084, 372);
+            dashboard.Dock = DockStyle.Fill;
+            dashboard.Location = new Point(171, 46);
             dashboard.Name = "dashboard";
-            dashboard.Size = new Size(339, 235);
+            dashboard.Size = new Size(933, 531);
             dashboard.TabIndex = 8;
+            // 
+            // label52
+            // 
+            label52.AutoSize = true;
+            label52.Location = new Point(462, 745);
+            label52.Name = "label52";
+            label52.Size = new Size(0, 15);
+            label52.TabIndex = 8;
+            // 
+            // TopClientsChart
+            // 
+            TopClientsChart.Location = new Point(62, 135);
+            TopClientsChart.Name = "TopClientsChart";
+            TopClientsChart.Size = new Size(345, 221);
+            TopClientsChart.TabIndex = 7;
+            TopClientsChart.Text = "cartesianChart1";
+            // 
+            // TopMedPie
+            // 
+            TopMedPie.Location = new Point(511, 141);
+            TopMedPie.Name = "TopMedPie";
+            TopMedPie.Size = new Size(324, 209);
+            TopMedPie.TabIndex = 6;
+            TopMedPie.Text = "pieChart1";
             // 
             // panelExpiry
             // 
             panelExpiry.AutoScroll = true;
             panelExpiry.BorderStyle = BorderStyle.FixedSingle;
-            panelExpiry.Location = new Point(504, 252);
+            panelExpiry.Location = new Point(493, 502);
             panelExpiry.Name = "panelExpiry";
             panelExpiry.Size = new Size(420, 240);
             panelExpiry.TabIndex = 5;
@@ -2123,20 +2239,21 @@
             // panelLowStock
             // 
             panelLowStock.BorderStyle = BorderStyle.FixedSingle;
-            panelLowStock.Location = new Point(30, 252);
+            panelLowStock.Location = new Point(18, 502);
             panelLowStock.Name = "panelLowStock";
             panelLowStock.Size = new Size(420, 240);
             panelLowStock.TabIndex = 5;
             // 
             // panel5
             // 
-            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.BackColor = Color.NavajoWhite;
             panel5.Controls.Add(panel11);
             panel5.Controls.Add(iconPictureBox3);
-            panel5.Location = new Point(30, 159);
+            panel5.Location = new Point(18, 433);
             panel5.Name = "panel5";
             panel5.Size = new Size(895, 58);
             panel5.TabIndex = 2;
+            panel5.Paint += panel5_Paint;
             // 
             // panel11
             // 
@@ -2145,7 +2262,7 @@
             panel11.Dock = DockStyle.Fill;
             panel11.Location = new Point(30, 0);
             panel11.Name = "panel11";
-            panel11.Size = new Size(863, 56);
+            panel11.Size = new Size(865, 58);
             panel11.TabIndex = 1;
             // 
             // lblExpiry
@@ -2171,7 +2288,7 @@
             // 
             // iconPictureBox3
             // 
-            iconPictureBox3.BackColor = Color.White;
+            iconPictureBox3.BackColor = Color.NavajoWhite;
             iconPictureBox3.Dock = DockStyle.Left;
             iconPictureBox3.ForeColor = Color.DarkOrange;
             iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.Warning;
@@ -2180,29 +2297,30 @@
             iconPictureBox3.IconSize = 30;
             iconPictureBox3.Location = new Point(0, 0);
             iconPictureBox3.Name = "iconPictureBox3";
-            iconPictureBox3.Size = new Size(30, 56);
+            iconPictureBox3.Size = new Size(30, 58);
             iconPictureBox3.TabIndex = 0;
             iconPictureBox3.TabStop = false;
             // 
             // panel4
             // 
-            panel4.BorderStyle = BorderStyle.FixedSingle;
             panel4.Controls.Add(panel10);
             panel4.Controls.Add(iconPictureBox2);
-            panel4.Location = new Point(30, 95);
+            panel4.Location = new Point(18, 369);
             panel4.Name = "panel4";
             panel4.Size = new Size(895, 58);
             panel4.TabIndex = 2;
             // 
             // panel10
             // 
+            panel10.BackColor = Color.SeaShell;
             panel10.Controls.Add(lblLowStock);
             panel10.Controls.Add(AlerteStock);
             panel10.Dock = DockStyle.Fill;
             panel10.Location = new Point(30, 0);
             panel10.Name = "panel10";
-            panel10.Size = new Size(863, 56);
+            panel10.Size = new Size(865, 58);
             panel10.TabIndex = 1;
+            panel10.Paint += panel10_Paint;
             // 
             // lblLowStock
             // 
@@ -2227,7 +2345,7 @@
             // 
             // iconPictureBox2
             // 
-            iconPictureBox2.BackColor = Color.White;
+            iconPictureBox2.BackColor = Color.SeaShell;
             iconPictureBox2.Dock = DockStyle.Left;
             iconPictureBox2.ForeColor = Color.Firebrick;
             iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Warning;
@@ -2236,28 +2354,48 @@
             iconPictureBox2.IconSize = 30;
             iconPictureBox2.Location = new Point(0, 0);
             iconPictureBox2.Name = "iconPictureBox2";
-            iconPictureBox2.Size = new Size(30, 56);
+            iconPictureBox2.Size = new Size(30, 58);
             iconPictureBox2.TabIndex = 0;
             iconPictureBox2.TabStop = false;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Georgia", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlDarkDark;
             label1.Location = new Point(30, 61);
             label1.Name = "label1";
-            label1.Size = new Size(218, 20);
+            label1.Size = new Size(215, 18);
             label1.TabIndex = 1;
             label1.Text = "Statistiques de votre pharmacie";
+            // 
+            // label51
+            // 
+            label51.AutoSize = true;
+            label51.Font = new Font("Georgia", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label51.Location = new Point(529, 102);
+            label51.Name = "label51";
+            label51.Size = new Size(261, 23);
+            label51.TabIndex = 0;
+            label51.Text = "Top Médicaments vendus";
+            // 
+            // label45
+            // 
+            label45.AutoSize = true;
+            label45.Font = new Font("Georgia", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label45.Location = new Point(81, 100);
+            label45.Name = "label45";
+            label45.Size = new Size(281, 23);
+            label45.TabIndex = 0;
+            label45.Text = "Top clients par commandes";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Georgia", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.Location = new Point(18, 24);
             label3.Name = "label3";
-            label3.Size = new Size(199, 32);
+            label3.Size = new Size(213, 29);
             label3.TabIndex = 0;
             label3.Text = "Tableau de bord";
             // 
@@ -2281,11 +2419,11 @@
             PanelStats.Controls.Add(label44);
             PanelStats.Controls.Add(label33);
             PanelStats.Controls.Add(label19);
-            PanelStats.Dock = DockStyle.Fill;
             PanelStats.Location = new Point(171, 46);
             PanelStats.Name = "PanelStats";
-            PanelStats.Size = new Size(933, 531);
+            PanelStats.Size = new Size(162, 136);
             PanelStats.TabIndex = 9;
+            PanelStats.Visible = false;
             // 
             // CategorieChart
             // 
@@ -2327,9 +2465,9 @@
             nbrCommtxt.Font = new Font("Georgia", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             nbrCommtxt.Location = new Point(355, 149);
             nbrCommtxt.Name = "nbrCommtxt";
-            nbrCommtxt.Size = new Size(67, 18);
+            nbrCommtxt.Size = new Size(92, 18);
             nbrCommtxt.TabIndex = 0;
-            nbrCommtxt.Text = "TxtRev";
+            nbrCommtxt.Text = "NbrComm";
             // 
             // label43
             // 
@@ -2465,18 +2603,39 @@
             comboStatutCommande.Size = new Size(121, 23);
             comboStatutCommande.TabIndex = 0;
             // 
+            // label54
+            // 
+            label54.AutoSize = true;
+            label54.Font = new Font("Georgia", 11.25F);
+            label54.ForeColor = SystemColors.ControlDarkDark;
+            label54.Location = new Point(37, 48);
+            label54.Name = "label54";
+            label54.Size = new Size(235, 18);
+            label54.TabIndex = 5;
+            label54.Text = "Gérez votre stock de médicaments";
+            // 
+            // label56
+            // 
+            label56.AutoSize = true;
+            label56.Font = new Font("Georgia", 11.25F);
+            label56.ForeColor = SystemColors.ControlDarkDark;
+            label56.Location = new Point(54, 48);
+            label56.Name = "label56";
+            label56.Size = new Size(249, 18);
+            label56.TabIndex = 5;
+            label56.Text = "Gérez les informations de vos clients";
+            // 
             // AdminMedicament
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(970, 473);
+            ClientSize = new Size(1104, 577);
+            Controls.Add(dashboard);
             Controls.Add(panelCommandes);
             Controls.Add(panelClients);
-            ClientSize = new Size(1104, 577);
-            Controls.Add(PanelStats);
-            Controls.Add(dashboard);
             Controls.Add(panelmedicaments);
+            Controls.Add(PanelStats);
             Controls.Add(panelTop);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -2512,13 +2671,15 @@
             panelClients.ResumeLayout(false);
             AddClientPanel.ResumeLayout(false);
             AddClientPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)iconPictureBoxCloseClient).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridClients).EndInit();
             panelClientsSearch.ResumeLayout(false);
             panelClientsSearch.PerformLayout();
             panelClientsHeader.ResumeLayout(false);
             panelClientsHeader.PerformLayout();
             panelCommandes.ResumeLayout(false);
+            panelAjoutComm.ResumeLayout(false);
+            panelAjoutComm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)iconPictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridCommandes).EndInit();
             panelCommandesSearch.ResumeLayout(false);
             panelCommandesSearch.PerformLayout();
@@ -2593,7 +2754,6 @@
         private ComboBox categorieCbox;
         private TextBox DescTxt;
         private TextBox NomMedTxt;
-        private TextBox NumlotTxt;
         private Label label10;
         private Label label9;
         private Label label8;
@@ -2656,27 +2816,16 @@
         private DataGridView gridClients;
         private DataGridViewTextBoxColumn ClientsActions;
         private Panel AddClientPanel;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBoxCloseClient;
         private Button buttonAnnulerClient;
         private Button buttonAjouterClient;
         private Label labelClientSubtitle;
         private Label labelClientTitle;
-        private TextBox txtNumeroClient;
         private TextBox txtNomClient;
         private TextBox txtPrenomClient;
-        private TextBox txtCIN;
         private TextBox txtTelephoneClient;
-        private TextBox txtEmailClient;
-        private TextBox txtVille;
-        private DateTimePicker dateNaissanceClient;
-        private Label labelNumeroClient;
         private Label labelNomClient;
         private Label labelPrenomClient;
-        private Label labelCIN;
         private Label labelTelephoneClient;
-        private Label labelEmailClient;
-        private Label labelDateNaissance;
-        private Label labelVille;
         private Panel panelCommandes;
         private Panel panelCommandesHeader;
         private Label labelCommandesTitle;
@@ -2695,11 +2844,9 @@
         private Label labelMontantTotalCommande;
         private DataGridView gridCommandeItems;
         private Label labelArticlesCommande;
-        private Label labelCommandePaiement;
         private Label labelCommandeDateValue;
         private Label labelCommandeStatut;
         private Label labelCommandeClient;
-        private Label labelPaiementCommande;
         private Label labelDateCommande;
         private ComboBox comboStatutCommande;
         private Label labelStatutCommande;
@@ -2709,7 +2856,6 @@
         private Panel PanelStats;
         private Label label33;
         private Label label19;
-        private FontAwesome.Sharp.IconButton iconButton8;
         private Label nbrCommtxt;
         private Label TxtRev;
         private Label label35;
@@ -2725,5 +2871,32 @@
         private Label label41;
         private Label label42;
         private Label label40;
+        private TextBox NumlotTxt;
+        private Panel panelAjoutComm;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox5;
+        private Button button3;
+        private Label lblmontant;
+        private Label label46;
+        private Label label53;
+        private Label label55;
+        private ComboBox clientcbox;
+        private TextBox qnttxt;
+        private ComboBox medcbox;
+        private Label label48;
+        private Label label47;
+        private TextBox remisetxt;
+        private TextBox remarques;
+        private Label label49;
+        private Label label50;
+        private Button button5;
+        private Button button4;
+        private Panel panel6;
+        private LiveCharts.WinForms.PieChart TopMedPie;
+        private LiveCharts.WinForms.CartesianChart TopClientsChart;
+        private Label label45;
+        private Label label51;
+        private Label label52;
+        private Label label54;
+        private Label label56;
     }
 }

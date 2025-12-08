@@ -47,7 +47,7 @@ namespace GestionPharmacie
             Actif = true;
             DateCreation = DateTime.Now;
         }
-        private static string connectionString ="data source = DESKTOP-DDPB0HH\\GI2_1;initial catalog=GestionPharmacie;" +
+        private static string connectionString = "data source = LAPTOP-G7L9QSSV;initial catalog=AppPharmacie;" +
                         "integrated security=True;TrustServerCertificate=True";
 
         public bool Ajouter()
@@ -172,7 +172,7 @@ namespace GestionPharmacie
 
         public static DataTable getFormes()
         {
-            using(SqlConnection conn=new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 String sql = "SELECT DISTINCT Forme FROM Medicaments;";
@@ -322,7 +322,7 @@ namespace GestionPharmacie
 
         public static int getCategoriebyNom(String Nom)
         {
-            using(SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 string sql = @"SELECT CategorieID FROM Categories WHERE NomCategorie = @Nom;";
@@ -339,7 +339,7 @@ namespace GestionPharmacie
                 conn.Open();
 
                 string sql = @"SELECT FORMAT(DateCommande, 'MMM') AS Month, SUM(MontantApresRemise) AS Revenue
-                    FROM Commandes WHERE Statut IN ('Validée', 'Livrée') GROUP BY FORMAT(DateCommande, 'MMM'), MONTH(DateCommande)
+                    FROM Commandes GROUP BY FORMAT(DateCommande, 'MMM'), MONTH(DateCommande)
                     ORDER BY MONTH(DateCommande);";
 
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
@@ -357,7 +357,7 @@ namespace GestionPharmacie
 
                 string sql = @"SELECT TOP 5 M.NomMedicament, SUM(D.Quantite) AS TotalVentes FROM DetailsCommande D
                     INNER JOIN Medicaments M ON D.MedicamentID = M.MedicamentID INNER JOIN Commandes C ON D.CommandeID = C.CommandeID
-                    WHERE C.Statut IN ('Validée', 'Livrée') GROUP BY M.NomMedicament ORDER BY TotalVentes DESC;";
+                    GROUP BY M.NomMedicament ORDER BY TotalVentes DESC;";
 
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
                 DataTable dt = new DataTable();
@@ -376,6 +376,92 @@ namespace GestionPharmacie
                     LEFT JOIN Medicaments M ON M.CategorieID = C.CategorieID GROUP BY C.NomCategorie ORDER BY Count DESC;";
 
                 SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+        public static String getTotalRevenue()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string sql = @"SELECT SUM(MontantApresRemise) FROM Commandes";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                object result = cmd.ExecuteScalar();
+                return result != DBNull.Value ? Convert.ToString(result) : "";
+            }
+        }
+
+        public static String getTotalOrders()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string sql = @"SELECT COUNT(*) FROM Commandes;";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                return Convert.ToString(cmd.ExecuteScalar());
+            }
+        }
+
+        public static String getAverageOrder()
+        {
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string sql = @"SELECT ROUND(AVG(MontantApresRemise), 3) FROM Commandes;";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                object result = cmd.ExecuteScalar();
+                return result != DBNull.Value ? Convert.ToString(result) : "";
+            }
+        }
+
+        public static decimal getPrixVente(int id) {
+            decimal prixUnitaire = 0;
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string sql = "SELECT PrixVente FROM Medicaments WHERE MedicamentID = @id";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                prixUnitaire = Convert.ToDecimal(cmd.ExecuteScalar());
+            }
+            return prixUnitaire;
+        }
+
+        public static DataTable GetTopMedicinesByPharmacist(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string sql = @"SELECT TOP 5 M.NomMedicament, SUM(D.Quantite) AS TotalVentes FROM DetailsCommande D
+                    INNER JOIN Medicaments M ON D.MedicamentID = M.MedicamentID 
+                    INNER JOIN Commandes C ON D.CommandeID = C.CommandeID
+                    WHERE C.PharmacienID = @PharmacistID
+                    GROUP BY M.NomMedicament ORDER BY TotalVentes DESC;";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@PharmacistID", id);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                return dt;
+            }
+        }
+
+        public static DataTable GetTotalQuantityByPharmacist(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                string sql = @"SELECT NomMedicament, SUM(D.Quantite) AS QuantiteTotale FROM DetailsCommande D
+                    INNER JOIN Medicaments M ON D.MedicamentID = M.MedicamentID
+                    INNER JOIN Commandes C ON D.CommandeID = C.CommandeID
+                    WHERE C.PharmacienID = @PharmacistID GROUP BY NomMedicament;";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@PharmacistID", id);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
                 return dt;

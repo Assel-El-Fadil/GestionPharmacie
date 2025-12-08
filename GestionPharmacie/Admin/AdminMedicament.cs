@@ -7,19 +7,26 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace GestionPharmacie.Admin
 {
     public partial class AdminMedicament : Form
     {
-        public AdminMedicament()
+        List<DetailCommande> detailsCommande = new List<DetailCommande>();
+        decimal soustotal = 0;
+        Utilisateur currentUser;
+
+        public AdminMedicament(Utilisateur utilisateur)
         {
             InitializeComponent();
+            currentUser = utilisateur;
         }
 
         private void AdminMedicament_Load(object sender, EventArgs e)
@@ -40,12 +47,17 @@ namespace GestionPharmacie.Admin
             LoadCategories();
             LoadFormes();
             LoadCharts();
+            LoadStats();
+            LoadAjoutComm();
+            dashboard.Visible = true;
+            dashboard.Dock = DockStyle.Fill;
         }
 
         private void LoadCharts()
         {
             try
             {
+                // --- Chart 1: Monthly Revenue ---
                 DataTable revenue = Medicament.GetMonthlyRevenue();
 
                 RevChart.Series.Clear();
@@ -54,7 +66,7 @@ namespace GestionPharmacie.Admin
 
                 var revenueSeries = new LineSeries
                 {
-                    Title = "Revenu (€)",
+                    Title = "Revenu (MAD)",
                     Values = new ChartValues<decimal>(),
                     PointGeometry = DefaultGeometries.Circle,
                     PointGeometrySize = 8
@@ -78,13 +90,14 @@ namespace GestionPharmacie.Admin
 
                 RevChart.AxisY.Add(new Axis
                 {
-                    Title = "Revenu (€)"
+                    Title = "Revenu (MAD)"
                 });
             }
             catch { }
 
             try
             {
+                // --- Chart 2: Top 5 Medicines Sold ---
                 DataTable sales = Medicament.GetTop5Sold();
 
                 SalesChart.Series.Clear();
@@ -121,6 +134,7 @@ namespace GestionPharmacie.Admin
 
             try
             {
+                // --- Chart 3: Top 5 Categories (Column) ---
                 DataTable cat = Medicament.GetCategoryCounts();
 
                 CategorieChart.Series.Clear();
@@ -157,6 +171,68 @@ namespace GestionPharmacie.Admin
                 });
             }
             catch { }
+
+            // --------------------- New: Chart 3 (Pie) ---------------------
+            try
+            {
+                // Top medications sold by the current pharmacist (Pie)
+                DataTable topMeds = Medicament.GetTopMedicinesByPharmacist(currentUser.UtilisateurId);
+
+                TopMedPie.Series.Clear();
+
+                foreach (DataRow row in topMeds.Rows)
+                {
+                    var slice = new PieSeries
+                    {
+                        Title = row["NomMedicament"].ToString(),
+                        Values = new ChartValues<int> { Convert.ToInt32(row["TotalVentes"]) },
+                        DataLabels = true
+                    };
+                    TopMedPie.Series.Add(slice);
+                }
+            }
+            catch{ }
+            // --------------------- New: Top Clients (Bar Chart) ---------------------
+            try
+            {
+                DataTable topClients = Commande.GetTopClientsByPharmacist(currentUser.UtilisateurId);
+
+                TopClientsChart.Series.Clear();
+                TopClientsChart.AxisX.Clear();
+                TopClientsChart.AxisY.Clear();
+
+                var clientSeries = new ColumnSeries
+                {
+                    Title = "",
+                    Values = new ChartValues<int>()
+                };
+
+                var clientLabels = new List<string>();
+
+                foreach (DataRow row in topClients.Rows)
+                {
+                    clientLabels.Add(row["NomClient"].ToString());
+                    clientSeries.Values.Add(Convert.ToInt32(row["TotalCommandes"]));
+                }
+
+                TopClientsChart.Series.Add(clientSeries);
+
+                TopClientsChart.AxisX.Add(new Axis
+                {
+                    Title = "Clients",
+                    Labels = clientLabels
+                });
+
+                TopClientsChart.AxisY.Add(new Axis
+                {
+                    Title = "Nombre de Commandes"
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur TopClientsChart: " + ex.Message);
+            }
+
         }
 
 
@@ -188,15 +264,15 @@ namespace GestionPharmacie.Admin
 
             System.Windows.Forms.Label header = new System.Windows.Forms.Label();
             header.Text = "Stock faible";
-            System.Drawing.Font headerFont = new System.Drawing.Font("Segoe UI Semibold", 12, FontStyle.Bold);
+            System.Drawing.Font headerFont = new System.Drawing.Font("Segoe UI Semibold", 12, System.Drawing.FontStyle.Bold);
             header.Font = headerFont;
             header.Location = new Point(14, 14);
             System.Windows.Forms.Label subheader = new System.Windows.Forms.Label();
             subheader.Text = "Médicaments à réapprovisionner.";
-            System.Drawing.Font subheaderFont = new System.Drawing.Font("Segoe UI", 9, FontStyle.Regular);
+            System.Drawing.Font subheaderFont = new System.Drawing.Font("Segoe UI", 9, System.Drawing.FontStyle.Regular);
             subheader.Font = subheaderFont;
             subheader.Location = new Point(15, 44);
-            subheader.ForeColor = Color.Gray;
+            subheader.ForeColor = System.Drawing.Color.Gray;
             header.AutoSize = true;
             subheader.AutoSize = true;
             panelLowStock.Controls.Add(header);
@@ -205,13 +281,72 @@ namespace GestionPharmacie.Admin
             int y = 64;
             foreach (DataRow row in dt.Rows)
             {
-                System.Windows.Forms.Label lbl = new System.Windows.Forms.Label();
-                lbl.Text = $"{row["NomMedicament"]} - {row["QuantiteStock"]}/{row["SeuilMinimum"]}";
-                lbl.Width = panelLowStock.Width - 10;
-                lbl.Height = 28;
-                lbl.Margin = new Padding(4);
-                lbl.Location = new Point(14, y);
-                panelLowStock.Controls.Add(lbl);
+                int quantiteStock = Convert.ToInt32(row["QuantiteStock"]);
+                int seuilMinimum = Convert.ToInt32(row["SeuilMinimum"]);
+                string nomMedicament = row["NomMedicament"].ToString();
+
+                // Main container panel
+                System.Windows.Forms.Panel itemPanel = new System.Windows.Forms.Panel
+                {
+                    Width = panelLowStock.Width - 20,
+                    Height = 35,
+                    Margin = new Padding(10, 5, 10, 5),
+                    Location = new Point(10, y),
+                    BackColor = Color.White
+                };
+
+                // Status bar on left
+                System.Windows.Forms.Panel statusBar = new System.Windows.Forms.Panel
+                {
+                    Width = 4,
+                    Height = itemPanel.Height,
+                    BackColor = Color.FromArgb(255, 87, 34), // Deep orange
+                    Location = new Point(0, 0),
+                    Enabled = false
+                };
+
+                // Text label
+                System.Windows.Forms.Label lbl = new System.Windows.Forms.Label
+                {
+                    Text = $"{nomMedicament}",
+                    Font = new Font("Segoe UI", 9),
+                    ForeColor = Color.FromArgb(55, 55, 55),
+                    Location = new Point(12, 5),
+                    AutoSize = true,
+                    TextAlign = ContentAlignment.MiddleLeft
+                };
+
+                // Stock badge
+                System.Windows.Forms.Label stockBadge = new System.Windows.Forms.Label
+                {
+                    Text = $"{quantiteStock}/{seuilMinimum}",
+                    Font = new Font("Segoe UI", 8.5f, FontStyle.Bold),
+                    ForeColor = Color.White,
+                    BackColor = Color.FromArgb(255, 87, 34),
+                    Size = new Size(60, 20),
+                    Location = new Point(itemPanel.Width - 65, 4),
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Padding = new Padding(0)
+                };
+
+                // Add controls
+                itemPanel.Controls.Add(statusBar);
+                itemPanel.Controls.Add(lbl);
+                itemPanel.Controls.Add(stockBadge);
+
+                // Add hover effect
+                itemPanel.MouseEnter += (sender, e) =>
+                {
+                    itemPanel.BackColor = Color.FromArgb(248, 248, 248);
+                };
+
+                itemPanel.MouseLeave += (sender, e) =>
+                {
+                    itemPanel.BackColor = Color.White;
+                };
+
+                panelLowStock.Controls.Add(itemPanel);
+                y += itemPanel.Height + itemPanel.Margin.Vertical;
             }
         }
 
@@ -223,15 +358,15 @@ namespace GestionPharmacie.Admin
 
             System.Windows.Forms.Label header = new System.Windows.Forms.Label();
             header.Text = "Péremption proche";
-            System.Drawing.Font headerFont = new System.Drawing.Font("Segoe UI Semibold", 12, FontStyle.Bold);
+            System.Drawing.Font headerFont = new System.Drawing.Font("Segoe UI Semibold", 12, System.Drawing.FontStyle.Bold);
             header.Font = headerFont;
             header.Location = new Point(14, 14);
             System.Windows.Forms.Label subheader = new System.Windows.Forms.Label();
             subheader.Text = "Médicaments arrivant à péremption.";
-            System.Drawing.Font subheaderFont = new System.Drawing.Font("Segoe UI", 9, FontStyle.Regular);
+            System.Drawing.Font subheaderFont = new System.Drawing.Font("Segoe UI", 9, System.Drawing.FontStyle.Regular);
             subheader.Font = subheaderFont;
             subheader.Location = new Point(15, 44);
-            subheader.ForeColor = Color.Gray;
+            subheader.ForeColor = System.Drawing.Color.Gray;
             header.AutoSize = true;
             subheader.AutoSize = true;
             panelExpiry.Controls.Add(header);
@@ -240,17 +375,127 @@ namespace GestionPharmacie.Admin
             int y = 64;
             foreach (DataRow row in dt.Rows)
             {
-                System.Windows.Forms.Label lbl = new System.Windows.Forms.Label();
-                lbl.Text = $"{row["NomMedicament"]} — expires: {((DateTime)row["DatePeremption"]).ToShortDateString()}";
-                lbl.Width = panelExpiry.Width - 25;
-                lbl.Height = 28;
-                lbl.Location = new Point(14, y);
-                y += lbl.Height + 4;
+                DateTime expiryDate = (DateTime)row["DatePeremption"];
+                DateTime today = DateTime.Today;
+                TimeSpan daysUntilExpiry = expiryDate - today;
+                int daysLeft = (int)daysUntilExpiry.TotalDays;
 
-                panelExpiry.Controls.Add(lbl);
+                // Determine color based on how soon it expires
+                Color statusColor;
+                if (daysLeft <= 0)
+                    statusColor = Color.FromArgb(244, 67, 54);       // Red - expired
+                else if (daysLeft <= 7)
+                    statusColor = Color.FromArgb(255, 152, 0);       // Orange - expires in 7 days
+                else if (daysLeft <= 30)
+                    statusColor = Color.FromArgb(255, 193, 7);       // Yellow - expires in 30 days
+                else
+                    statusColor = Color.FromArgb(76, 175, 80);       // Green - more than 30 days
+
+                // Main container panel
+                System.Windows.Forms.Panel itemPanel = new System.Windows.Forms.Panel
+                {
+                    Width = panelExpiry.Width - 30,
+                    Height = 28,
+                    Margin = new Padding(10, 5, 10, 5),
+                    Location = new Point(10, y),
+                    BackColor = Color.White
+                };
+
+                // Status bar on left (color indicates urgency)
+                System.Windows.Forms.Panel statusBar = new System.Windows.Forms.Panel
+                {
+                    Width = 4,
+                    Height = itemPanel.Height,
+                    BackColor = statusColor,
+                    Location = new Point(0, 0),
+                    Enabled = false
+                };
+
+                // Medication name
+                System.Windows.Forms.Label nameLabel = new System.Windows.Forms.Label
+                {
+                    Text = row["NomMedicament"].ToString(),
+                    Font = new Font("Segoe UI", 9),
+                    ForeColor = Color.FromArgb(55, 55, 55),
+                    Location = new Point(12, 5),
+                    AutoSize = true,
+                    TextAlign = ContentAlignment.MiddleLeft
+                };
+
+                // Expiry badge with color-coded text
+                System.Windows.Forms.Label expiryBadge = new System.Windows.Forms.Label
+                {
+                    Text = daysLeft <= 0 ? "EXPIRED" : $"{daysLeft}d",
+                    Font = new Font("Segoe UI", 8.5f, FontStyle.Bold),
+                    ForeColor = Color.White,
+                    BackColor = statusColor,
+                    Size = new Size(50, 20),
+                    Location = new Point(itemPanel.Width - 55, 4),
+                    TextAlign = ContentAlignment.MiddleCenter,
+                    Padding = new Padding(0)
+                };
+
+                // Expiry date label
+                System.Windows.Forms.Label dateLabel = new System.Windows.Forms.Label
+                {
+                    Text = expiryDate.ToShortDateString(),
+                    Font = new Font("Segoe UI", 8),
+                    ForeColor = Color.FromArgb(120, 120, 120),
+                    Location = new Point(itemPanel.Width - 120, 6),
+                    AutoSize = true,
+                    TextAlign = ContentAlignment.MiddleRight
+                };
+
+                // Add controls
+                itemPanel.Controls.Add(statusBar);
+                itemPanel.Controls.Add(nameLabel);
+                itemPanel.Controls.Add(dateLabel);
+                itemPanel.Controls.Add(expiryBadge);
+
+                // Add hover effect
+                itemPanel.MouseEnter += (sender, e) =>
+                {
+                    itemPanel.BackColor = Color.FromArgb(248, 248, 248);
+                };
+
+                itemPanel.MouseLeave += (sender, e) =>
+                {
+                    itemPanel.BackColor = Color.White;
+                };
+
+                // Add tooltip with more info
+                System.Windows.Forms.ToolTip tooltip = new System.Windows.Forms.ToolTip();
+                string statusText = daysLeft <= 0 ? "Expired" :
+                                   daysLeft <= 7 ? "Expires soon" :
+                                   daysLeft <= 30 ? "Expires this month" : "Expires later";
+                tooltip.SetToolTip(itemPanel, $"{row["NomMedicament"]}\nExpiry: {expiryDate.ToShortDateString()}\nStatus: {statusText}");
+
+                panelExpiry.Controls.Add(itemPanel);
+                y += itemPanel.Height + itemPanel.Margin.Vertical;
             }
         }
 
+        private void LoadStats()
+        {
+            TxtRev.Text = Medicament.getTotalRevenue();
+            nbrCommtxt.Text = Medicament.getTotalOrders();
+            Txtavgpanier.Text = Medicament.getAverageOrder();
+        }
+
+        private void LoadAjoutComm()
+        {
+            DataTable med = Medicament.GetAll();
+            medcbox.Items.Clear();
+            medcbox.DataSource = med;
+            medcbox.DisplayMember = "NomMedicament";
+            medcbox.ValueMember = "MedicamentID";
+
+            DataTable clients = Client.GetAll();
+            clientcbox.Items.Clear();
+            clientcbox.DataSource = clients;
+            clientcbox.DisplayMember = "Nom";
+            clientcbox.ValueMember = "ClientID";
+        }
         private void buttonChercher_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(searchtxt.Text))
@@ -267,7 +512,7 @@ namespace GestionPharmacie.Admin
             }
 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "data source = LAPTOP-G7L9QSSV;initial catalog=GestionPharmacie;" +
+            conn.ConnectionString = "data source = LAPTOP-G7L9QSSV;initial catalog=AppPharmacie;" +
                         "integrated security=True;TrustServerCertificate=True";
 
             string sql = $"SELECT MedicamentID, Reference, NomMedicament, CategorieID, Forme, Dosage, PrixVente, QuantiteStock," +
@@ -359,7 +604,7 @@ namespace GestionPharmacie.Admin
                 return;
 
             int cellLeft = GridView1.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false).X;
-            int clickX = GridView1.PointToClient(Cursor.Position).X - cellLeft;
+            int clickX = GridView1.PointToClient(System.Windows.Forms.Cursor.Position).X - cellLeft;
 
             if (clickX < 30)
             {
@@ -448,6 +693,11 @@ namespace GestionPharmacie.Admin
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            iconButton1.BackColor = System.Drawing.Color.FromArgb(47, 157, 122);
+            iconButton2.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            iconButton3.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            iconButton4.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            iconButton5.BackColor = System.Drawing.Color.FromName("inactiveCaption");
             panelmedicaments.Visible = false;
             panelmedicaments.Dock = DockStyle.None;
             panelClients.Visible = false;
@@ -462,6 +712,11 @@ namespace GestionPharmacie.Admin
 
         private void iconButton2_Click(object sender, EventArgs e)
         {
+            iconButton2.BackColor = System.Drawing.Color.FromArgb(47, 157, 122);
+            iconButton1.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            iconButton3.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            iconButton4.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            iconButton5.BackColor = System.Drawing.Color.FromName("inactiveCaption");
             dashboard.Visible = false;
             dashboard.Dock = DockStyle.None;
             PanelStats.Visible = false;
@@ -477,12 +732,19 @@ namespace GestionPharmacie.Admin
         private void iconButton3_Click(object sender, EventArgs e)
         {
             // show Commandes panel
+            iconButton3.BackColor = System.Drawing.Color.FromArgb(47, 157, 122);
+            iconButton2.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            iconButton1.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            iconButton4.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            iconButton5.BackColor = System.Drawing.Color.FromName("inactiveCaption");
             dashboard.Visible = false;
             dashboard.Dock = DockStyle.None;
             panelmedicaments.Visible = false;
             panelmedicaments.Dock = DockStyle.None;
             panelClients.Visible = false;
             panelClients.Dock = DockStyle.None;
+            PanelStats.Visible = false;
+            PanelStats.Dock = DockStyle.None;
             panelCommandes.Visible = true;
             panelCommandes.Dock = DockStyle.Fill;
 
@@ -492,16 +754,41 @@ namespace GestionPharmacie.Admin
         private void iconButton4_Click(object sender, EventArgs e)
         {
             // show Clients panel
+            iconButton4.BackColor = System.Drawing.Color.FromArgb(47, 157, 122);
+            iconButton2.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            iconButton3.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            iconButton1.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            iconButton5.BackColor = System.Drawing.Color.FromName("inactiveCaption");
             dashboard.Visible = false;
             dashboard.Dock = DockStyle.None;
             panelmedicaments.Visible = false;
             panelmedicaments.Dock = DockStyle.None;
             panelCommandes.Visible = false;
             panelCommandes.Dock = DockStyle.None;
+            PanelStats.Visible = false;
+            PanelStats.Dock = DockStyle.None;
             panelClients.Visible = true;
             panelClients.Dock = DockStyle.Fill;
 
             LoadClients();
+        }
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            iconButton5.BackColor = System.Drawing.Color.FromArgb(47, 157, 122);
+            iconButton2.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            iconButton3.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            iconButton4.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            iconButton1.BackColor = System.Drawing.Color.FromName("inactiveCaption");
+            ViewMedicament.Visible = false;
+            ViewMedicament.Dock = DockStyle.None;
+            dashboard.Visible = false;
+            dashboard.Dock = DockStyle.None;
+            panelCommandes.Visible = false;
+            panelCommandes.Dock = DockStyle.None;
+            panelClients.Visible = false;
+            panelClients.Dock = DockStyle.None;
+            PanelStats.Visible = true;
+            PanelStats.Dock = DockStyle.Fill;
         }
 
         private void LoadClients()
@@ -633,16 +920,6 @@ namespace GestionPharmacie.Admin
             ViewMedicament.Visible = false;
         }
 
-        private void iconButton5_Click(object sender, EventArgs e)
-        {
-            ViewMedicament.Visible = false;
-            ViewMedicament.Dock = DockStyle.None;
-            dashboard.Visible = false;
-            dashboard.Dock = DockStyle.None;
-            PanelStats.Visible = true;
-            PanelStats.Dock = DockStyle.Fill;
-        }
-
         private void AddPanel_Paint(object sender, PaintEventArgs e)
         {
 
@@ -694,30 +971,26 @@ namespace GestionPharmacie.Admin
                 return;
 
             int cellLeft = gridClients.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false).X;
-            int clickX = gridClients.PointToClient(Cursor.Position).X - cellLeft;
+            int clickX = gridClients.PointToClient(System.Windows.Forms.Cursor.Position).X - cellLeft;
 
-            int id = Convert.ToInt32(gridClients.Rows[e.RowIndex].Cells["UtilisateurID"].Value);
-            string numeroClient = gridClients.Rows[e.RowIndex].Cells["NumeroClient"].Value?.ToString();
+            int id = Convert.ToInt32(gridClients.Rows[e.RowIndex].Cells["ClientID"].Value);
             string nom = gridClients.Rows[e.RowIndex].Cells["Nom"].Value?.ToString();
             string prenom = gridClients.Rows[e.RowIndex].Cells["Prenom"].Value?.ToString();
             string telephone = gridClients.Rows[e.RowIndex].Cells["Telephone"].Value?.ToString();
-            string email = gridClients.Rows[e.RowIndex].Cells["Email"].Value?.ToString();
 
             if (clickX < 30)
             {
                 // Modifier client
                 Client c = new Client
                 {
-                    UtilisateurID = id,
-                    NumeroClient = numeroClient,
+                    ClientID = id,
                     Nom = nom,
                     Prenom = prenom,
-                    Telephone = telephone,
-                    Email = email
+                    Telephone = telephone
                 };
 
                 DialogResult confirm = MessageBox.Show(
-                    $"Voulez-vous modifier le client '{nom} {prenom}' (N° {numeroClient}) ?",
+                    $"Voulez-vous modifier le client '{nom} {prenom}' ?",
                     "Confirmation de modification",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question
@@ -734,7 +1007,7 @@ namespace GestionPharmacie.Admin
             {
                 // Supprimer client
                 DialogResult confirm = MessageBox.Show(
-                    $"Voulez-vous vraiment supprimer le client '{nom} {prenom}' (N° {numeroClient}) ?",
+                    $"Voulez-vous vraiment supprimer le client '{nom} {prenom}'?",
                     "Confirmation de suppression",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question
@@ -767,8 +1040,7 @@ namespace GestionPharmacie.Admin
         private void buttonAjouterClient_Click(object sender, EventArgs e)
         {
             // Validate required fields
-            if (string.IsNullOrWhiteSpace(txtNumeroClient.Text) ||
-                string.IsNullOrWhiteSpace(txtNomClient.Text) ||
+            if (string.IsNullOrWhiteSpace(txtNomClient.Text) ||
                 string.IsNullOrWhiteSpace(txtPrenomClient.Text))
             {
                 MessageBox.Show("Veuillez remplir tous les champs obligatoires (marqués d'un *).",
@@ -776,42 +1048,18 @@ namespace GestionPharmacie.Admin
                 return;
             }
 
-            // Validate email format if provided
-            if (!string.IsNullOrWhiteSpace(txtEmailClient.Text))
-            {
-                try
-                {
-                    var mail = new System.Net.Mail.MailAddress(txtEmailClient.Text);
-                }
-                catch
-                {
-                    MessageBox.Show("Format d'email invalide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-            }
-
             // Get values
-            string numeroClient = txtNumeroClient.Text.Trim();
             string nom = txtNomClient.Text.Trim();
             string prenom = txtPrenomClient.Text.Trim();
-            string cin = txtCIN.Text.Trim();
             string telephone = txtTelephoneClient.Text.Trim();
-            string email = txtEmailClient.Text.Trim();
-            DateTime dateNaissance = dateNaissanceClient.Value;
-            string ville = txtVille.Text.Trim();
 
             // Add client
-            bool result = Client.AddClient(numeroClient, nom, prenom, cin, telephone, email, dateNaissance, ville);
+            bool result = Client.AddClient(nom, prenom, telephone);
 
             // Clear fields
-            txtNumeroClient.Text = "";
             txtNomClient.Text = "";
             txtPrenomClient.Text = "";
-            txtCIN.Text = "";
             txtTelephoneClient.Text = "";
-            txtEmailClient.Text = "";
-            txtVille.Text = "";
-            dateNaissanceClient.Value = DateTime.Now;
 
             if (result)
             {
@@ -905,7 +1153,7 @@ namespace GestionPharmacie.Admin
                 return;
 
             int cellLeft = gridCommandes.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false).X;
-            int clickX = gridCommandes.PointToClient(Cursor.Position).X - cellLeft;
+            int clickX = gridCommandes.PointToClient(System.Windows.Forms.Cursor.Position).X - cellLeft;
 
             if (clickX < 30)
             {
@@ -931,9 +1179,7 @@ namespace GestionPharmacie.Admin
             labelCommandeNumero.Text = $"Détails de la commande {cmd["NumeroCommande"]}";
             labelCommandeDate.Text = $"Commande du {((DateTime)cmd["DateCommande"]).ToString("dd/MM/yyyy")}";
             labelCommandeClient.Text = cmd["Client"]?.ToString() ?? "";
-            labelCommandeStatut.Text = cmd["Statut"]?.ToString() ?? "";
             labelCommandeDateValue.Text = ((DateTime)cmd["DateCommande"]).ToString("dd/MM/yyyy");
-            labelCommandePaiement.Text = cmd["Paiement"]?.ToString() ?? "";
             labelCommandeMontantTotal.Text = $"{Convert.ToDecimal(cmd["MontantTotal"]):F2} DH";
 
             // Populate items grid
@@ -947,7 +1193,6 @@ namespace GestionPharmacie.Admin
                         decimal prix = Convert.ToDecimal(row["PrixUnitaire"]);
                         row["PrixUnitaire"] = prix.ToString("F2");
                     }
-                   
                 }
             }
 
@@ -962,6 +1207,136 @@ namespace GestionPharmacie.Admin
         private void buttonFermerCommande_Click(object sender, EventArgs e)
         {
             ViewCommande.Visible = false;
+        }
+
+        private void buttonNouvelleCommande_Click(object sender, EventArgs e)
+        {
+            panelAjoutComm.Visible = true;
+            lblmontant.Text = "0.00 DH";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(clientcbox.Text) ||
+                string.IsNullOrWhiteSpace(remisetxt.Text))
+            {
+                MessageBox.Show("Veuillez remplir tous les champs obligatoires.",
+                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (clientcbox.SelectedValue == null)
+            {
+                MessageBox.Show("Veuillez sélectionner un client.",
+                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!decimal.TryParse(remisetxt.Text, out decimal remise))
+            {
+                MessageBox.Show("Remise invalide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (detailsCommande.Count == 0)
+            {
+                MessageBox.Show("Veuillez ajouter des détails de commande.",
+                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int clientId = Convert.ToInt32(clientcbox.SelectedValue);
+
+            // Calcul du montant total
+            decimal montantTotal = detailsCommande.Sum(d => d.SousTotal);
+            decimal montantApresRemise = montantTotal - (montantTotal * remise / 100);
+
+            int result = Commande.insertCommande(detailsCommande, clientId, currentUser.UtilisateurId, montantTotal, remise, montantApresRemise, remarques.Text);
+
+            detailsCommande.Clear();
+            remarques.Clear();
+            remisetxt.Clear();
+        }
+
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(qnttxt.Text) ||
+                string.IsNullOrWhiteSpace(medcbox.Text))
+            {
+                MessageBox.Show("Veuillez remplir tous les champs obligatoires.",
+                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (medcbox.SelectedValue == null)
+            {
+                MessageBox.Show("Veuillez sélectionner un médicament.",
+                                "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (!decimal.TryParse(qnttxt.Text, out decimal quantite) || quantite <= 0)
+            {
+                MessageBox.Show("Quantité invalide.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int medicamentId = Convert.ToInt32(medcbox.SelectedValue);
+
+            // Récupérer le prix unitaire depuis la BD
+            decimal prixUnitaire = Medicament.getPrixVente(medicamentId);
+            soustotal += quantite * prixUnitaire;
+            lblmontant.Text = $"{soustotal:F2} DH";
+
+            // Ajouter dans la liste
+            detailsCommande.Add(new DetailCommande()
+            {
+                MedicamentID = medicamentId,
+                NomMedicament = medcbox.Text,
+                Quantite = quantite,
+                PrixUnitaire = prixUnitaire,
+                SousTotal = soustotal
+            });
+
+            MessageBox.Show("Détail ajouté !                                 ");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            panelAjoutComm.Visible = false;
+            clientcbox.SelectedIndex = 0;
+            detailsCommande.Clear();
+            remarques.Clear();
+            remisetxt.Clear();
+            qnttxt.Clear();
+            soustotal = 0;
+            medcbox.SelectedIndex = 0;
+        }
+
+        private void iconPictureBox5_Click(object sender, EventArgs e)
+        {
+            panelAjoutComm.Visible = false;
+            clientcbox.SelectedIndex = 0;
+            detailsCommande.Clear();
+            remarques.Clear();
+            remisetxt.Clear();
+            qnttxt.Clear();
+            soustotal = 0;
+            medcbox.SelectedIndex = 0;
+        }
+
+        private void panelAjoutComm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
