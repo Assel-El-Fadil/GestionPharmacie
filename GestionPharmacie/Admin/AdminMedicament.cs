@@ -512,7 +512,7 @@ namespace GestionPharmacie.Admin
             }
 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "data source = LAPTOP-G7L9QSSV;initial catalog=AppPharmacie;" +
+            conn.ConnectionString = "data source = DESKTOP-DDPB0HH\\GI2_1;initial catalog=AppPharmacie;" +
                         "integrated security=True;TrustServerCertificate=True";
 
             string sql = $"SELECT MedicamentID, Reference, NomMedicament, CategorieID, Forme, Dosage, PrixVente, QuantiteStock," +
