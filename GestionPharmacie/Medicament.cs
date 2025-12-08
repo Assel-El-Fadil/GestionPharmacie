@@ -47,7 +47,7 @@ namespace GestionPharmacie
             Actif = true;
             DateCreation = DateTime.Now;
         }
-        private static string connectionString = "data source = LAPTOP-G7L9QSSV;initial catalog=AppPharmacie;" +
+        private static string connectionString = "data source = DESKTOP-DDPB0HH\\GI2_1;initial catalog=AppPharmacie;" +
                         "integrated security=True;TrustServerCertificate=True";
 
         public bool Ajouter()
