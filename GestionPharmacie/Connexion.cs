@@ -39,7 +39,7 @@ namespace GestionPharmacie
             else
             {
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = "data source = DESKTOP-DDPB0HH\\GI2_1;initial catalog=AppPharmacie;" +
+                conn.ConnectionString = "data source = LAPTOP-G7L9QSSV;initial catalog=AppPharmacie;" +
                         "integrated security=True;TrustServerCertificate=True";
                 String sql = "select * from Utilisateurs where NomUtilisateur='" + Email.Text + "' and MotDePasse='" + Password.Text + "'";
                 conn.Open();

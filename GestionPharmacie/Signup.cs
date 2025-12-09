@@ -6,7 +6,7 @@ namespace GestionPharmacie
 {
     public partial class Signup : Form
     {
-        private readonly string connectionString = "data source = DESKTOP-DDPB0HH\\GI2_1;initial catalog=AppPharmacie;integrated security=True;TrustServerCertificate=True";
+        private readonly string connectionString = "data source = LAPTOP-G7L9QSSV;initial catalog=AppPharmacie;integrated security=True;TrustServerCertificate=True";
 
         public Signup()
         {

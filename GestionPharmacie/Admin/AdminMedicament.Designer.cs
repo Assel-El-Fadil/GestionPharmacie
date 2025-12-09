@@ -84,6 +84,7 @@
             panelmedicaments = new Panel();
             panelSearch = new Panel();
             labelTitle = new Label();
+            label54 = new Label();
             buttonNouveau = new FontAwesome.Sharp.IconButton();
             ViewMedicament = new Panel();
             iconPictureBox4 = new FontAwesome.Sharp.IconPictureBox();
@@ -153,6 +154,7 @@
             searchClientTxt = new TextBox();
             panelClientsHeader = new Panel();
             labelClientsTitle = new Label();
+            label56 = new Label();
             buttonNouveauClient = new FontAwesome.Sharp.IconButton();
             panelCommandes = new Panel();
             panelAjoutComm = new Panel();
@@ -223,8 +225,6 @@
             label33 = new Label();
             label19 = new Label();
             comboStatutCommande = new ComboBox();
-            label54 = new Label();
-            label56 = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -926,9 +926,10 @@
             panelmedicaments.Controls.Add(AddPanel);
             panelmedicaments.Controls.Add(panel3);
             panelmedicaments.Controls.Add(GridView1);
-            panelmedicaments.Location = new Point(500, 46);
+            panelmedicaments.Dock = DockStyle.Fill;
+            panelmedicaments.Location = new Point(171, 46);
             panelmedicaments.Name = "panelmedicaments";
-            panelmedicaments.Size = new Size(205, 166);
+            panelmedicaments.Size = new Size(933, 531);
             panelmedicaments.TabIndex = 7;
             panelmedicaments.Visible = false;
             // 
@@ -942,7 +943,7 @@
             panelSearch.Location = new Point(0, 0);
             panelSearch.Name = "panelSearch";
             panelSearch.Padding = new Padding(10);
-            panelSearch.Size = new Size(205, 70);
+            panelSearch.Size = new Size(933, 70);
             panelSearch.TabIndex = 2;
             // 
             // labelTitle
@@ -955,6 +956,17 @@
             labelTitle.Size = new Size(370, 31);
             labelTitle.TabIndex = 4;
             labelTitle.Text = "Gestion des Médicaments";
+            // 
+            // label54
+            // 
+            label54.AutoSize = true;
+            label54.Font = new Font("Georgia", 11.25F);
+            label54.ForeColor = SystemColors.ControlDarkDark;
+            label54.Location = new Point(37, 48);
+            label54.Name = "label54";
+            label54.Size = new Size(235, 18);
+            label54.TabIndex = 5;
+            label54.Text = "Gérez votre stock de médicaments";
             // 
             // buttonNouveau
             // 
@@ -969,7 +981,7 @@
             buttonNouveau.IconFont = FontAwesome.Sharp.IconFont.Solid;
             buttonNouveau.IconSize = 16;
             buttonNouveau.ImageAlign = ContentAlignment.MiddleLeft;
-            buttonNouveau.Location = new Point(-7, 24);
+            buttonNouveau.Location = new Point(721, 24);
             buttonNouveau.Name = "buttonNouveau";
             buttonNouveau.Padding = new Padding(8, 0, 0, 0);
             buttonNouveau.Size = new Size(200, 32);
@@ -1782,6 +1794,17 @@
             labelClientsTitle.TabIndex = 4;
             labelClientsTitle.Text = "Gestion des Clients";
             // 
+            // label56
+            // 
+            label56.AutoSize = true;
+            label56.Font = new Font("Georgia", 11.25F);
+            label56.ForeColor = SystemColors.ControlDarkDark;
+            label56.Location = new Point(54, 48);
+            label56.Name = "label56";
+            label56.Size = new Size(249, 18);
+            label56.TabIndex = 5;
+            label56.Text = "Gérez les informations de vos clients";
+            // 
             // buttonNouveauClient
             // 
             buttonNouveauClient.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -2197,10 +2220,9 @@
             dashboard.Controls.Add(label51);
             dashboard.Controls.Add(label45);
             dashboard.Controls.Add(label3);
-            dashboard.Dock = DockStyle.Fill;
-            dashboard.Location = new Point(171, 46);
+            dashboard.Location = new Point(712, 314);
             dashboard.Name = "dashboard";
-            dashboard.Size = new Size(933, 531);
+            dashboard.Size = new Size(269, 176);
             dashboard.TabIndex = 8;
             // 
             // label52
@@ -2603,38 +2625,17 @@
             comboStatutCommande.Size = new Size(121, 23);
             comboStatutCommande.TabIndex = 0;
             // 
-            // label54
-            // 
-            label54.AutoSize = true;
-            label54.Font = new Font("Georgia", 11.25F);
-            label54.ForeColor = SystemColors.ControlDarkDark;
-            label54.Location = new Point(37, 48);
-            label54.Name = "label54";
-            label54.Size = new Size(235, 18);
-            label54.TabIndex = 5;
-            label54.Text = "Gérez votre stock de médicaments";
-            // 
-            // label56
-            // 
-            label56.AutoSize = true;
-            label56.Font = new Font("Georgia", 11.25F);
-            label56.ForeColor = SystemColors.ControlDarkDark;
-            label56.Location = new Point(54, 48);
-            label56.Name = "label56";
-            label56.Size = new Size(249, 18);
-            label56.TabIndex = 5;
-            label56.Text = "Gérez les informations de vos clients";
-            // 
             // AdminMedicament
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1104, 577);
+            Controls.Add(panelmedicaments);
             Controls.Add(dashboard);
             Controls.Add(panelCommandes);
             Controls.Add(panelClients);
-            Controls.Add(panelmedicaments);
+            
             Controls.Add(PanelStats);
             Controls.Add(panelTop);
             Controls.Add(panel1);

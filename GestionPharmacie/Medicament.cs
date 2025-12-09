@@ -47,7 +47,7 @@ namespace GestionPharmacie
             Actif = true;
             DateCreation = DateTime.Now;
         }
-        private static string connectionString = "data source = DESKTOP-DDPB0HH\\GI2_1;initial catalog=AppPharmacie;" +
+        private static string connectionString = "data source = LAPTOP-G7L9QSSV;initial catalog=AppPharmacie;" +
                         "integrated security=True;TrustServerCertificate=True";
 
         public bool Ajouter()
@@ -276,7 +276,7 @@ namespace GestionPharmacie
                 conn.Open();
                 string sql = @"SELECT MedicamentID, Reference, NomMedicament, NomCategorie, Forme,PrixVente, QuantiteStock, 
                     SeuilMinimum, DatePeremption, NumeroLot, Actif FROM Medicaments INNER JOIN Categories 
-                    ON Medicaments.CategorieID = Categories.CategorieID WHERE NomMedicament = @txt OR NomCategorie = @txt;";
+                    ON Medicaments.CategorieID = Categories.CategorieID WHERE NomMedicament LIKE @txt OR NomCategorie LIKE @txt;";
 
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@txt", txt);

@@ -8,7 +8,7 @@ namespace GestionPharmacie
 {
     public class DetailCommande
     {
-        private static readonly string connectionString = "data source = DESKTOP-DDPB0HH\\GI2_1;initial catalog=AppPharmacie;" +
+        private static readonly string connectionString = "data source = LAPTOP-G7L9QSSV;initial catalog=AppPharmacie;" +
             "integrated security=True;TrustServerCertificate=True";
 
         public int MedicamentID { get; set; }

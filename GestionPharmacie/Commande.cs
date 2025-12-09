@@ -7,7 +7,7 @@ namespace GestionPharmacie
     public class Commande
     {
         private static readonly string connectionString =
-            "data source = DESKTOP-DDPB0HH\\GI2_1;initial catalog=AppPharmacie;" +
+            "data source = LAPTOP-G7L9QSSV;initial catalog=AppPharmacie;" +
             "integrated security=True;TrustServerCertificate=True";
 
         public int CommandeID { get; set; }

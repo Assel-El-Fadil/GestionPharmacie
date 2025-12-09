@@ -496,41 +496,6 @@ namespace GestionPharmacie.Admin
             clientcbox.DisplayMember = "Nom";
             clientcbox.ValueMember = "ClientID";
         }
-        private void buttonChercher_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(searchtxt.Text))
-            {
-                MessageBox.Show("Veuillez entrer un IdMedicament.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            int medicamentId;
-            if (!int.TryParse(searchtxt.Text, out medicamentId))
-            {
-                MessageBox.Show("Le Id medicament doit être un nombre entier.", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "data source = DESKTOP-DDPB0HH\\GI2_1;initial catalog=AppPharmacie;" +
-                        "integrated security=True;TrustServerCertificate=True";
-
-            string sql = $"SELECT MedicamentID, Reference, NomMedicament, CategorieID, Forme, Dosage, PrixVente, QuantiteStock," +
-                $" SeuilMinimum, DatePeremption, NumeroLot, Ordonnance, Actif FROM Medicaments WHERE MedicamentId={medicamentId}";
-
-            conn.Open();
-            SqlDataAdapter dp = new SqlDataAdapter(sql, conn);
-            DataTable dt = new DataTable();
-            dp.Fill(dt);
-            conn.Close();
-
-            if (dt.Rows.Count == 0)
-            {
-                MessageBox.Show("Aucun Medicament trouvé avec ce Id.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            GridView1.DataSource = dt;
-        }
 
         private void iconButton7_Click(object sender, EventArgs e)
         {
@@ -558,7 +523,7 @@ namespace GestionPharmacie.Admin
 
             if (dt.Rows.Count == 0)
             {
-                MessageBox.Show("Aucun Medicament trouvé avec ce Id.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Aucun Medicament trouvé.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             GridView1.DataSource = dt;
@@ -795,11 +760,6 @@ namespace GestionPharmacie.Admin
         {
             DataTable dt = Client.GetAll();
             gridClients.DataSource = dt;
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void iconButton6_Click_1(object sender, EventArgs e)
